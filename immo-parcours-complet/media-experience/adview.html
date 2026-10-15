@@ -1,0 +1,3434 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-v="title">Maison 3 pièces 61 m² — Lille Lomme | leboncoin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-main: #ec5a13;
+    --color-on-main: #ffffff;
+    --color-main-hovered: #f07b42;
+    --color-main-container: #ffe9de;
+    --color-on-main-container: #89380f;
+
+    --color-support: #094171;
+    --color-on-support: #ffffff;
+    --color-support-hovered: #0c5291;
+    --color-support-container: #e6f2fd;
+    --color-on-support-container: #152233;
+
+    --color-neutral: #3a4757;
+    --color-on-neutral: #ffffff;
+    --color-neutral-container: #f0f2f5;
+    --color-on-neutral-container: #3a4757;
+    --color-neutral-container-hovered: #f6f8f9;
+
+    --color-success: #1d6340;
+    --color-success-container: #e0f2e9;
+    --color-alert-container: #ffeecc;
+    --color-on-alert-container: #664400;
+
+    --color-background: #ffffff;
+    --color-background-variant: #f4f9fe;
+    --color-surface: #ffffff;
+    --color-on-surface: #152233;
+    --color-surface-hovered: #f6f8f9;
+    --color-on-surface-dim-1: rgba(21, 34, 51, 0.72);
+
+    --opacity-dim-2: 0.56;
+
+    --color-outline: #acb8c7;
+    --color-shadow: rgba(108, 129, 157, 0.5);
+    --color-focus: #0000ff;
+
+    --spacing-none: 0px;
+    --spacing-sm: 4px;
+    --spacing-md: 8px;
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+    --spacing-2xl: 32px;
+    --spacing-3xl: 40px;
+
+    --rounded-sm: 4px;
+    --rounded-md: 8px;
+    --rounded-lg: 16px;
+    --rounded-xl: 24px;
+    --rounded-full: 99999px;
+
+    --border-sm: 1px;
+    --border-md: 2px;
+    --border-lg: 4px;
+
+    --duration-short: 150ms;
+    --duration-medium: 250ms;
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+    /* Trame de la maquette : colonne principale 672 + 18 + colonne droite 330 */
+    --page-width: 1020px;
+    --header-width: 1066px;
+    --main-col: 672px;
+    --aside-col: 330px;
+    --col-gap: 18px;
+  }
+
+  :where(a, button, input, [tabindex]):focus-visible {
+    outline: var(--border-md) solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--color-surface);
+    font-family: "Nunito Sans", system-ui, sans-serif;
+    font-variation-settings: "YTLC" 500, "wdth" 100;
+    color: var(--color-on-surface);
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  img { display: block; }
+
+  /* ---------- Header ---------- */
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--color-surface);
+    border-bottom: var(--border-sm) solid var(--color-outline);
+    box-shadow: 0 4px 4px var(--color-shadow);
+  }
+  .header__main {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    width: 100%;
+    max-width: var(--header-width);
+    padding-inline: var(--spacing-lg);
+  }
+  .header__logo { flex: none; padding-right: var(--spacing-lg); }
+  .header__logo img { width: 164px; height: 30px; }
+
+  .header__search {
+    display: flex;
+    flex: 1 1 0;
+    min-width: 0;
+    align-items: center;
+    gap: var(--spacing-lg);
+  }
+  .searchbar {
+    display: flex;
+    flex: 1 1 0;
+    min-width: 0;
+    align-items: center;
+    gap: var(--spacing-md);
+    height: 44px;
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) var(--spacing-lg);
+    border: 0;
+    border-radius: var(--rounded-full);
+    background: var(--color-neutral-container);
+    font: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-on-neutral-container);
+    cursor: pointer;
+    text-align: left;
+  }
+  .searchbar__label { flex: 1 1 0; min-width: 0; }
+  .searchbar__submit {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+    border-radius: var(--rounded-full);
+    background: var(--color-main);
+  }
+  .searchbar__submit img { width: 16px; height: 16px; }
+
+  .header__nav {
+    flex: none;
+    display: flex;
+    align-items: flex-start;
+  }
+  .header__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: 0 var(--spacing-md) var(--spacing-md);
+    border: 0;
+    background: var(--color-surface);
+    font: inherit;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-on-surface);
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .header__item-icon { display: flex; align-items: flex-end; height: 32px; }
+  .header__item-icon img { width: 24px; height: 24px; }
+
+  .header__categories {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: var(--header-width);
+    height: 50px;
+    padding-inline: var(--spacing-lg);
+    overflow: hidden;
+  }
+  .header__category {
+    color: var(--color-on-surface);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .header__category:hover { text-decoration: underline; }
+  .header__category--highlight { font-weight: 700; }
+  .header__categories span {
+    font-weight: 700;
+    color: var(--color-on-surface-dim-1);
+    padding-inline: var(--spacing-md);
+  }
+
+  /* ---------- Boutons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    height: 44px;
+    padding-inline: var(--spacing-lg);
+    border: 0;
+    border-radius: var(--rounded-full);
+    font: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color var(--duration-short) var(--ease-standard);
+  }
+  .btn img { width: 16px; height: 16px; }
+  .btn--main { background: var(--color-main); color: var(--color-on-main); }
+  .btn--main:hover { background: var(--color-main-hovered); }
+  .btn--support { background: var(--color-support); color: var(--color-on-support); }
+  .btn--support:hover { background: var(--color-support-hovered); }
+  .btn--outlined {
+    background: transparent;
+    color: var(--color-support);
+    box-shadow: inset 0 0 0 var(--border-sm) var(--color-support);
+  }
+  .btn--outlined:hover { background: var(--color-support-container); }
+  .btn--full { width: 100%; }
+
+  /* ---------- Barre de rappel affichée au scroll ---------- */
+  .stickybar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 4;
+    background: var(--color-surface);
+    box-shadow: 0 4px 4px var(--color-shadow);
+    /* translate3d et non translateY : Safari iOS garde parfois un élément fixe
+       transformé sur sa dernière position peinte quand la classe change pendant
+       le scroll — la barre reste alors invisible au-dessus de l'écran. La
+       promotion en couche composite (3D + will-change) force le repeint. */
+    transform: translate3d(0, -100%, 0);
+    will-change: transform;
+    transition: transform var(--duration-medium) var(--ease-standard);
+  }
+  .stickybar--shown { transform: translate3d(0, 0, 0); }
+  .stickybar__summary {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    width: 100%;
+    max-width: var(--page-width);
+    height: 64px;
+    margin-inline: auto;
+    padding-inline: var(--spacing-lg);
+  }
+  .stickybar__cover {
+    flex: none;
+    width: 64px;
+    height: 40px;
+    border-radius: var(--rounded-sm);
+    object-fit: cover;
+  }
+  .stickybar__text { flex: 1 1 0; min-width: 0; }
+  .stickybar__text b,
+  .stickybar__text span {
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+  .stickybar__text b { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .stickybar__fav {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: var(--rounded-full);
+    background: none;
+    cursor: pointer;
+  }
+  .stickybar__fav:hover { background: var(--color-surface-hovered); }
+  .stickybar__fav img { width: 24px; height: 24px; }
+  /* Retour et partage n'existent que dans la barre mobile */
+  .stickybar__back, .stickybar__share { display: none; }
+  .stickybar__tabs {
+    display: flex;
+    width: 100%;
+    max-width: var(--page-width);
+    height: 40px;
+    margin-inline: auto;
+    padding-inline: var(--spacing-lg);
+    border-top: var(--border-sm) solid var(--color-neutral-container);
+    /* Les onglets débordent en dessous de ~1000px : la bande garde la largeur
+       de l'écran et se parcourt au doigt, les libellés cachés arrivant au
+       glissé. `overscroll-behavior-x` empêche le geste de se propager au
+       document une fois la bande au bout — sans ça iOS décale toute la page
+       (ou déclenche son retour arrière) et l'écran semble s'élargir. */
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .stickybar__tabs::-webkit-scrollbar { display: none; }
+  .stickybar__tabs a {
+    display: flex;
+    align-items: center;
+    padding-inline: var(--spacing-lg);
+    border-bottom: var(--border-md) solid transparent;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-on-surface);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .stickybar__tabs a:hover { text-decoration: underline; }
+  .stickybar__tabs a[aria-current="true"] {
+    border-bottom-color: var(--color-support);
+    color: var(--color-support);
+    font-weight: 700;
+  }
+  /* La barre recouvre 104px : les ancres doivent s'arrêter en dessous */
+  [id^="sec-"] { scroll-margin-top: 120px; }
+
+  /* ---------- Layout page ---------- */
+  .page {
+    display: grid;
+    /* La colonne principale plie : `--page-width` est la largeur de la boite, dont
+       le padding lateral se retranche. Les colonnes figees demandaient 672+18+330,
+       soit la boite entiere, et la colonne laterale sortait donc de 32px a droite
+       avec sa carte de contact et ses trois bannieres. */
+    grid-template-columns: minmax(0, var(--main-col)) var(--aside-col);
+    gap: var(--col-gap);
+    width: 100%;
+    max-width: var(--page-width);
+    margin-inline: auto;
+    padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-3xl);
+  }
+  .page__main { min-width: 0; grid-column: 1; }
+  .page__aside { min-width: 0; grid-column: 2; }
+
+  .breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-sm);
+    grid-column: 1 / -1;
+    margin-bottom: var(--spacing-xl);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    color: var(--color-neutral);
+  }
+  .breadcrumb a {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: inherit;
+  }
+  .breadcrumb img { width: 8px; height: 8px; }
+
+  /* ---------- Hero galerie ---------- */
+  .hero { display: flex; flex-direction: column; gap: var(--spacing-lg); }
+
+  .hero__mosaic {
+    position: relative;
+    display: flex;
+    gap: var(--spacing-sm);
+    height: 324px;
+  }
+  .hero__col {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    width: 225px;
+  }
+  .hero__shot { flex: none; border: 0; padding: 0; background: none; cursor: pointer; }
+  .hero__col .hero__shot { flex: 1 1 0; min-height: 0; }
+  .hero__shot--wide { flex: 1 1 0; min-width: 0; }
+  .hero__shot img { width: 100%; height: 100%; object-fit: cover; }
+  .hero__shot:first-child img { border-top-left-radius: var(--rounded-md); }
+  .hero__col .hero__shot:last-child img { border-bottom-left-radius: var(--rounded-md); }
+  .hero__shot--wide img {
+    border-top-right-radius: var(--rounded-md);
+    border-bottom-right-radius: var(--rounded-md);
+  }
+
+  .hero__actions {
+    position: absolute;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    display: flex;
+    gap: var(--spacing-md);
+  }
+  .icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: var(--rounded-lg);
+    background: var(--color-surface);
+    cursor: pointer;
+    transition: background-color var(--duration-short) var(--ease-standard);
+  }
+  .icon-btn:hover { background: var(--color-surface-hovered); }
+  .icon-btn img { width: 16px; height: 16px; }
+
+  /* Retour posé sur la photo : mobile seulement. La barre collée, qui porte
+     l'autre retour, n'apparaît qu'au scroll — en haut de page il n'y a donc
+     rien pour revenir à la liste. */
+  .hero__back {
+    position: absolute;
+    top: var(--spacing-lg);
+    left: var(--spacing-lg);
+    display: none;
+  }
+
+  /* Point d'entrée vers la media experience */
+  .hero__medias {
+    position: absolute;
+    right: var(--spacing-lg);
+    bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    height: 32px;
+    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-sm) var(--spacing-sm);
+    border-radius: var(--rounded-lg);
+    background: var(--color-surface);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    color: var(--color-on-support-container);
+    text-decoration: none;
+    transition: background-color var(--duration-short) var(--ease-standard);
+  }
+  .hero__medias:hover { background: var(--color-surface-hovered); }
+  .hero__medias-icons { display: flex; align-items: center; }
+  .hero__medias-icons span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: var(--border-sm) solid rgba(172, 184, 199, 0.4);
+    border-radius: var(--rounded-full);
+    background: var(--color-surface);
+  }
+  /* Pastilles empilées : la première passe devant */
+  .hero__medias-icons span:not(:last-child) { margin-right: -4px; }
+  .hero__medias-icons span:nth-child(1) { z-index: 3; }
+  .hero__medias-icons span:nth-child(2) { z-index: 2; }
+  .hero__medias-icons span:nth-child(3) { z-index: 1; }
+  .hero__medias-icons img { width: 16px; height: 16px; }
+
+  /* ---------- Titre, prix, critères ---------- */
+  .hero__summary { display: flex; flex-direction: column; gap: var(--spacing-2xl); }
+  .summary__features {
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+  .summary__price {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0 0;
+  }
+  .summary__price b { font-size: 24px; line-height: 32px; }
+  .summary__price small {
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-on-surface-dim-1);
+  }
+  .summary__price-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    /* Sans ça, la marge par défaut du <p> s'ajoute au gap de .hero__summary et
+       décroche les critères du bloc prix. */
+    margin: var(--spacing-md) 0 0;
+  }
+  .summary__price-actions > * { display: flex; align-items: center; gap: var(--spacing-md); }
+  .summary__price-actions img { width: 16px; height: 16px; }
+
+  /* ---------- Popover (tooltip au survol) ---------- */
+  .tip { position: relative; display: inline-flex; }
+  .tip__btn {
+    display: inline-flex;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
+  .tip__bubble {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + var(--spacing-md));
+    z-index: 3;
+    width: 328px;
+    padding: var(--spacing-lg);
+    border-radius: var(--rounded-md);
+    background: var(--color-surface);
+    box-shadow: 0 2px 8px var(--color-shadow);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%);
+    transition: opacity var(--duration-short) var(--ease-standard),
+                visibility var(--duration-short) var(--ease-standard);
+  }
+  .tip__bubble::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-width: 8px 8px 8px 0;
+    border-style: solid;
+    border-color: transparent var(--color-surface) transparent transparent;
+    transform: translateY(-50%);
+  }
+  .tip:hover .tip__bubble,
+  .tip:focus-within .tip__bubble { opacity: 1; visibility: visible; }
+  .link {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    color: var(--color-neutral);
+  }
+  .summary__divider {
+    width: var(--border-sm);
+    height: 18px;
+    background: var(--color-outline);
+  }
+
+  .summary__keyinfo { display: flex; flex-direction: column; gap: var(--spacing-md); }
+  .keyinfo__row { display: flex; align-items: flex-start; gap: var(--spacing-md); margin: 0; }
+  .keyinfo__icon {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin-top: 2px;
+    border-radius: var(--rounded-sm);
+    background: var(--color-background-variant);
+  }
+  .keyinfo__icon img { width: 16px; height: 16px; }
+  .keyinfo__text {
+    flex: 1 1 0;
+    min-width: 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  /* ---------- Titres de section ---------- */
+  .section__title {
+    margin: 0 0 var(--spacing-lg);
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+  .link--block {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    color: var(--color-on-surface);
+  }
+
+  /* ---------- Description ---------- */
+  .description p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    white-space: pre-wrap;
+  }
+  /* Replié par défaut : « Voir plus » déplie le texte complet */
+  .description__text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+  }
+  .description.is-open .description__text { -webkit-line-clamp: unset; overflow: visible; }
+  .description__more {
+    margin-top: var(--spacing-sm);
+    border: 0;
+    padding: 0;
+    background: none;
+    font: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    color: var(--color-on-surface);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  /* ---------- Bande médias (entrées vers la galerie) ---------- */
+  .medias { display: flex; flex-wrap: wrap; gap: var(--spacing-lg); }
+  .media-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    width: 144px;
+    color: inherit;
+    text-decoration: none;
+  }
+  .media-card__visual {
+    position: relative;
+    height: 104px;
+    border: var(--border-lg) solid var(--color-surface);
+    border-radius: var(--rounded-md);
+    background: var(--color-surface);
+    box-shadow: 0 1px 2px var(--color-shadow);
+    transition: transform var(--duration-short) var(--ease-standard);
+  }
+  .media-card:hover .media-card__visual { transform: translateY(-2px); }
+  .media-card__visual > img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--rounded-sm);
+    object-fit: cover;
+  }
+  /* Pile de photos : la carte du dessous dépasse en rotation */
+  .media-card__behind {
+    position: absolute;
+    inset: -8px -8px auto -1px;
+    z-index: -1;
+    height: 104px;
+    border: var(--border-lg) solid var(--color-surface);
+    border-radius: var(--rounded-md);
+    box-shadow: 0 1px 2px var(--color-shadow);
+    transform: rotate(5deg);
+    overflow: hidden;
+  }
+  .media-card__behind img { width: 100%; height: 100%; object-fit: cover; }
+  .media-card__visual > .media-card__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+  }
+  .media-card__label { font-size: 14px; line-height: 20px; }
+
+  /* ---------- Diagnostics ---------- */
+  .diags { display: flex; flex-wrap: wrap; gap: var(--spacing-lg); }
+  .diag { display: flex; gap: var(--spacing-md); width: 330px; }
+  .diag__icon { flex: none; width: 24px; height: 24px; }
+  .diag__label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin: 0 0 var(--spacing-md);
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-on-surface-dim-1);
+  }
+  .diag__label img { width: 12px; height: 12px; }
+
+  .scale { display: flex; align-items: center; gap: 1px; }
+  .scale__step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 3px;
+    font-family: "Open Sans", system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--color-on-surface);
+  }
+  .scale__step--active {
+    padding: 5px 4px;
+    border: var(--border-sm) solid var(--color-surface);
+    border-radius: var(--rounded-sm);
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+
+  /* ---------- Informations clés ---------- */
+  .keys {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 324px));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+  }
+  .keys__item { display: flex; align-items: center; gap: var(--spacing-md); margin: 0; }
+  .keys__item img { flex: none; width: 24px; height: 24px; }
+  .keys__item span { font-size: 16px; line-height: 24px; font-weight: 700; }
+  .keys__col { display: flex; flex-direction: column; gap: var(--spacing-xl); }
+  .keys__item--more { display: none; }
+  .keys--expanded .keys__item--more { display: flex; }
+  .keys__toggle {
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  /* ---------- Localisation ---------- */
+  .section__title--lg { font-size: 20px; line-height: 28px; }
+  .locality { margin: 0 0 var(--spacing-lg); }
+  .locality b { display: block; font-size: 16px; line-height: 24px; }
+  .locality span { font-size: 14px; line-height: 20px; }
+
+  .map {
+    position: relative;
+    aspect-ratio: 670 / 396;
+    border-radius: var(--rounded-md);
+    overflow: hidden;
+  }
+  /* Grille de 9 tuiles OSM de 256 px, zoom 15. L'offset amène les coordonnées de
+     l'annonce sous le pin, qui est fixe au centre du cadre : il vaut 256 px (la
+     tuile qui précède) plus la position du point dans sa tuile centrale.
+     Variante 1, Lomme 50.63003 / 3.0026312, tuile 16657/11023 -> 334,38 / 329,92.
+     Variante 2, Carquefou 47.278316 / -1.4916236, tuile 16248/11488 -> 314,65 / 287,36
+     (appliqué par le script de variantes, cf. data-vtransform). */
+  .map__tiles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 256px);
+    grid-auto-rows: 256px;
+    transform: translate(-334.38px, -329.92px);
+  }
+  .map__tiles img { width: 256px; height: 256px; }
+  .map__pin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    transform: translate(-50%, -100%);
+  }
+  .map__credit {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 2px var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 10px;
+    line-height: 14px;
+    color: var(--color-neutral);
+  }
+  /* ---------- Transports ---------- */
+  .transports { display: flex; flex-direction: column; gap: 12px; }
+  .transport { display: flex; align-items: center; gap: var(--spacing-md); }
+  .transport span { font-size: 16px; line-height: 24px; }
+  .transport b { font-size: 16px; line-height: 24px; }
+  .line-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: var(--rounded-sm);
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    color: var(--color-on-support);
+  }
+
+  /* ---------- Temps de trajet ---------- */
+  .trip__from { display: flex; align-items: center; gap: var(--spacing-md); }
+  .trip__from img { width: 16px; height: 16px; }
+  .trip__from b { font-size: 16px; line-height: 24px; }
+  .trip__link { width: 8px; height: 24px; margin-left: var(--spacing-sm); }
+  .trip__to { display: flex; gap: var(--spacing-md); }
+  .trip__to > img { flex: none; width: 16px; height: 16px; margin-top: 4px; }
+  .trip__field { flex: 1 1 0; min-width: 0; }
+  .trip__field label {
+    display: block;
+    margin-bottom: var(--spacing-md);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+  .trip__field label i { color: var(--color-neutral); font-style: normal; }
+  .trip__field input {
+    width: 100%;
+    height: 44px;
+    padding-inline: var(--spacing-lg);
+    border: var(--border-sm) solid var(--color-outline);
+    border-radius: var(--rounded-full);
+    background: var(--color-surface);
+    font: inherit;
+    font-size: 16px;
+    color: var(--color-on-surface);
+  }
+  .trip__field input::placeholder { color: var(--color-neutral); }
+  .trip__results {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+    text-align: center;
+  }
+  .trip__result { flex: 1 1 0; }
+  .trip__result img { width: 16px; height: 16px; margin: 0 auto var(--spacing-md); }
+  .trip__result b { font-size: 16px; line-height: 24px; }
+
+  /* ---------- Bandeau promo intercalaire ---------- */
+  .promo-band { display: block; width: 257px; max-width: 100%; margin-inline: auto; }
+  .promo-band img { display: block; width: 100%; height: auto; }
+
+  /* ---------- Localisation : badge + accordéons ---------- */
+  .map__badge {
+    position: absolute;
+    top: var(--spacing-lg);
+    left: var(--spacing-lg);
+    padding: 2px var(--spacing-md);
+    border-radius: var(--rounded-sm);
+    background: var(--color-support);
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+    color: var(--color-on-support);
+  }
+  .locality__panels {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+  }
+  .panel {
+    border: var(--border-sm) solid var(--color-outline);
+    border-radius: var(--rounded-md);
+    background: var(--color-surface);
+  }
+  .panel__head {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
+    cursor: pointer;
+    list-style: none;
+  }
+  .panel__head::-webkit-details-marker { display: none; }
+  .panel__icon {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--rounded-md);
+    background: var(--color-support-container);
+  }
+  .panel__icon img { width: 20px; height: 20px; }
+  .panel__text { flex: 1 1 0; min-width: 0; }
+  .panel__text b { display: block; font-size: 16px; line-height: 24px; }
+  .panel__text span { font-size: 14px; line-height: 20px; color: var(--color-on-surface-dim-1); }
+  /* Chevron dessiné en masque : l'asset est monochrome, la couleur vient du token */
+  .panel__chevron {
+    flex: none;
+    width: 16px;
+    height: 16px;
+    background: var(--color-neutral);
+    opacity: var(--opacity-dim-2);
+    -webkit-mask: url(assets/icon-chevron-down.svg) center / contain no-repeat;
+    mask: url(assets/icon-chevron-down.svg) center / contain no-repeat;
+    transition: transform var(--duration-short) var(--ease-standard);
+  }
+  .panel[open] .panel__chevron { transform: rotate(180deg); }
+  .panel__body { padding: 0 var(--spacing-lg) var(--spacing-lg) 72px; }
+  .panel--link { display: block; color: inherit; text-decoration: none; }
+  .panel__arrow { flex: none; width: 20px; height: 20px; transform: rotate(-45deg); }
+
+  /* ---------- Coût du projet ---------- */
+  .cost { display: flex; flex-direction: column; gap: var(--spacing-lg); }
+  .cost__card {
+    padding: var(--spacing-lg);
+    border: var(--border-sm) solid var(--color-outline);
+    border-radius: var(--rounded-md);
+  }
+  .cost__title { margin: 0; font-size: 16px; line-height: 24px; font-weight: 700; }
+  .cost__card > .cost__title { margin-bottom: var(--spacing-lg); }
+  .cost__row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+  }
+  .cost__row + .cost__row { margin-top: var(--spacing-lg); }
+  .cost__label { margin: 0; display: flex; align-items: center; gap: var(--spacing-sm); font-size: 14px; line-height: 20px; }
+  .cost__label img { width: 16px; height: 16px; }
+  .cost__amount { margin: 0; font-size: 16px; line-height: 24px; font-weight: 700; text-align: right; white-space: nowrap; }
+  .cost__amount small { display: block; font-size: 12px; line-height: 16px; font-weight: 400; color: var(--color-on-surface-dim-1); }
+  .cost__note {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--rounded-md);
+    background: var(--color-support-container);
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .cost__sep { height: 1px; margin: var(--spacing-lg) 0; border: 0; background: var(--color-outline); }
+  .cost__edf { margin: var(--spacing-lg) 0 0; }
+  .cost__edf .btn { width: 100%; gap: var(--spacing-md); }
+  .cost__edf .btn img { width: auto; height: 20px; }
+  .cost__sponsor { margin: var(--spacing-sm) 0 0; font-size: 12px; line-height: 16px; text-align: right; color: var(--color-on-surface-dim-1); }
+  .cost__legal { margin: 0; font-size: 12px; line-height: 16px; color: var(--color-on-surface-dim-1); }
+  .cost__aid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+  .cost__aid a { font-size: 16px; line-height: 24px; font-weight: 700; color: var(--color-support); }
+  .cost__logo { margin: var(--spacing-lg) 0 0; }
+  .cost__logo img { width: 250px; height: auto; }
+
+  /* Jauge « prix au m² par rapport au secteur » */
+  .market { margin-top: var(--spacing-2xl); }
+  .market__title { margin: 0; display: flex; align-items: center; gap: var(--spacing-md); font-size: 16px; line-height: 24px; }
+  .market__title img { width: 16px; height: 16px; }
+  .market__hint { margin: var(--spacing-sm) 0 56px; font-size: 12px; line-height: 16px; color: var(--color-on-surface-dim-1); }
+  .market__gauge {
+    position: relative;
+    height: 6px;
+    border-radius: var(--rounded-full);
+    background: linear-gradient(90deg, #1d6340 0%, #7fa8c4 40%, #b34a3a 100%);
+  }
+  .market__cursor {
+    position: absolute;
+    top: -6px;
+    width: 18px;
+    height: 18px;
+    border: var(--border-md) solid var(--color-on-surface);
+    border-radius: var(--rounded-full);
+    background: var(--color-surface);
+    transform: translateX(-50%);
+  }
+  .market__bubble {
+    position: absolute;
+    bottom: 22px;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--rounded-full);
+    background: var(--color-surface);
+    box-shadow: 0 2px 8px var(--color-shadow);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    white-space: nowrap;
+    transform: translateX(-50%);
+  }
+  .market__bounds { display: flex; justify-content: space-between; margin: var(--spacing-lg) 0 0; }
+  .market__bounds b { display: block; font-size: 14px; line-height: 20px; }
+  .market__bounds span { font-size: 14px; line-height: 20px; color: var(--color-on-surface-dim-1); }
+  .market__bounds div:last-child { text-align: right; }
+  .market__verdict { margin: var(--spacing-lg) 0 0; font-size: 16px; line-height: 24px; }
+  /* Les 56px sous le hint réservent la place de la bulle au-dessus de la jauge.
+     Sans jauge, ils laissent un trou. */
+  .market--nodata .market__hint { margin-bottom: 0; }
+
+  /* ---------- Carrousels d'annonces ---------- */
+  .more__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--spacing-md) var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+  .more__head .section__title { margin: 0; }
+  .more__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    color: var(--color-support);
+    white-space: nowrap;
+  }
+  .more__cta img { width: 20px; height: 20px; }
+  .more__scroller { position: relative; }
+  .more__track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 208px;
+    gap: var(--spacing-lg);
+    overflow-x: auto;
+    padding-bottom: var(--spacing-md);
+    scrollbar-width: none;
+  }
+  .more__track::-webkit-scrollbar { display: none; }
+  .more__next {
+    position: absolute;
+    top: 46px;
+    right: -12px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: var(--rounded-full);
+    background: var(--color-surface);
+    box-shadow: 0 2px 8px var(--color-shadow);
+    cursor: pointer;
+  }
+  .more__next img { width: 24px; height: 24px; }
+  .mini { display: block; color: inherit; text-decoration: none; }
+  .mini__media {
+    position: relative;
+    display: block;
+    aspect-ratio: 208 / 139;
+    border-radius: var(--rounded-md);
+    overflow: hidden;
+  }
+  .mini__media img { width: 100%; height: 100%; object-fit: cover; }
+  .mini__fav {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: var(--rounded-full);
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+  }
+  .mini__fav img { width: 20px; height: 20px; }
+  .mini__price { display: flex; align-items: center; gap: var(--spacing-md); margin: var(--spacing-md) 0 var(--spacing-sm); }
+  .mini__price b { font-size: 16px; line-height: 24px; }
+  .mini__price small { font-size: 12px; line-height: 16px; color: var(--color-on-surface-dim-1); }
+  .mini__price .tag--pro { margin-left: auto; }
+  .mini p { margin: 0; font-size: 14px; line-height: 20px; }
+  .mini__type { font-weight: 700; }
+  .mini__where { color: var(--color-on-surface-dim-1); }
+
+  /* ---------- Signaler / droits ---------- */
+  .report { display: flex; flex-wrap: wrap; gap: var(--spacing-lg) var(--spacing-2xl); }
+  .report a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    color: var(--color-support);
+  }
+  .report img { width: 16px; height: 16px; }
+
+  /* ---------- Financement (simulateur statique) ---------- */
+  .finance__subtitle {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin: 0 0 var(--spacing-lg);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+  .tag {
+    padding: 2px var(--spacing-md);
+    border-radius: var(--rounded-sm);
+    box-shadow: inset 0 0 0 var(--border-sm) var(--color-support);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    color: var(--color-support);
+  }
+  .finance {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 323px;
+    gap: var(--spacing-xl);
+  }
+  .finance__fields { display: flex; flex-direction: column; gap: var(--spacing-xl); }
+  .field label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .field__control {
+    display: flex;
+    align-items: stretch;
+    height: 44px;
+    border: var(--border-sm) solid var(--color-outline);
+    border-radius: var(--rounded-lg);
+    overflow: hidden;
+  }
+  .field__control input {
+    flex: 1 1 0;
+    min-width: 0;
+    border: 0;
+    padding-inline: var(--spacing-lg);
+    background: var(--color-surface);
+    font: inherit;
+    font-size: 16px;
+    color: var(--color-on-surface);
+  }
+  .field__suffix {
+    display: flex;
+    align-items: center;
+    padding-inline: var(--spacing-lg);
+    border-left: var(--border-sm) solid var(--color-outline);
+    font-size: 16px;
+  }
+  .field__helper {
+    margin: var(--spacing-sm) 0 0;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-neutral);
+  }
+
+  /* Sliders statiques : position figée, valeur affichée au-dessus du handle */
+  .slider { position: relative; padding-top: var(--spacing-2xl); }
+  .slider__track {
+    position: relative;
+    height: var(--border-lg);
+    border-radius: var(--rounded-sm);
+    background: rgba(58, 71, 87, 0.16);
+  }
+  .slider__fill {
+    height: 100%;
+    border-radius: var(--rounded-sm);
+    background: var(--color-support);
+  }
+  .slider__handle {
+    position: absolute;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    transform: translate(-50%, -50%);
+  }
+  .slider__value {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    color: var(--color-support);
+    white-space: nowrap;
+  }
+  .slider__bounds {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--spacing-lg);
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-neutral);
+  }
+
+  .results {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    border-radius: var(--rounded-md);
+    background: var(--color-support-container);
+  }
+  .results__row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+  }
+  .results__row dt { font-size: 14px; line-height: 20px; }
+  .results__row dt small { display: block; font-size: 12px; line-height: 16px; }
+  .results__row dd { margin: 0; font-size: 16px; line-height: 24px; font-weight: 700; }
+  .results__total dt { font-size: 16px; line-height: 24px; font-weight: 700; }
+  .results__total dd { font-size: 20px; line-height: 28px; }
+  .results__total dd span { font-size: 16px; font-weight: 400; }
+  .results dl { display: flex; flex-direction: column; gap: var(--spacing-md); margin: 0; }
+  .results__divider { height: 1px; border: 0; margin: 0; background: var(--color-outline); }
+  .results__pitch p { margin: 0 0 var(--spacing-md); }
+  .results__pitch b { font-size: 16px; line-height: 24px; }
+  .results__pitch span { font-size: 14px; line-height: 20px; }
+  .logo-mt { display: block; position: relative; width: 200px; height: 50px; margin-top: var(--spacing-md); }
+  .logo-mt img:first-child { position: absolute; top: 12.6px; left: 0; width: 57.6px; height: 24.9px; }
+  .logo-mt img:last-child { position: absolute; top: 16.4px; left: 69.5px; width: 130.5px; height: 17.2px; }
+  .finance__legal {
+    margin: var(--spacing-lg) 0 0;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-neutral);
+  }
+  .finance__legal a { color: inherit; }
+
+  /* ---------- Bloc agence ---------- */
+  .agency {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+    padding-top: var(--spacing-xl);
+    border-top: var(--border-sm) solid var(--color-neutral-container);
+  }
+  .agency__id { display: flex; align-items: center; gap: var(--spacing-lg); }
+  .agency__pic {
+    flex: none;
+    width: 104px;
+    height: 104px;
+    border-radius: var(--rounded-md);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 -1px 4px rgba(0, 0, 0, 0.08);
+    object-fit: cover;
+  }
+  .agency__name { margin: 0 0 var(--spacing-md); font-size: 18px; line-height: 24px; font-weight: 700; }
+  .agency__siret { margin: 0; font-size: 16px; line-height: 24px; }
+
+  /* ---------- Colonne droite ---------- */
+  .page__aside { display: flex; flex-direction: column; gap: var(--spacing-xl); }
+  .contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl) var(--spacing-lg);
+    border-radius: var(--rounded-md);
+    background: var(--color-surface);
+    box-shadow: 0 4px 8px var(--color-shadow);
+  }
+  .contact-card__pro {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    color: inherit;
+    text-decoration: none;
+  }
+  .contact-card__pic {
+    flex: none;
+    width: 70px;
+    height: 72px;
+    border-radius: var(--rounded-md);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 -1px 4px rgba(0, 0, 0, 0.08);
+    object-fit: cover;
+  }
+  .contact-card__body { flex: 1 1 0; min-width: 0; }
+  .contact-card__body p { margin: 0; }
+  .contact-card__over { font-size: 12px; line-height: 16px; }
+  .contact-card__name { font-size: 16px; line-height: 24px; font-weight: 700; }
+  .rating { display: flex; align-items: center; gap: var(--spacing-sm); }
+  .rating img { width: 12px; height: 12px; }
+  .rating b { font-size: 16px; line-height: 24px; }
+  .contact-card__chevron { flex: none; width: 16px; height: 16px; margin-top: var(--spacing-md); }
+  .contact-card__ads { margin-top: var(--spacing-sm); font-size: 16px; line-height: 24px; }
+  .tag--pro {
+    display: inline-block;
+    margin: var(--spacing-sm) 0;
+    padding: 2px var(--spacing-md);
+    border-radius: var(--rounded-sm);
+    box-shadow: inset 0 0 0 var(--border-sm) var(--color-support);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    color: var(--color-support);
+  }
+  /* Vendeur particulier : même chip, couleur neutre — « Pro » est une qualité
+     commerciale, « Particulier » n'en est pas une. Après .tag--pro pour l'emporter. */
+  .tag--private {
+    box-shadow: inset 0 0 0 var(--border-sm) var(--color-on-surface-dim-1);
+    color: var(--color-on-surface-dim-1);
+  }
+  .promo { display: block; }
+  .promo img { width: 100%; height: auto; }
+
+  /* ---------- Footer ---------- */
+  .footer {
+    padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-3xl);
+    background: #2b3441;
+    color: #fff;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .footer__inner { width: 100%; max-width: var(--page-width); margin-inline: auto; }
+  .footer__cols {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 237px));
+    gap: var(--spacing-xl);
+    justify-content: space-between;
+  }
+  .footer h2 {
+    margin: 0 0 var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: var(--border-sm) solid #dae6f1;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .footer ul { margin: 0; padding: 0; list-style: none; }
+  .footer a { color: inherit; text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+  .footer__extra {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-3xl);
+  }
+  .footer__apps { display: flex; gap: var(--spacing-md); }
+  .footer__apps img { height: 34px; width: auto; }
+  .footer__country {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    width: 237px;
+    height: 35px;
+    padding-inline: var(--spacing-lg);
+    border: 0;
+    border-radius: var(--rounded-sm);
+    background: var(--color-surface);
+    font: inherit;
+    font-size: 16px;
+    color: var(--color-support);
+    cursor: pointer;
+  }
+  .footer__country img:first-child { width: 20px; height: 14px; }
+  .footer__country img:last-child { width: 16px; height: 16px; margin-left: auto; }
+  .footer__partners {
+    margin: var(--spacing-3xl) 0 0;
+    padding: var(--spacing-lg) 0;
+    border-top: var(--border-sm) solid #dae6f1;
+    border-bottom: var(--border-sm) solid #dae6f1;
+    text-align: center;
+  }
+  .footer__legal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+  }
+  .footer__social { display: flex; align-items: center; gap: var(--spacing-md); }
+  .footer__social img { width: 24px; height: 24px; }
+
+  /* ---------- Séparateurs de sections ---------- */
+  .rule {
+    height: 0;
+    margin: var(--spacing-xl) 0;
+    border: 0;
+    border-top: var(--border-sm) solid var(--color-neutral-container);
+  }
+
+  @media (max-width: 1059px) {
+    .page {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 720px;
+    }
+    .page__main, .page__aside { grid-column: 1; }
+    .page__aside { margin-top: var(--spacing-3xl); }
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 767px) {
+    /* La maquette mobile n'a pas de header : la photo occupe le haut de l'écran */
+    .header, .breadcrumb { display: none; }
+    /* Barre collée en haut : retour + titre + partage + favori, puis les onglets */
+    .stickybar__summary {
+      gap: var(--spacing-md);
+      height: 60px;
+      /* Sans gouttière, retour et favori sont collés aux bords de l'écran et le
+         retour ne tombe pas sous celui posé sur la photo. */
+      padding-inline: var(--spacing-md);
+    }
+    .stickybar__cover,
+    .stickybar__summary .btn,
+    .stickybar__text span { display: none; }
+    .stickybar__back, .stickybar__share { display: flex; }
+    /* Le premier onglet garde ses 16px de gouttière via son propre padding. */
+    .stickybar__tabs { padding-inline: 0; }
+    .tip__bubble {
+      top: calc(100% + var(--spacing-md));
+      right: 0;
+      left: auto;
+      width: min(328px, calc(100vw - 2 * var(--spacing-lg)));
+      transform: none;
+    }
+    .tip__bubble::before {
+      top: -8px;
+      right: 12px;
+      left: auto;
+      border-width: 0 8px 8px;
+      border-color: transparent transparent var(--color-surface);
+      transform: none;
+    }
+
+    .page { padding: 0 0 96px; }
+    .page__main > *, .page__aside > * { padding-inline: var(--spacing-lg); }
+    .hero { gap: 0; padding-inline: 0; }
+
+    /* Galerie : carrousel plein écran au doigt */
+    .hero__mosaic {
+      display: flex;
+      gap: 0;
+      height: 333px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+    .hero__mosaic::-webkit-scrollbar { display: none; }
+    .hero__col { display: contents; }
+    .hero__shot, .hero__col .hero__shot, .hero__shot--wide {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+    }
+    .hero__shot img { border-radius: 0; }
+    .hero__back { display: flex; }
+    /* Abandonné sur mobile : la bande médias plus bas fait l'entrée de galerie */
+    .hero__medias { display: none; }
+
+    /* La fiche remonte sur la photo */
+    .hero__summary {
+      position: relative;
+      z-index: 1;
+      gap: var(--spacing-xl);
+      margin-top: -24px;
+      padding: var(--spacing-xl) var(--spacing-lg) 0;
+      border-radius: var(--rounded-xl) var(--rounded-xl) 0 0;
+      background: var(--color-surface);
+    }
+    .summary__features, .summary__price, .summary__price-actions { justify-content: center; text-align: center; }
+
+    .keys { grid-template-columns: minmax(0, 1fr); gap: var(--spacing-lg); }
+    .keys__col { gap: var(--spacing-lg); }
+
+    /* Bande médias défilable au doigt */
+    .medias { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+    .medias::-webkit-scrollbar { display: none; }
+    .media-card { flex: 0 0 144px; }
+    .finance { grid-template-columns: minmax(0, 1fr); }
+
+    /* Carte au format portrait */
+    .map { aspect-ratio: 343 / 400; }
+
+    .cost__amount { white-space: normal; }
+    /* Le pavé 300x600 ne doit pas être étiré à la largeur de l'écran */
+    .promo { max-width: 300px; margin-inline: auto; }
+    .footer__cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .report { flex-direction: column; gap: var(--spacing-lg); }
+    .more__next { display: none; }
+
+    /* Les deux actions de contact deviennent la barre collée en bas */
+    .page__aside { margin-top: var(--spacing-xl); }
+    .contact-card {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      flex-direction: row;
+      gap: var(--spacing-lg);
+      padding: var(--spacing-lg);
+      border: 0;
+      border-radius: 0;
+      box-shadow: 0 -2px 8px var(--color-shadow);
+    }
+    .contact-card__pro { display: none; }
+    .contact-card .btn { flex: 1 1 0; min-width: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header__main">
+    <!-- Passerelle : le logo ramène à la page de résultats en rejouant la
+         recherche validée avant d'entrer sur l'annonce (`?resume`). -->
+    <a class="header__logo" href="../search-funnel-v8/index.html?resume=1"
+       aria-label="leboncoin, retour aux résultats">
+      <img src="assets/lbc-logo.svg" alt="leboncoin">
+    </a>
+    <div class="header__search">
+      <a class="btn btn--main" href="#">
+        <img src="assets/icon-add-square.svg" alt="">
+        Déposer une annonce
+      </a>
+      <button class="searchbar" type="button">
+        <span class="searchbar__label">Rechercher sur leboncoin</span>
+        <span class="searchbar__submit"><img src="assets/icon-magnifier.svg" alt=""></span>
+      </button>
+    </div>
+    <nav class="header__nav" aria-label="Mon compte">
+      <button class="header__item" type="button">
+        <span class="header__item-icon"><img src="assets/icon-bell.svg" alt=""></span>
+        Mes recherches
+      </button>
+      <button class="header__item" type="button">
+        <span class="header__item-icon"><img src="assets/icon-heart.svg" alt=""></span>
+        Favoris
+      </button>
+      <button class="header__item" type="button">
+        <span class="header__item-icon"><img src="assets/icon-bubble-text.svg" alt=""></span>
+        Messages
+      </button>
+      <button class="header__item" type="button">
+        <span class="header__item-icon"><img src="assets/icon-user.svg" alt=""></span>
+        Se connecter
+      </button>
+    </nav>
+  </div>
+  <nav class="header__categories" aria-label="Catégories">
+    <a class="header__category" href="#">Immobilier</a><span>·</span>
+    <a class="header__category" href="#">Véhicules</a><span>·</span>
+    <a class="header__category" href="#">Vacances</a><span>·</span>
+    <a class="header__category" href="#">Emploi</a><span>·</span>
+    <a class="header__category" href="#">Mode</a><span>·</span>
+    <a class="header__category" href="#">Maison &amp; Jardin</a><span>·</span>
+    <a class="header__category" href="#">Famille</a><span>·</span>
+    <a class="header__category" href="#">Électronique</a><span>·</span>
+    <a class="header__category" href="#">Loisirs</a><span>·</span>
+    <a class="header__category" href="#">Autres</a><span>·</span>
+    <a class="header__category header__category--highlight" href="#">Bon plans !</a>
+  </nav>
+</header>
+
+<div class="stickybar" id="stickybar">
+  <div class="stickybar__summary">
+    <button class="stickybar__fav stickybar__back" type="button" aria-label="Revenir à la liste"
+            onclick="location.assign('../search-funnel-v8/index.html?resume=1')">
+      <img src="assets/icon-arrow-left.svg" alt="">
+    </button>
+    <img class="stickybar__cover" src="assets/ad-lomme/photo-01.jpg" alt="" data-vsrc="cover">
+    <p class="stickybar__text">
+      <b data-v="features">Maison · 61 m² · 3 pièces</b>
+      <span data-v="price">182 500 €</span>
+    </p>
+    <a class="btn btn--support" href="#">Envoyer un message</a>
+    <button class="stickybar__fav stickybar__share" type="button" aria-label="Partager l'annonce">
+      <img src="assets/icon-share.svg" alt="">
+    </button>
+    <button class="stickybar__fav" type="button" aria-label="Ajouter aux favoris">
+      <img src="assets/icon-heart-outline.svg" alt="">
+    </button>
+  </div>
+  <nav class="stickybar__tabs" aria-label="Sections de l’annonce">
+    <a href="#sec-description">Description</a>
+    <a href="#sec-diag">Diagnostic</a>
+    <a href="#sec-keys">Infos clés</a>
+    <a href="#sec-localisation">Localisation</a>
+    <a href="#sec-cout">Prix</a>
+    <a href="#sec-finance">Financements</a>
+  </nav>
+</div>
+
+<div class="page">
+
+  <nav class="breadcrumb" aria-label="Fil d'ariane">
+    <a href="#">Accueil <img src="assets/icon-chevron-right.svg" alt=""></a>
+    <a href="#">Ventes immobilières <img src="assets/icon-chevron-right.svg" alt=""></a>
+    <a href="#"><span data-v="region">Hauts-de-France</span> <img src="assets/icon-chevron-right.svg" alt=""></a>
+    <a href="#"><span data-v="city">Lille</span> <img src="assets/icon-chevron-right.svg" alt=""></a>
+    <span aria-current="page" data-v="breadcrumb">Vente maison 3 pièces, 61 m²</span>
+  </nav>
+
+  <main class="page__main">
+
+    <section class="hero">
+      <div class="hero__mosaic">
+        <div class="hero__col">
+          <a class="hero__shot" href="index.html"><img src="assets/ad-lomme/photo-02.jpg" alt="Séjour ouvert sur la cuisine" data-vsrc="hero1" data-valt="hero1Alt"></a>
+          <a class="hero__shot" href="index.html"><img src="assets/ad-lomme/photo-03.jpg" alt="Cuisine équipée ouvrant sur la cour" data-vsrc="hero2" data-valt="hero2Alt"></a>
+        </div>
+        <a class="hero__shot hero__shot--wide" href="index.html">
+          <img src="assets/ad-lomme/photo-01.jpg" alt="Façade en brique de la maison 1930" data-vsrc="hero0" data-valt="hero0Alt">
+        </a>
+
+        <!-- Même passerelle que le logo : `?resume` plutôt que `history.back()`,
+             qui ramènerait la galerie si on arrive de là, et un listing vierge. -->
+        <button class="icon-btn hero__back" type="button" aria-label="Revenir à la liste"
+                onclick="location.assign('../search-funnel-v8/index.html?resume=1')">
+          <img src="assets/icon-arrow-left.svg" alt="">
+        </button>
+
+        <div class="hero__actions">
+          <button class="icon-btn" type="button" aria-label="Partager l'annonce">
+            <img src="assets/icon-share.svg" alt="">
+          </button>
+          <button class="icon-btn" type="button" aria-label="Ajouter aux favoris">
+            <img src="assets/icon-heart-outline.svg" alt="">
+          </button>
+        </div>
+
+        <a class="hero__medias" href="index.html">
+          <span class="hero__medias-icons">
+            <span><img src="assets/icon-plan.svg" alt=""></span>
+            <span><img src="assets/icon-play-small.svg" alt=""></span>
+            <span><img src="assets/icon-3d-small.svg" alt=""></span>
+          </span>
+          Voir les médias
+        </a>
+      </div>
+
+      <div class="hero__summary">
+        <div>
+          <h1 class="summary__features" data-v="features">Maison · 61 m² · 3 pièces</h1>
+          <p class="summary__price">
+            <b data-v="price">182 500 €</b>
+            <small data-v="ppm">2 992 € / m²</small>
+          </p>
+          <p class="summary__price-actions">
+            <a class="link" href="#">Voir le détail du prix</a>
+            <span class="summary__divider" aria-hidden="true"></span>
+            <span>
+              <a class="link" href="#">Simuler mon prêt</a>
+              <span class="tip">
+                <button class="tip__btn" type="button" aria-label="En savoir plus sur la simulation de prêt">
+                  <img src="assets/icon-info.svg" alt="">
+                </button>
+                <span class="tip__bubble" role="tooltip">Ce service gratuit est proposé par notre partenaire Crédit Agricole.</span>
+              </span>
+            </span>
+          </p>
+        </div>
+
+        <div class="summary__keyinfo">
+          <p class="keyinfo__row">
+            <span class="keyinfo__icon"><img src="assets/icon-check-toggle.svg" alt=""></span>
+            <span class="keyinfo__text">
+              <span data-v="keyinfo">Cour · Cave · Cuisine équipée · 2 niveaux</span> ·
+              <a class="link keyinfo__more" href="#sec-keys">+8</a>
+            </span>
+          </p>
+          <p class="keyinfo__row">
+            <span class="keyinfo__icon"><img src="assets/icon-map-pin.svg" alt=""></span>
+            <span class="keyinfo__text">
+              <span data-v="where">Lille 59160 · Quartier Lomme</span> ·
+              <a class="link" href="#sec-localisation">Voir le plan</a>
+            </span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <a class="promo-band" href="#"><img src="assets/promo-simuler-pret.png" alt="Publicité — Je simule mon prêt immobilier"></a>
+
+    <hr class="rule">
+
+    <section class="description" id="sec-description">
+      <h2 class="section__title">Description</h2>
+      <p class="description__text" data-v="desc">Imko Lille - Hugues Olivry vous propose : LILLE EURATECHNOLOGIES – MAISON 1930 EN PARFAIT ÉTAT – COUR EXPOSÉE SUD
+
+Lille Euratechnologies, rue Anatole France. Maison 1930 de 61 m² environ avec cour, en parfait état (dont façade refaite en 2020).
+
+Cette maison comprend :
+
+Une entrée
+Un séjour lumineux en façade
+Une cuisine équipée ouvrant sur la cour
+Deux chambres
+Une salle de douche
+Un WC séparé
+Une cave
+
+À proximité d’Euratechnologies, des commerces, des transports en commun et des écoles. Idéal primo-accédant.
+
+Les atouts majeurs :
+
+Maison 1930 en parfait état, sans travaux à prévoir
+Façade refaite en 2020
+Cour exposée sud
+Cuisine équipée
+Cave
+Quartier Euratechnologies, à pied des commerces et des écoles
+
+Honoraires à la charge de l’acquéreur : 5,26 % du prix hors honoraires, soit 173 400 € hors honoraires et 9 100 € d’honoraires. Barème disponible sur demande.
+
+Date de réalisation du diagnostic énergétique : 27/11/2025. Consommation énergie primaire : 225 kWh/m²/an. Consommation énergie finale : 220 kWh/m²/an.
+
+Montant estimé des dépenses annuelles d’énergie pour un usage standard : entre 1 270 € et 1 770 € (abonnements compris).
+
+Référence : VM4921-IMKO
+
+Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr</p>
+      <button class="description__more" type="button">Voir plus</button>
+    </section>
+
+    <hr class="rule">
+
+    <section class="medias">
+      <a class="media-card" href="index.html?media=plan">
+        <span class="media-card__visual">
+          <img src="assets/ad-lomme/plan.jpg" alt="" data-vsrc="plan2d">
+        </span>
+        <span class="media-card__label">Plan</span>
+      </a>
+      <a class="media-card" href="index.html?media=tour">
+        <span class="media-card__visual">
+          <span class="media-card__behind" aria-hidden="true"><img src="assets/ad-lomme/photo-05.jpg" alt="" data-vsrc="tour1"></span>
+          <img src="assets/ad-lomme/photo-02.jpg" alt="" data-vsrc="tour0">
+        </span>
+        <span class="media-card__label">Photos par pièce</span>
+      </a>
+      <a class="media-card" href="index.html?media=video">
+        <span class="media-card__visual">
+          <img src="assets/media-video.png" alt="">
+          <img class="media-card__play" src="assets/icon-play-circle.svg" alt="">
+        </span>
+        <span class="media-card__label">Vidéo</span>
+      </a>
+    </section>
+
+    <hr class="rule">
+
+    <section id="sec-diag">
+      <h2 class="section__title">Diagnostics</h2>
+      <div class="diags">
+        <div class="diag">
+          <img class="diag__icon" src="assets/icon-crit-class.svg" alt="">
+          <div>
+            <p class="diag__label">Classe énergie <img src="assets/icon-info-12.svg" alt=""></p>
+            <p class="scale" data-vscale="dpe">
+              <span class="scale__step" style="background:#549641">A</span>
+              <span class="scale__step" style="background:#69c74c">B</span>
+              <span class="scale__step" style="background:#d8fa5e">C</span>
+              <span class="scale__step scale__step--active" style="background:#f9e967">D</span>
+              <span class="scale__step" style="background:#f3ca52">E</span>
+              <span class="scale__step" style="background:#ef9f4c">F</span>
+              <span class="scale__step" style="background:#e63a30">G</span>
+            </p>
+          </div>
+        </div>
+        <div class="diag">
+          <img class="diag__icon" src="assets/icon-crit-class.svg" alt="">
+          <div>
+            <p class="diag__label">GES <img src="assets/icon-info-12.svg" alt=""></p>
+            <p class="scale" data-vscale="ges">
+              <span class="scale__step" style="background:#f4edfd">A</span>
+              <span class="scale__step" style="background:#dfc9f7">B</span>
+              <span class="scale__step" style="background:#ccafec">C</span>
+              <span class="scale__step scale__step--active" style="background:#c29eea">D</span>
+              <span class="scale__step" style="background:#aa7dde">E</span>
+              <span class="scale__step" style="background:#9b61e1">F</span>
+              <span class="scale__step" style="background:#7d41d1">G</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="sec-keys">
+      <h2 class="section__title">Informations clés</h2>
+      <div class="keys" id="keys">
+        <div class="keys__col">
+          <p class="keys__item"><img src="assets/icon-crit-clock.svg" alt=""><span>Publié le 05/08/2026</span></p>
+          <p class="keys__item"><img src="assets/icon-crit-buildings.svg" alt=""><span><a class="link--block" href="#" data-v="kind">Maison</a></span></p>
+          <p class="keys__item"><img src="assets/icon-crit-measures.svg" alt=""><span data-v="surface">61 m²</span></p>
+          <p class="keys__item keys__item--more"><img src="assets/icon-crit-rooms.svg" alt=""><span data-v="rooms">3 pièces</span></p>
+          <p class="keys__item keys__item--more"><img src="assets/icon-crit-bath.svg" alt=""><span data-v="bathroom">1 salle de douche</span></p>
+          <p class="keys__item keys__item--more"><img src="assets/icon-crit-balcony.svg" alt=""><span data-v="outside">Cour</span></p>
+          <p class="keys__item keys__item--more"><img src="assets/icon-crit-features.svg" alt=""><span data-v="feat">Cave · Cuisine équipée</span></p>
+        </div>
+        <div class="keys__col">
+          <p class="keys__item"><img src="assets/icon-crit-bed.svg" alt=""><span data-v="beds">2 chambres</span></p>
+          <p class="keys__item"><img src="assets/icon-crit-stairs.svg" alt=""><span data-v="levels">2 niveaux</span></p>
+          <p class="keys__item"><img src="assets/icon-crit-lift.svg" alt=""><span data-v="orient">Orientation sud</span></p>
+          <p class="keys__item keys__item--more"><img src="assets/icon-crit-heating.svg" alt=""><span data-v="heat">Chauffage individuel au gaz</span></p>
+          <p class="keys__item keys__item--more"><img src="assets/icon-crit-year.svg" alt=""><span data-v="year">Construit en 1930</span></p>
+          <p class="keys__item keys__item--more"><img src="assets/icon-crit-condition.svg" alt=""><span data-v="cond">Parfait état</span></p>
+          <!-- Vente entre particuliers (6) ou honoraires payés par le vendeur (7) :
+               dans les deux cas l'acquéreur n'en paie pas, donc pas ce critère. -->
+          <p class="keys__item keys__item--more" data-vnot="6 7 8"><img src="assets/icon-crit-charges.svg" alt=""><span>Honoraires à la charge de l’acquéreur</span></p>
+        </div>
+      </div>
+      <button class="link--block keys__toggle" type="button" aria-expanded="false" aria-controls="keys"
+              data-label-more="Voir les 8 critères supplémentaires" data-label-less="Voir moins">
+        Voir les 8 critères supplémentaires
+      </button>
+    </section>
+
+    <hr class="rule">
+
+    <section id="sec-localisation">
+      <h2 class="section__title section__title--lg">Localisation</h2>
+      <p class="locality">
+        <b data-v="localityName">Quartier Lomme</b>
+        <span data-v="localityAdmin">Lille (59160)</span>
+      </p>
+      <!-- Carte statique, tuiles OpenStreetMap zoom 15, centrée sur les coordonnées
+           de l'annonce source : variante 1 à Lomme (50.63003, 3.0026312), variante 2
+           à Carquefou (47.278316, -1.4916236). Variante 7 : l'annonce est relocalisée,
+           le point est le milieu des deux voies du quartier géocodées par la Base
+           Adresse Nationale, Saint-Éloi et Camonil (44.35860, 2.57226). Variante 5 :
+           relocalisée elle aussi, le point est le parc de la rue des Cygnes
+           (48.41636, 7.66210), à 370 m du noeud OpenStreetMap de la Cité des
+           Peupliers ; il est préféré au noeud lui-même parce qu'il tombe au milieu
+           de sa tuile, là où le noeud aurait laissé la grille de 768 px plus courte
+           que le cadre de la carte. -->
+      <div class="map">
+        <div class="map__tiles" data-valabel="mapLabel" data-vtransform="mapOffset"
+             aria-label="Carte du quartier de Lomme à Lille" role="img">
+          <img src="assets/map/t-16656-11022.png" alt="" data-vsrc="map0">
+          <img src="assets/map/t-16657-11022.png" alt="" data-vsrc="map1">
+          <img src="assets/map/t-16658-11022.png" alt="" data-vsrc="map2">
+          <img src="assets/map/t-16656-11023.png" alt="" data-vsrc="map3">
+          <img src="assets/map/t-16657-11023.png" alt="" data-vsrc="map4">
+          <img src="assets/map/t-16658-11023.png" alt="" data-vsrc="map5">
+          <img src="assets/map/t-16656-11024.png" alt="" data-vsrc="map6">
+          <img src="assets/map/t-16657-11024.png" alt="" data-vsrc="map7">
+          <img src="assets/map/t-16658-11024.png" alt="" data-vsrc="map8">
+        </div>
+        <img class="map__pin" src="assets/icon-pin-filled.svg" alt="">
+        <p class="map__credit">© OpenStreetMap</p>
+        <span class="map__badge" data-v="mapBadge">Localisation exacte</span>
+      </div>
+
+      <div class="locality__panels">
+        <a class="panel panel--link" href="#">
+          <span class="panel__head">
+            <span class="panel__icon"><img src="assets/icon-3d-small.svg" alt=""></span>
+            <span class="panel__text">
+              <b>Ouvrir street View</b>
+              <span>Explorer virtuellement le quartier</span>
+            </span>
+            <img class="panel__arrow" src="assets/icon-arrow-right.svg" alt="">
+          </span>
+        </a>
+
+        <details class="panel" id="sec-transports">
+          <summary class="panel__head">
+            <span class="panel__icon"><img src="assets/icon-map-train.svg" alt=""></span>
+            <span class="panel__text">
+              <b>Transports à proximité</b>
+              <span>Connaître les transports aux alentours</span>
+            </span>
+            <span class="panel__chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="panel__body">
+            <!-- Les arrêts sont chargés côté client sur lbc : absents du HTML de l'annonce, donc non injectés -->
+            <div class="transports">
+              <p class="transport"><span>Données transport non disponibles pour cette annonce</span></p>
+            </div>
+          </div>
+        </details>
+
+        <details class="panel">
+          <summary class="panel__head">
+            <span class="panel__icon"><img src="assets/icon-map-pin.svg" alt=""></span>
+            <span class="panel__text">
+              <b>Temps de trajet</b>
+              <span>Simuler un trajet (école, travail, etc.)</span>
+            </span>
+            <span class="panel__chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="panel__body">
+            <p class="trip__from"><img src="assets/icon-pin-filled.svg" alt=""> <b>Adresse du bien</b></p>
+            <img class="trip__link" src="assets/icon-pin-dotted-line.svg" alt="">
+            <div class="trip__to">
+              <img src="assets/icon-pin-outline.svg" alt="">
+              <p class="trip__field">
+                <label for="trip-to">Saisissez l’adresse d’arrivée <i>*</i></label>
+                <input id="trip-to" type="text" placeholder="Nom de rue, ville">
+              </p>
+            </div>
+            <div class="trip__results">
+              <p class="trip__result"><img src="assets/icon-map-car.svg" alt="Voiture"><b>-</b></p>
+              <p class="trip__result"><img src="assets/icon-map-train.svg" alt="Transports en commun"><b>-</b></p>
+              <p class="trip__result"><img src="assets/icon-map-bike.svg" alt="Vélo"><b>-</b></p>
+              <p class="trip__result"><img src="assets/icon-map-walk.svg" alt="À pied"><b>-</b></p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="sec-cout">
+      <h2 class="section__title section__title--lg">Coût du projet</h2>
+
+      <div class="cost">
+        <div class="cost__card">
+          <div class="cost__row">
+            <h3 class="cost__title">Prix du bien</h3>
+            <p class="cost__amount"><span data-v="price">182 500 €</span><small data-v="ppm">2 992 € / m²</small></p>
+          </div>
+          <p class="cost__note" data-v="honoraires">Honoraires de 5,26 % à la charge de l’acquéreur, soit 9 100 € inclus dans le prix.</p>
+          <div class="cost__row">
+            <p class="cost__label">Frais de notaire estimés <img src="assets/icon-info-12.svg" alt="En savoir plus"></p>
+            <p class="cost__amount" data-v="notaire">13 900 €</p>
+          </div>
+          <hr class="cost__sep">
+          <div class="cost__row">
+            <h3 class="cost__title">Montant estimé du projet</h3>
+            <p class="cost__amount" data-v="total">196 400 €</p>
+          </div>
+        </div>
+
+        <div class="cost__card">
+          <h3 class="cost__title">Charges futures du bien</h3>
+          <!-- Taxe foncière : absente de l'annonce de la variante 1, valeur reprise de la
+               maquette Figma. La variante 2 reprend celle de son annonce source (1 460 €
+               pour 95 m²), ramenée au prorata de la surface. Les variantes 3 et 4 ne la
+               donnent nulle part : plutôt que de l'estimer, la ligne dit qu'on ne l'a pas.
+               Les variantes 5 et 6 la publient, elle est reprise telle quelle. Les
+               variantes 7 et 8 ne la donnent pas non plus. -->
+          <div class="cost__row">
+            <p class="cost__label">Taxe foncière</p>
+            <p class="cost__amount" data-v="taxe">609 € / an</p>
+          </div>
+          <!-- Charges de copropriété : seuls les appartements en ont, et chacun les siennes.
+               Une ligne par variante concernée plutôt qu'une valeur variabilisée, sinon la
+               ligne resterait visible pour les deux maisons. -->
+          <div class="cost__row" data-vonly="3">
+            <p class="cost__label">Charges de copropriété</p>
+            <p class="cost__amount">952 € / an</p>
+          </div>
+          <div class="cost__row" data-vonly="4">
+            <p class="cost__label">Charges de copropriété</p>
+            <p class="cost__amount">3 400 € / an</p>
+          </div>
+          <div class="cost__row" data-vonly="5">
+            <p class="cost__label">Charges de copropriété</p>
+            <p class="cost__amount">924 € / an</p>
+          </div>
+          <div class="cost__row" data-vonly="6">
+            <p class="cost__label">Charges de copropriété</p>
+            <p class="cost__amount">140 € / an</p>
+          </div>
+          <div class="cost__row" data-vonly="7">
+            <p class="cost__label">Charges de copropriété</p>
+            <p class="cost__amount">3 300 € / an</p>
+          </div>
+          <div class="cost__row">
+            <p class="cost__label">Estimation de la facture énergétique</p>
+            <p class="cost__amount" data-v="energie">entre 1&nbsp;270 et 1&nbsp;770 €&nbsp;/&nbsp;an</p>
+          </div>
+          <p class="cost__edf">
+            <button class="btn btn--outlined" type="button">
+              Préciser l’estimation avec <img src="assets/logo-edf.png" alt="EDF"> *
+            </button>
+          </p>
+          <p class="cost__sponsor">Sponsorisé</p>
+        </div>
+
+        <p class="cost__legal">
+          * L’estimation affichée est fournie par le déposant. L’estimation EDF est calculée
+          indépendamment selon ses propres critères.
+        </p>
+
+        <div class="cost__card">
+          <div class="cost__row">
+            <h3 class="cost__title">Aides de l’État</h3>
+            <p class="cost__amount"><span data-v="price">182 500 €</span><small data-v="ppm">2 992 € / m²</small></p>
+          </div>
+          <div class="cost__aid">
+            <p class="cost__label">Aides à la rénovation énergétique</p>
+            <a class="link" href="#">Estimer</a>
+          </div>
+          <p class="cost__logo"><img src="assets/logo-mesaides-reno.png" alt="Mes Aides Réno, un service de France Rénov’"></p>
+        </div>
+      </div>
+
+      <!-- Fourchette de prix au m² du secteur : absente de l'annonce. Calculée sur les
+           ventes de maisons 2024 dans les fichiers DVF geo-dvf Etalab. « Prix bas » et
+           « Prix haut » sont les 1er et 9e déciles, pas des bornes estimées.
+           Variante 1, Lomme (commune 59350) : n = 213, médiane 2 725 €/m².
+           Variante 2, Carquefou (commune 44026) : n = 99, médiane 3 234 €/m². -->
+      <div class="market" data-vnot="5">
+        <h3 class="market__title">Prix au m² par rapport au secteur <img src="assets/icon-info-12.svg" alt="En savoir plus"></h3>
+        <p class="market__hint">Ces données sont indicatives.</p>
+        <div class="market__gauge">
+          <span class="market__bubble" style="left: 63%" data-v="ppm" data-vleft="gaugeLeft">2 992 € / m²</span>
+          <span class="market__cursor" style="left: 63%" data-vleft="gaugeLeft"></span>
+        </div>
+        <div class="market__bounds">
+          <div><b>Prix bas</b><span data-v="mktLow">1 625 € / m²</span></div>
+          <div><b>Prix haut</b><span data-v="mktHigh">3 779 € / m²</span></div>
+        </div>
+        <p class="market__verdict" data-v="verdict">À 2 992 € / m², le bien est au-dessus de la médiane du secteur (2 725 € / m²).</p>
+      </div>
+      <!-- Variante 5 : DVF ne couvre pas le Bas-Rhin, le Haut-Rhin ni la Moselle
+           (régime du livre foncier, pas de publicité foncière). Aucune fourchette
+           n'est donc calculable pour Erstein sans l'estimer, et la jauge s'en va
+           au lieu d'afficher une position inventée. -->
+      <div class="market market--nodata" data-vonly="5">
+        <h3 class="market__title">Prix au m² par rapport au secteur <img src="assets/icon-info-12.svg" alt="En savoir plus"></h3>
+        <p class="market__hint">Comparaison indisponible pour ce secteur.</p>
+        <p class="market__verdict">Les prix de vente ne sont pas publiés en Alsace-Moselle : le fichier des valeurs foncières s’arrête aux départements soumis à la publicité foncière, ce qui exclut le Bas-Rhin.</p>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- Simulateur statique : sliders et résultats non calculés dans le proto -->
+    <section id="sec-finance">
+      <h2 class="section__title section__title--lg">Financement</h2>
+      <p class="finance__subtitle">Calculer mes mensualités <span class="tag">Sponsorisé</span></p>
+
+      <div class="finance">
+        <div class="finance__fields">
+          <div class="field">
+            <label for="fin-price">Prix du bien</label>
+            <div class="field__control">
+              <input id="fin-price" type="text" value="182 500" data-vval="finPrice">
+              <span class="field__suffix">€</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="fin-down">Apport personnel</label>
+            <div class="field__control">
+              <input id="fin-down" type="text" value="36 500" data-vval="finDown">
+              <span class="field__suffix">€</span>
+            </div>
+          </div>
+          <p class="field__helper">20% du prix total recommandé.</p>
+
+          <div class="field">
+            <label>Durée du prêt</label>
+            <div class="slider">
+              <span class="slider__value" style="left:75%">20 ans</span>
+              <div class="slider__track">
+                <div class="slider__fill" style="width:75%"></div>
+                <img class="slider__handle" src="assets/slider-handle.svg" style="left:75%" alt="">
+              </div>
+              <p class="slider__bounds"><span>5 ans</span><span>25 ans</span></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Taux d’intérêt</label>
+            <div class="slider">
+              <span class="slider__value" style="left:37%">3,48%</span>
+              <div class="slider__track">
+                <div class="slider__fill" style="width:37%"></div>
+                <img class="slider__handle" src="assets/slider-handle.svg" style="left:37%" alt="">
+              </div>
+              <p class="slider__bounds"><span>0 %</span><span>10 %</span></p>
+            </div>
+            <p class="field__helper">Actuellement le taux d’intérêt annuel moyen : 3,48%</p>
+          </div>
+
+          <div class="field">
+            <label>Taux d’assurance</label>
+            <div class="slider">
+              <span class="slider__value" style="left:23%">0,34%</span>
+              <div class="slider__track">
+                <div class="slider__fill" style="width:23%"></div>
+                <img class="slider__handle" src="assets/slider-handle.svg" style="left:23%" alt="">
+              </div>
+              <p class="slider__bounds"><span>0 %</span><span>10 %</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="results">
+          <dl>
+            <div class="results__row results__total">
+              <dt>Mensualités :</dt>
+              <dd>1 283 € <span>/ mois*</span></dd>
+            </div>
+          </dl>
+          <hr class="results__divider">
+          <dl>
+            <div class="results__row">
+              <dt>Montant de l’emprunt :</dt>
+              <dd>211 200 €</dd>
+            </div>
+            <div class="results__row">
+              <dt>Coût des intérêts : <small>(d’après le taux d’intérêt renseigné)</small></dt>
+              <dd>82 249 €</dd>
+            </div>
+            <div class="results__row">
+              <dt>Coût d’assurance : <small>(d’après le taux d’assurance renseigné)</small></dt>
+              <dd>14 362 €</dd>
+            </div>
+            <div class="results__row">
+              <dt>Frais de notaire : <small>(8% du prix de vente dans l’ancien)</small></dt>
+              <dd>19 200 €</dd>
+            </div>
+          </dl>
+          <hr class="results__divider">
+          <div class="results__pitch">
+            <p><b>Vous avez un projet d’achat ?</b></p>
+            <p><span>Personnalisez votre simulation en ligne et sans engagement, grâce à notre partenaire</span></p>
+            <span class="logo-mt">
+              <img src="assets/logo-mt-mark.svg" alt="">
+              <img src="assets/logo-mt-word.svg" alt="Meilleurtaux">
+            </span>
+          </div>
+          <a class="btn btn--outlined btn--full" href="#">Personnaliser ma simulation</a>
+        </div>
+      </div>
+
+      <p class="finance__legal">
+        *<a href="#">Les données de ce simulateur sont indicatives et non contractuelles</a>. Calcul hors assurance
+        et frais de garantie. Sous réserve d’acceptation de votre dossier de prêt&nbsp;…
+      </p>
+    </section>
+
+    <hr class="rule">
+
+    <section class="agency">
+      <div class="agency__id">
+        <img class="agency__pic" src="assets/ad-lomme/store-logo.jpg" alt="Imko Lille"
+             data-vsrc="agencyLogo" data-valt="agencyName">
+        <div>
+          <p class="agency__name" data-v="agencyName">Imko Lille</p>
+          <!-- Un particulier n'a pas de SIREN : la ligne disparaît plutôt que d'afficher
+               un numéro vide ou emprunté. -->
+          <p class="agency__siret" data-v="agencySiren" data-vnot="6">N° SIREN : 849442439</p>
+        </div>
+      </div>
+      <button class="btn btn--outlined" type="button">Suivre</button>
+    </section>
+
+    <hr class="rule">
+
+    <!-- Annonces de vitrine : non présentes dans le HTML de l'annonce, visuels repris de la
+         galerie. Ce sont des annonces de décor, pas des biens réels ; leurs prix au m² se
+         tiennent dans la fourchette interdécile DVF 2024 du secteur de leur variante
+         (Lomme 1 625–3 779, Carquefou 2 551–4 036 €/m²). On n'en fabrique plus : les
+         variantes ajoutées après coup n'en ont pas, et le carrousel disparaît alors au
+         lieu d'afficher un titre sans carte. -->
+    <section class="more">
+      <div class="more__head">
+        <h2 class="section__title" data-v="agencyOthers">D’autres annonces de Imko Lille</h2>
+        <a class="more__cta" href="#">Voir plus d’annonces <img src="assets/icon-arrow-right.svg" alt=""></a>
+      </div>
+      <div class="more__scroller">
+        <div class="more__track">
+          <a class="mini" href="#" data-vonly="1">
+            <span class="mini__media">
+              <img src="assets/ad-lomme/photo-01.jpg" alt="">
+              <span class="mini__fav"><img src="assets/icon-heart-outline.svg" alt="Ajouter aux favoris"></span>
+            </span>
+            <p class="mini__price"><b>249 000 €</b><small>3 037 € / m²</small><span class="tag--pro">Pro</span></p>
+            <p class="mini__type">Maison</p>
+            <p>4 pièces · 82 m²</p>
+            <p class="mini__where">Lille 59160</p>
+          </a>
+          <a class="mini" href="#" data-vonly="1">
+            <span class="mini__media">
+              <img src="assets/ad-lomme/photo-06.jpg" alt="">
+              <span class="mini__fav"><img src="assets/icon-heart-outline.svg" alt="Ajouter aux favoris"></span>
+            </span>
+            <p class="mini__price"><b>315 000 €</b><small>2 917 € / m²</small><span class="tag--pro">Pro</span></p>
+            <p class="mini__type">Maison</p>
+            <p>5 pièces · 108 m²</p>
+            <p class="mini__where">Lambersart 59130</p>
+          </a>
+          <a class="mini" href="#" data-vonly="1">
+            <span class="mini__media">
+              <img src="assets/ad-lomme/photo-10.jpg" alt="">
+              <span class="mini__fav"><img src="assets/icon-heart-outline.svg" alt="Ajouter aux favoris"></span>
+            </span>
+            <p class="mini__price"><b>189 000 €</b><small>2 700 € / m²</small><span class="tag--pro">Pro</span></p>
+            <p class="mini__type">Maison</p>
+            <p>3 pièces · 70 m²</p>
+            <p class="mini__where">Haubourdin 59320</p>
+          </a>
+          <a class="mini" href="#" data-vonly="1">
+            <span class="mini__media">
+              <img src="assets/ad-lomme/photo-04.jpg" alt="">
+              <span class="mini__fav"><img src="assets/icon-heart-outline.svg" alt="Ajouter aux favoris"></span>
+            </span>
+            <p class="mini__price"><b>165 000 €</b><small>3 438 € / m²</small><span class="tag--pro">Pro</span></p>
+            <p class="mini__type">Appartement</p>
+            <p>2 pièces · 48 m²</p>
+            <p class="mini__where">Lille 59000</p>
+          </a>
+
+          <a class="mini" href="#" data-vonly="2">
+            <span class="mini__media">
+              <img src="assets/ad-carquefou/photo-01.jpg" alt="">
+              <span class="mini__fav"><img src="assets/icon-heart-outline.svg" alt="Ajouter aux favoris"></span>
+            </span>
+            <p class="mini__price"><b>398 000 €</b><small>3 790 € / m²</small><span class="tag--pro">Pro</span></p>
+            <p class="mini__type">Maison</p>
+            <p>5 pièces · 105 m²</p>
+            <p class="mini__where">Carquefou 44470</p>
+          </a>
+          <a class="mini" href="#" data-vonly="2">
+            <span class="mini__media">
+              <img src="assets/ad-carquefou/photo-03.jpg" alt="">
+              <span class="mini__fav"><img src="assets/icon-heart-outline.svg" alt="Ajouter aux favoris"></span>
+            </span>
+            <p class="mini__price"><b>315 000 €</b><small>3 580 € / m²</small><span class="tag--pro">Pro</span></p>
+            <p class="mini__type">Maison</p>
+            <p>4 pièces · 88 m²</p>
+            <p class="mini__where">Sainte-Luce-sur-Loire 44980</p>
+          </a>
+          <a class="mini" href="#" data-vonly="2">
+            <span class="mini__media">
+              <img src="assets/ad-carquefou/photo-10.jpg" alt="">
+              <span class="mini__fav"><img src="assets/icon-heart-outline.svg" alt="Ajouter aux favoris"></span>
+            </span>
+            <p class="mini__price"><b>249 000 €</b><small>3 458 € / m²</small><span class="tag--pro">Pro</span></p>
+            <p class="mini__type">Maison</p>
+            <p>3 pièces · 72 m²</p>
+            <p class="mini__where">Thouaré-sur-Loire 44470</p>
+          </a>
+          <a class="mini" href="#" data-vonly="2">
+            <span class="mini__media">
+              <img src="assets/ad-carquefou/photo-09.jpg" alt="">
+              <span class="mini__fav"><img src="assets/icon-heart-outline.svg" alt="Ajouter aux favoris"></span>
+            </span>
+            <p class="mini__price"><b>165 000 €</b><small>3 511 € / m²</small><span class="tag--pro">Pro</span></p>
+            <p class="mini__type">Appartement</p>
+            <p>2 pièces · 47 m²</p>
+            <p class="mini__where">Nantes 44300</p>
+          </a>
+        </div>
+        <button class="more__next" type="button" aria-label="Annonces suivantes">
+          <img src="assets/icon-chevron-right.svg" alt="">
+        </button>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <p class="report">
+      <a href="#"><img src="assets/icon-flag.svg" alt="">Signaler l’annonce</a>
+      <a href="#"><img src="assets/icon-info-12.svg" alt="">Vos droits et obligations</a>
+    </p>
+
+    <hr class="rule">
+
+    <!-- Recommandations : non présentes dans le HTML de l'annonce, visuels repris de la galerie -->
+    <section class="more">
+      <div class="more__head">
+        <h2 class="section__title">Ces annonces peuvent vous intéresser</h2>
+      </div>
+      <div class="more__scroller">
+        <div class="more__track">
+          <a class="mini" href="#" data-vonly="1">
+            <span class="mini__media">
+              <img src="assets/ad-lomme/photo-05.jpg" alt="">
+              <span class="mini__fav"><img src="assets/icon-heart-outline.svg" alt="Ajouter aux favoris"></span>
+            </span>
+            <p class="mini__price"><b>219 000 €</b><small>2 920 € / m²</small><span class="tag--pro">Pro</span></p>
+            <p class="mini__type">Maison</p>
+            <p>4 pièces · 75 m²</p>
+            <p class="mini__where">Lille 59160</p>
+          </a>
+          <a class="mini" href="#" data-vonly="1">
+            <span class="mini__media">
+              <img src="assets/ad-lomme/photo-03.jpg" alt="">
+              <span class="mini__fav"><img src="assets/icon-heart-outline.svg" alt="Ajouter aux favoris"></span>
+            </span>
+            <p class="mini__price"><b>289 000 €</b><small>2 890 € / m²</small><span class="tag--pro">Pro</span></p>
+            <p class="mini__type">Maison</p>
+            <p>5 pièces · 100 m²</p>
+            <p class="mini__where">Sequedin 59320</p>
+          </a>
+          <a class="mini" href="#" data-vonly="1">
+            <span class="mini__media">
+              <img src="assets/ad-lomme/photo-09.jpg" alt="">
+              <span class="mini__fav"><img src="assets/icon-heart-outline.svg" alt="Ajouter aux favoris"></span>
+            </span>
+            <p class="mini__price"><b>178 000 €</b><small>2 738 € / m²</small><span class="tag--pro">Pro</span></p>
+            <p class="mini__type">Maison</p>
+            <p>3 pièces · 65 m²</p>
+            <p class="mini__where">Loos 59120</p>
+          </a>
+          <a class="mini" href="#" data-vonly="1">
+            <span class="mini__media">
+              <img src="assets/ad-lomme/photo-08.jpg" alt="">
+              <span class="mini__fav"><img src="assets/icon-heart-outline.svg" alt="Ajouter aux favoris"></span>
+            </span>
+            <p class="mini__price"><b>349 000 €</b><small>2 908 € / m²</small><span class="tag--pro">Pro</span></p>
+            <p class="mini__type">Maison</p>
+            <p>6 pièces · 120 m²</p>
+            <p class="mini__where">Lambersart 59130</p>
+          </a>
+
+          <a class="mini" href="#" data-vonly="2">
+            <span class="mini__media">
+              <img src="assets/ad-carquefou/photo-04.jpg" alt="">
+              <span class="mini__fav"><img src="assets/icon-heart-outline.svg" alt="Ajouter aux favoris"></span>
+            </span>
+            <p class="mini__price"><b>359 000 €</b><small>3 779 € / m²</small><span class="tag--pro">Pro</span></p>
+            <p class="mini__type">Maison</p>
+            <p>4 pièces · 95 m²</p>
+            <p class="mini__where">Vertou 44120</p>
+          </a>
+          <a class="mini" href="#" data-vonly="2">
+            <span class="mini__media">
+              <img src="assets/ad-carquefou/photo-11.jpg" alt="">
+              <span class="mini__fav"><img src="assets/icon-heart-outline.svg" alt="Ajouter aux favoris"></span>
+            </span>
+            <p class="mini__price"><b>429 000 €</b><small>3 636 € / m²</small><span class="tag--pro">Pro</span></p>
+            <p class="mini__type">Maison</p>
+            <p>5 pièces · 118 m²</p>
+            <p class="mini__where">Basse-Goulaine 44115</p>
+          </a>
+          <a class="mini" href="#" data-vonly="2">
+            <span class="mini__media">
+              <img src="assets/ad-carquefou/photo-08.jpg" alt="">
+              <span class="mini__fav"><img src="assets/icon-heart-outline.svg" alt="Ajouter aux favoris"></span>
+            </span>
+            <p class="mini__price"><b>232 000 €</b><small>3 412 € / m²</small><span class="tag--pro">Pro</span></p>
+            <p class="mini__type">Maison</p>
+            <p>3 pièces · 68 m²</p>
+            <p class="mini__where">Sucé-sur-Erdre 44240</p>
+          </a>
+          <a class="mini" href="#" data-vonly="2">
+            <span class="mini__media">
+              <img src="assets/ad-carquefou/photo-06.jpg" alt="">
+              <span class="mini__fav"><img src="assets/icon-heart-outline.svg" alt="Ajouter aux favoris"></span>
+            </span>
+            <p class="mini__price"><b>495 000 €</b><small>3 750 € / m²</small><span class="tag--pro">Pro</span></p>
+            <p class="mini__type">Maison</p>
+            <p>6 pièces · 132 m²</p>
+            <p class="mini__where">Saint-Sébastien-sur-Loire 44230</p>
+          </a>
+        </div>
+        <button class="more__next" type="button" aria-label="Annonces suivantes">
+          <img src="assets/icon-chevron-right.svg" alt="">
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="page__aside">
+    <div class="contact-card">
+      <a class="contact-card__pro" href="#">
+        <img class="contact-card__pic" src="assets/ad-lomme/store-logo.jpg" alt="Imko Lille"
+             data-vsrc="agencyLogo" data-valt="agencyName">
+        <div class="contact-card__body">
+          <!-- Type de mandat repris de l'annonce : simple pour la variante 1
+               (mandate_type: simple), exclusif pour la variante 2. -->
+          <p class="contact-card__over" data-v="proposedBy">Proposé par</p>
+          <p class="contact-card__name" data-v="agencyName">Imko Lille</p>
+          <!-- Note et nombre d'avis : absents du HTML de l'annonce, valeurs de décor.
+               La variante 6 est vendue par un particulier : ni note, ni compteur
+               d'annonces, ni badge Pro — on n'a aucune de ces données pour elle. -->
+          <p class="rating" data-vnot="6">
+            <img src="assets/icon-star.svg" alt="">
+            <img src="assets/icon-star.svg" alt="">
+            <img src="assets/icon-star.svg" alt="">
+            <img src="assets/icon-star.svg" alt="">
+            <img src="assets/icon-star.svg" alt="">
+            <b>4,8 (34)</b>
+          </p>
+          <span class="tag--pro" data-vnot="6">Pro</span>
+          <span class="tag--pro tag--private" data-vonly="6">Particulier</span>
+          <!-- Nombre d'annonces : chargé côté client sur lbc, absent du HTML de l'annonce -->
+          <p class="contact-card__ads" data-vnot="6">87 annonces</p>
+        </div>
+        <img class="contact-card__chevron" src="assets/icon-chevron-vertical.svg" alt="">
+      </a>
+      <a class="btn btn--support btn--full" href="#">Envoyer un message</a>
+      <button class="btn btn--outlined btn--full" type="button">Voir le numéro</button>
+    </div>
+
+    <a class="promo" href="#"><img src="assets/ad-bouygues.png" alt="Publicité Bouygues"></a>
+    <a class="promo" href="#"><img src="assets/ad-edf.png" alt="Publicité EDF"></a>
+    <a class="promo" href="#"><img src="assets/ad-galeries.png" alt="Publicité Galeries Lafayette"></a>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__cols">
+      <nav>
+        <h2>À propos du bon coin</h2>
+        <ul>
+          <li><a href="#">Qui sommes-nous ?</a></li>
+          <li><a href="#">Nous rejoindre</a></li>
+          <li><a href="#">Acteur responsable de l’économie française</a></li>
+          <li><a href="#">L’Avenir a du bon</a></li>
+          <li><a href="#">Le bon observatoire</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <h2>Informations légales</h2>
+        <ul>
+          <li><a href="#">Conditions générales d’utilisation</a></li>
+          <li><a href="#">Règles de diffusion, de référencement et de déréférencement</a></li>
+          <li><a href="#">Conditions générales de vente</a></li>
+          <li><a href="#">Vie privée / cookies</a></li>
+          <li><a href="#">Vos droits et obligations</a></li>
+          <li><a href="#">Critères de classement</a></li>
+          <li><a href="#">Décisions de justice</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <h2>Professionnels</h2>
+        <ul>
+          <li><a href="#">Publicité</a></li>
+          <li><a href="#">Professionnels de l’immobilier</a></li>
+          <li><a href="#">Vos recrutements</a></li>
+          <li><a href="#">Professionnels de l’auto</a></li>
+          <li><a href="#">Professionnels du tourisme</a></li>
+          <li><a href="#">Autres solutions professionnelles</a></li>
+          <li><a href="#">Annuaire des professionnels</a></li>
+          <li><a href="#">Dépôt gratuit d’emploi pour les TPE</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <h2>Des questions ?</h2>
+        <ul>
+          <li><a href="#">Aide</a></li>
+          <li><a href="#">Le service de paiement sécurisé et la livraison</a></li>
+          <li><a href="#">Le service de réservation de vacances en ligne pour les hôtes</a></li>
+          <li><a href="#">Demandez conseil à la Communauté</a></li>
+          <li><a href="#">Statut de nos services</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer__extra">
+      <div>
+        <h2>Nos applications</h2>
+        <p class="footer__apps">
+          <a href="#"><img src="assets/badge-appstore.svg" alt="Télécharger sur l’App Store"></a>
+          <a href="#"><img src="assets/badge-playstore.png" alt="Disponible sur Google Play"></a>
+        </p>
+      </div>
+      <div>
+        <h2>Vous êtes à l’étranger ?</h2>
+        <button class="footer__country" type="button">
+          <img src="assets/flag-fr.svg" alt="">
+          France
+          <img src="assets/icon-chevron-down.svg" alt="">
+        </button>
+      </div>
+    </div>
+
+    <p class="footer__partners">
+      leboncoin Groupe : AVendreALouer • leboncoin Immobilier Neuf • L'argus • Paycar • Agriaffaires •
+      MachineryZone • Locasun • Locasun-vp • Pilgo • Videdressing • LeDénicheur • Younited Credit
+    </p>
+
+    <div class="footer__legal">
+      <span>leboncoin 2006-2023</span>
+      <span class="footer__social">
+        Retrouvez-nous sur :
+        <a href="#"><img src="assets/icon-facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="assets/icon-twitter.svg" alt="Twitter"></a>
+        <a href="#"><img src="assets/icon-instagram.svg" alt="Instagram"></a>
+        <a href="#"><img src="assets/icon-pinterest.svg" alt="Pinterest"></a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!--
+  Variantes participants. Un seul code, sept jeux de valeurs, chacun adossé à une
+  annonce réelle différente :
+    ?p=1 — annonce 3214064492, maison 1930 à Lille Lomme (59160), ramenée à
+           61 m² / 3 pièces / 182 500 € ;
+    ?p=2 — annonce 3214673441, maison contemporaine de 2023 à Carquefou (44470),
+           ramenée à 92 m² / 4 pièces (2 chambres + bureau) / 409 500 € ;
+    ?p=3 — annonce 3245449385, appartement dans un immeuble de 1900 à Paris 18e,
+           31 m² / 2 pièces / 247 000 € ;
+    ?p=4 — annonce 3269303248, appartement de 1970 à Paris 15e (Javel),
+           45 m² / 2 pièces. Les deux appartements ajoutent les charges de
+           copropriété et remplacent le nombre de niveaux par l'étage.
+           Son prix est le seul chiffre qui ne vient pas de l'annonce : 408 000 €
+           au lieu des 430 000 € affichés, à la demande d'Imene. Tous les montants
+           qui en dépendent ont été recalculés avec les ratios de l'annonce (prix
+           au m², honoraires 2,87 %, notaire 7,78 %, apport 20 %), arrondis à la
+           centaine pour que le total reste juste.
+    ?p=5 — annonce 3130421698, 46 m² / 2 pièces / 199 000 €, relocalisée à la
+           demande d'Imene : de Strasbourg Krutenau (67000) vers la Cité des
+           Peupliers à Erstein (67150), un quartier bordé d'espaces verts — aire de
+           jeux a 70 m du noeud OpenStreetMap du quartier, parc de la rue des Cygnes
+           a 370 m, square de l'Obertor a 590 m, Jardins Canop'Terre a 760 m. Deux
+           autres valeurs changent : l'appartement passe du 3e étage au
+           rez-de-chaussée surélevé, et la location en cours se termine fin
+           septembre 2026 — le bien est donc disponible le 1er octobre et non le
+           4 novembre. La phrase de l'annonce sur le bail de 6 ans signé le
+           05/11/2024 est retirée : elle contredirait cette fin de bail. L'adresse
+           de l'annonce (5 rue Klein) tombe avec Strasbourg : aucune rue d'Erstein
+           n'est inventée à la place ;
+    ?p=6 — annonce 3265472209, maison de 2023 de 89 m² / 4 pièces, vendue par un
+           particulier. Deux valeurs sont changées à la demande d'Imene : la
+           localisation passe de Blanquefort au Pian-Médoc, secteur Feydieu, et le
+           prix de 353 000 € à 335 500 €. Les montants dérivés sont recalculés avec
+           les ratios de l'annonce (notaire 8,00 %, apport 20 %) et la phrase de
+           l'annonce sur les transports, écrite pour Blanquefort, est retirée : elle
+           serait fausse au Pian-Médoc.
+    ?p=7 — annonce 3222720860, appartement de 1964 de 88 m² / 4 pièces au 1er étage
+           avec ascenseur, vendu par un agent mandataire du réseau Expertimo. Deux
+           valeurs sont changées à la demande d'Imene : la localisation passe de
+           Millau au quartier Saint-Éloi – Camonil de Rodez (12000) et le prix de
+           222 000 € à 213 000 €. Les dérivés sont recalculés avec les ratios de
+           l'annonce (notaire 8,00 %, apport 20 %). La description reprend celle de
+           l'annonce, dont les repères millavois (résidence du XVI, bas de l'avenue
+           Charles de Gaulle, Parc de la Victoire) sont retirés : ils n'existent pas
+           à Rodez et aucun équivalent n'est inventé.
+    ?p=8 — annonce 3223510276, appartement de 2016 de 64 m² / 3 pièces au 2e étage
+           d'un immeuble de 8, quartier Ivry Port à Ivry-sur-Seine (94200), vendu en
+           exclusivité par Guy Hoquet. Ni le prix ni la localisation ne sont changés :
+           tout vient de l'annonce. Sa page a été enregistrée avec le bouton « Voir
+           plus » replié, donc la description s'arrête à « La cuisine ouverte,
+           moderne… » : la suite n'est pas reconstituée, et les pièces qu'elle aurait
+           décrites (chambres, salle de bains, balcon) portent une légende de ce qu'on
+           voit au lieu d'un extrait cité.
+  La variante est mémorisée pour que la navigation adview <-> galerie <-> listing la
+  conserve sans param dans chaque lien. Le HTML porte la variante 1 en dur : sans JS
+  la page reste cohérente.
+  Aucun chiffre n'est estimé : tous les montants dérivés reprennent les ratios de leur
+  propre annonce source. Variante 1 : honoraires 5,26 % du prix hors honoraires, notaire
+  7,60 % du prix. Variante 2 : honoraires 2,51 % (11 000 € sur 438 000 € hors honoraires),
+  notaire 7,80 % (35 040 € sur 449 000 €), taxe foncière et budget énergie de l'annonce
+  ramenés au prorata de la surface (95 m² -> 92 m²). Apport = 20 % du prix. Le curseur du
+  marché est la position du prix au m² entre les 1er et 9e déciles DVF du secteur, borné à
+  100 %.
+  Variante 3 : honoraires 5,11 % (12 000 € sur 235 000 € hors honoraires), notaire et
+  budget énergie repris tels quels de l'annonce. Variante 4 : voir ci-dessus, prix
+  modifié et dérivés recalculés. Aucune des deux ne publie sa taxe foncière : la ligne
+  reste « Non communiquée » plutôt qu'estimée.
+  Variante 5 : honoraires 4,74 % (9 000 € sur 190 000 € hors honoraires), notaire, taxe
+  foncière et budget énergie repris tels quels de l'annonce. Variante 6 : pas d'honoraires,
+  c'est une vente entre particuliers. Variante 7 : honoraires à la charge du vendeur
+  (fees_price = 0), donc rien à afficher côté acquéreur ; charges de copropriété et budget
+  énergie repris tels quels, taxe foncière absente de l'annonce. Variante 8 : honoraires
+  à la charge du vendeur également ; notaire (24 720 €) et montant total (333 720 €) sont
+  ceux de l'annonce, l'apport reste 20 % du prix. Ni taxe foncière ni charges de
+  copropriété dans l'annonce : la première dit qu'on ne l'a pas, la seconde n'a pas de
+  ligne.
+  Les déciles DVF 2024 par secteur : Paris 18e 5 769 / 11 768, Paris 15e 7 199 / 11 921 €/m²
+  (appartements, commune entière), Le Pian-Médoc 2 672 / 4 711 €/m² (maisons, 21 ventes),
+  Rodez 1 248 / 2 815 €/m² (appartements, 366 ventes, médiane 2 087 €/m²),
+  Ivry-sur-Seine 3 529 / 6 396 €/m² (appartements, 384 ventes, médiane 4 822 €/m²).
+  La variante 5 n'a pas de fourchette : le fichier des valeurs foncières ne couvre pas le
+  Bas-Rhin, le Haut-Rhin et la Moselle, qui relèvent du livre foncier. Le bloc marché est
+  donc remplacé par une explication, pas par une position inventée.
+  Chaque variante garde l'agence, le type de mandat, le DPE et les photos de SON annonce :
+  ce sont des données réelles, on ne les remplace pas par des valeurs inventées.
+-->
+<script>
+  const VARIANTS = {
+    '2': {
+      title: 'Maison 4 pièces 92 m² — Carquefou | leboncoin',
+      features: 'Maison · 92 m² · 4 pièces',
+      breadcrumb: 'Vente maison 4 pièces, 92 m²',
+      region: 'Pays de la Loire',
+      city: 'Carquefou',
+      where: 'Carquefou 44470',
+      localityName: 'Carquefou',
+      localityAdmin: 'Loire-Atlantique (44470)',
+      mapLabel: 'Carte du secteur de la maison à Carquefou',
+      mktLow: '2 551 € / m²',
+      mktHigh: '4 036 € / m²',
+      price: '409 500 €',
+      ppm: '4 451 € / m²',
+      keyinfo: 'Terrasse · Jardin · Garage · Cuisine ouverte',
+      surface: '92 m²',
+      rooms: '4 pièces',
+      beds: '2 chambres',
+      levels: '2 niveaux',
+      bathroom: '1 salle de bains',
+      outside: 'Terrasse · Jardin',
+      feat: 'Terrain de 370 m² · Garage · Cuisine ouverte',
+      orient: 'Orientation nord-est',
+      year: 'Construit en 2023',
+      cond: 'Construction récente',
+      honoraires: 'Honoraires de 2,51 % à la charge de l’acquéreur, soit 10 000 € inclus dans le prix.',
+      notaire: '32 000 €',
+      total: '441 500 €',
+      taxe: '1 415 € / an',
+      energie: 'entre 550 et 760 € / an',
+      verdict: 'À 4 451 € / m², le bien est au-dessus de la fourchette du secteur (médiane 3 234 € / m²).',
+      proposedBy: 'Proposé en exclusivité par',
+      agencyName: 'Estelle Girardin – Propriétés Privées',
+      agencySiren: 'N° SIREN : 850714106',
+      agencyOthers: 'D’autres annonces de Estelle Girardin',
+      desc: `Estelle Girardin - Propriétés Privées vous propose : CARQUEFOU – MAISON CONTEMPORAINE DE 2023 – DOMAINE SÉCURISÉ
+
+Carquefou, dans un domaine sécurisé. Maison contemporaine de 2023 de 92 m² sur deux niveaux, sur un terrain clos et arboré de 370 m².
+
+Dès l’entrée, vous découvrirez une belle cuisine aménagée et équipée ouverte sur une agréable pièce de vie tournée vers le jardin et sa vaste terrasse en bois exotique. À l’étage, le palier dessert deux chambres, un bureau, une salle de bains ainsi que des toilettes indépendants.
+
+Cette maison comprend :
+
+Une entrée
+Une cuisine ouverte sur la pièce de vie
+Une buanderie avec accès au jardin
+Un WC au rez-de-chaussée
+Deux chambres
+Un bureau
+Une salle de bains
+Un WC indépendant à l’étage
+Un garage avec porte motorisée
+
+De nombreux rangements, une place de stationnement privative devant le garage, la domotique et des matériaux de qualité complètent ce bien.
+
+Les atouts majeurs :
+
+Construction 2023 à la norme RE2020, DPE B et GES B
+Chauffage au sol au gaz et ballon thermodynamique
+Domaine sécurisé, jardin arboré sans vis-à-vis direct
+Terrasse en bois exotique et sauna tonneau
+Garage avec porte motorisée et place de stationnement privative
+Domotique et matériaux de qualité
+
+À proximité du centre de Carquefou, des commerces, des transports en commun et des écoles.
+
+Honoraires à la charge de l’acquéreur : 2,51 % du prix hors honoraires, soit 399 500 € hors honoraires et 10 000 € d’honoraires. Barème disponible sur demande.
+
+Mandat exclusif. Estelle GIRARDIN, agent commercial, RSAC Nantes 850714106, auprès de la SAS PROPRIÉTÉS PRIVÉES, ZAC Le Chêne Ferré, 44 allée des Cinq Continents, 44120 Vertou.
+
+Date de réalisation du diagnostic énergétique : 11/04/2023.
+
+Montant estimé des dépenses annuelles d’énergie pour un usage standard : entre 550 € et 760 € (abonnements compris).
+
+Référence : 454549EGS
+
+Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr`,
+      scale: { dpe: 'B', ges: 'B' },
+      alt: {
+        hero0Alt: 'Façade arrière et terrasse en bois donnant sur le jardin',
+        hero1Alt: 'Pièce de vie ouverte sur le jardin',
+        hero2Alt: 'Cuisine ouverte sur la salle à manger'
+      },
+      src: {
+        plan2d: 'assets/ad-carquefou/plan.jpg',
+        cover: 'assets/ad-carquefou/photo-01.jpg',
+        hero0: 'assets/ad-carquefou/photo-01.jpg',
+        hero1: 'assets/ad-carquefou/photo-03.jpg',
+        hero2: 'assets/ad-carquefou/photo-02.jpg',
+        tour0: 'assets/ad-carquefou/photo-03.jpg',
+        tour1: 'assets/ad-carquefou/photo-02.jpg',
+        agencyLogo: 'assets/ad-carquefou/store-logo.jpg',
+        map0: 'assets/map/t-16247-11487.png', map1: 'assets/map/t-16248-11487.png',
+        map2: 'assets/map/t-16249-11487.png', map3: 'assets/map/t-16247-11488.png',
+        map4: 'assets/map/t-16248-11488.png', map5: 'assets/map/t-16249-11488.png',
+        map6: 'assets/map/t-16247-11489.png', map7: 'assets/map/t-16248-11489.png',
+        map8: 'assets/map/t-16249-11489.png'
+      },
+      left: { gaugeLeft: '100%' },
+      transform: { mapOffset: 'translate(-314.65px, -287.36px)' },
+      val: { finPrice: '409 500', finDown: '81 900' }
+    },
+    '3': {
+      title: 'Appartement 2 pièces 31 m² — Paris 18e | leboncoin',
+      features: 'Appartement · 31 m² · 2 pièces',
+      breadcrumb: 'Vente appartement 2 pièces, 31 m²',
+      region: 'Île-de-France',
+      city: 'Paris',
+      where: 'Paris 75018 · Chapelle - Marx Dormoy',
+      localityName: 'Chapelle - Marx Dormoy',
+      localityAdmin: 'Paris (75018)',
+      // `location.type` de l'annonce vaut « district » : le point n'est pas l'adresse
+      // du bien mais celui du quartier, le badge ne peut donc pas dire « exacte ».
+      mapBadge: 'Localisation approximative',
+      mapLabel: 'Carte du secteur de l’appartement à Paris 18e',
+      mktLow: '5 769 € / m²',
+      mktHigh: '11 768 € / m²',
+      price: '247 000 €',
+      ppm: '7 968 € / m²',
+      keyinfo: 'Cave · Cuisine équipée · Interphone · Étage 4/6',
+      kind: 'Appartement',
+      surface: '31 m²',
+      rooms: '2 pièces',
+      beds: '1 chambre',
+      levels: 'Étage 4 sur 6',
+      bathroom: '1 salle d’eau',
+      outside: 'Square au pied de l’immeuble',
+      feat: 'Cave · Cuisine équipée · Interphone',
+      // L'annonce ne donne pas d'orientation mais donne l'ascenseur : la ligne porte
+      // deja l'icone d'ascenseur, elle affiche donc l'information qui existe.
+      orient: 'Sans ascenseur',
+      heat: 'Chauffage individuel électrique',
+      year: 'Construit en 1900',
+      cond: 'Bon état',
+      honoraires: 'Honoraires de 5,11 % à la charge de l’acquéreur, soit 12 000 € inclus dans le prix.',
+      notaire: '18 800 €',
+      total: '265 800 €',
+      taxe: 'Non communiquée',
+      energie: 'entre 590 et 820 € / an',
+      verdict: 'À 7 968 € / m², le bien est en dessous de la médiane du secteur (8 489 € / m²).',
+      proposedBy: 'Proposé par',
+      agencyName: 'L’Immobilier par Charly',
+      agencySiren: 'N° SIREN : 885172601',
+      agencyOthers: 'D’autres annonces de L’Immobilier par Charly',
+      desc: `Appartement 2 pièces 31 m²
+
+Métro Marx Dormoy – Square de la Madone – Dans un immeuble ancien en bon état général. Au 4ème étage sans ascenseur, joli 2 pièces de 31 m² comprenant un séjour avec cuisine ouverte aménagée, une salle d’eau avec WC sanibroyeur (possible de se raccorder à une colonne), belle chambre avec grand placard aménagé. Calme, vue ciel, aucune perte de place et en bon état général. C’est un appartement parfait pour poser ses valises tout de suite ! Une cave en sous-sol est comprise également.
+Square au pied de l’immeuble !
+
+Surface : 31 m²
+
+À propos de la copropriété :
+Pas de procédure en cours
+Statut provisoire du syndicat : Pas de procédure en cours
+Nombre de lots : 140
+Date de réalisation du diagnostic énergétique : 13/06/2026
+
+Consommation énergie primaire : 175 kWh/m²/an
+Consommation énergie finale : 92 kWh/m²/an
+
+Montant estimé des dépenses annuelles d’énergie pour un usage standard : entre 590 € et 820 € sur les années 2021, 2022 et 2023 (abonnements compris).
+
+Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr`,
+      scale: { dpe: 'C', ges: 'A' },
+      alt: {
+        hero0Alt: 'Séjour avec cuisine ouverte',
+        hero1Alt: 'Chambre avec coin bureau',
+        hero2Alt: 'Cuisine ouverte aménagée et équipée'
+      },
+      src: {
+        plan2d: 'assets/ad-paris18/plan.jpg',
+        cover: 'assets/ad-paris18/photo-01.jpg',
+        hero0: 'assets/ad-paris18/photo-01.jpg',
+        hero1: 'assets/ad-paris18/photo-05.jpg',
+        hero2: 'assets/ad-paris18/photo-03.jpg',
+        tour0: 'assets/ad-paris18/photo-03.jpg',
+        tour1: 'assets/ad-paris18/photo-06.jpg',
+        agencyLogo: 'assets/ad-paris18/store-logo.jpg',
+        map0: 'assets/map/t-16598-11267.png', map1: 'assets/map/t-16599-11267.png',
+        map2: 'assets/map/t-16600-11267.png', map3: 'assets/map/t-16598-11268.png',
+        map4: 'assets/map/t-16599-11268.png', map5: 'assets/map/t-16600-11268.png',
+        map6: 'assets/map/t-16598-11269.png', map7: 'assets/map/t-16599-11269.png',
+        map8: 'assets/map/t-16600-11269.png'
+      },
+      left: { gaugeLeft: '37%' },
+      transform: { mapOffset: 'translate(-287.52px, -338.41px)' },
+      val: { finPrice: '247 000', finDown: '49 400' }
+    },
+    '4': {
+      title: 'Appartement 2 pièces 45 m² — Paris 15e | leboncoin',
+      features: 'Appartement · 45 m² · 2 pièces',
+      breadcrumb: 'Vente appartement 2 pièces, 45 m²',
+      region: 'Île-de-France',
+      city: 'Paris',
+      where: 'Paris 75015 · Javel - André Citroën',
+      localityName: 'Javel - André Citroën',
+      localityAdmin: 'Paris (75015)',
+      mapBadge: 'Localisation approximative',
+      mapLabel: 'Carte du secteur de l’appartement à Paris 15e',
+      mktLow: '7 199 € / m²',
+      mktHigh: '11 921 € / m²',
+      price: '408 000 €',
+      ppm: '9 067 € / m²',
+      keyinfo: 'Parking · Cave · Cuisine équipée · Étage 1/6',
+      kind: 'Appartement',
+      surface: '45 m²',
+      rooms: '2 pièces',
+      beds: '1 chambre',
+      levels: 'Étage 1 sur 6',
+      bathroom: '1 salle de bains',
+      outside: 'Cour intérieure végétalisée',
+      feat: 'Cave · Cuisine équipée · Interphone · Gardien',
+      orient: 'Orientation nord',
+      heat: 'Chauffage collectif au gaz',
+      year: 'Construit en 1970',
+      // L'annonce ne renseigne pas l'état général : la ligne le dit plutôt que de trancher.
+      cond: 'État non communiqué',
+      honoraires: 'Honoraires de 2,87 % à la charge de l’acquéreur, soit 11 400 € inclus dans le prix.',
+      notaire: '31 700 €',
+      total: '439 700 €',
+      taxe: 'Non communiquée',
+      energie: 'entre 520 et 750 € / an',
+      verdict: 'À 9 067 € / m², le bien est en dessous de la médiane du secteur (9 428 € / m²).',
+      proposedBy: 'Proposé par',
+      agencyName: 'Alexandre Gouin Immobilier',
+      agencySiren: 'N° SIREN : 813678679',
+      desc: `Paris 15e – Javel – 2 pièces – 45 m²
+
+À proximité immédiate de Beaugrenelle et de l’église Saint-Christophe-de-Javel, au cœur d’un environnement recherché du 15e arrondissement de Paris, cet appartement deux pièces prend place au 1er étage avec ascenseur d’une résidence sécurisée des années 70 avec gardien. Situé dans un quartier apprécié pour sa qualité de vie, sa proximité avec les commerces, les transports et les quais de Seine, ce bien constitue une belle opportunité aussi bien pour une résidence principale que pour un investissement locatif.
+
+Donnant entièrement sur une agréable cour intérieure végétalisée, l’appartement bénéficie d’un environnement calme et préservé, à l’abri de l’agitation urbaine. Son agencement fonctionnel et ses volumes bien répartis permettent d’envisager différents projets d’aménagement et d’optimisation.
+
+L’entrée dessert une pièce de vie confortable avec espace de rangement intégré. La cuisine indépendante offre un espace distinct et fonctionnel, facilement aménageable selon les besoins. La chambre dispose d’une salle de bains attenante, apportant confort et praticité au quotidien. Des WC séparés viennent compléter l’ensemble.
+
+Une cave en sous-sol complète ce bien et offre un espace de stockage supplémentaire particulièrement appréciable. Un emplacement de parking en sous-sol est proposé en supplément, un véritable atout dans ce secteur recherché du 15e arrondissement.
+
+L’emplacement constitue l’un des principaux points forts de cet appartement. À quelques pas des commerces de Beaugrenelle, des transports, notamment du métro Javel, ainsi que des quais de Seine, le bien profite d’un cadre de vie pratique et agréable au quotidien.
+
+Copropriété de 126 lots – dont 74 lots d’habitation. Pas de procédure en cours.
+
+Charges prévisionnelles annuelles : 3 400 €.
+
+Le prix indiqué comprend les honoraires à la charge de l’acheteur : 2,87 % TTC du prix du bien hors honoraires. Prix hors honoraires : 396 600 €.
+
+Référence annonce : 65122
+
+Date de réalisation du diagnostic : 28/04/2026
+
+Montant estimé des dépenses annuelles d’énergie pour un usage standard : entre 520 € et 750 € sur les années 2021, 2022 et 2023 (abonnements compris).
+
+Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr`,
+      scale: { dpe: 'C', ges: 'C' },
+      alt: {
+        hero0Alt: 'Pièce de vie avec fenêtres sur la cour intérieure',
+        hero1Alt: 'Chambre avec accès à la salle de bains',
+        hero2Alt: 'Cuisine indépendante équipée'
+      },
+      src: {
+        plan2d: 'assets/ad-paris15/plan.jpg',
+        cover: 'assets/ad-paris15/photo-01.jpg',
+        hero0: 'assets/ad-paris15/photo-01.jpg',
+        hero1: 'assets/ad-paris15/photo-11.jpg',
+        hero2: 'assets/ad-paris15/photo-09.jpg',
+        tour0: 'assets/ad-paris15/photo-09.jpg',
+        tour1: 'assets/ad-paris15/photo-11.jpg',
+        agencyLogo: 'assets/ad-paris15/store-logo.jpg',
+        map0: 'assets/map/t-16589-11274.png', map1: 'assets/map/t-16590-11274.png',
+        map2: 'assets/map/t-16591-11274.png', map3: 'assets/map/t-16589-11275.png',
+        map4: 'assets/map/t-16590-11275.png', map5: 'assets/map/t-16591-11275.png',
+        map6: 'assets/map/t-16589-11276.png', map7: 'assets/map/t-16590-11276.png',
+        map8: 'assets/map/t-16591-11276.png'
+      },
+      left: { gaugeLeft: '40%' },
+      transform: { mapOffset: 'translate(-442.46px, -396.29px)' },
+      val: { finPrice: '408 000', finDown: '81 600' }
+    },
+    '5': {
+      title: 'Appartement 2 pièces 46 m² — Erstein Cité des Peupliers | leboncoin',
+      features: 'Appartement · 46 m² · 2 pièces',
+      breadcrumb: 'Vente appartement 2 pièces, 46 m²',
+      region: 'Alsace',
+      city: 'Erstein',
+      where: 'Erstein 67150 · Cité des Peupliers',
+      localityName: 'Cité des Peupliers',
+      localityAdmin: 'Erstein (67150)',
+      mapBadge: 'Localisation approximative',
+      mapLabel: 'Carte du secteur de l’appartement à Erstein',
+      price: '199 000 €',
+      ppm: '4 326 € / m²',
+      keyinfo: 'Rez-de-chaussée surélevé · Sans ascenseur · Actuellement loué',
+      kind: 'Appartement',
+      surface: '46 m²',
+      rooms: '2 pièces',
+      beds: '1 chambre',
+      levels: 'Rez-de-chaussée surélevé',
+      bathroom: '1 salle d’eau',
+      // L'annonce ne mentionne aucun extérieur ni aucun équipement : les deux lignes
+      // le disent, plutôt que de reprendre les valeurs de la variante précédente.
+      outside: 'Non communiqué',
+      feat: 'Non communiqué',
+      orient: 'Sans ascenseur',
+      heat: 'Chauffage individuel électrique',
+      // Ni année de construction ni état général dans l'annonce.
+      year: 'Non communiquée',
+      cond: 'État non communiqué',
+      honoraires: 'Honoraires de 4,74 % à la charge de l’acquéreur, soit 9 000 € inclus dans le prix.',
+      notaire: '15 200 €',
+      total: '214 200 €',
+      taxe: '634 € / an',
+      energie: 'entre 1 002 et 1 357 € / an',
+      proposedBy: 'Proposé par',
+      agencyName: 'Cabinet Husser et Stocki',
+      agencySiren: 'N° SIREN : 489317339',
+      desc: `Appartement 2 pièces 46 m²
+
+Disponible le 1er octobre 2026. Appartement actuellement loué, la location en cours se termine le 30 septembre 2026.
+
+– CITÉ DES PEUPLIERS –
+67150 Erstein
+2 pièces, 45,51 m² au rez-de-chaussée surélevé, immeuble sans ascenseur.
+
+DPE E – nouvelle version 1er janvier 2026
+Chauffage individuel électrique
+
+Actuellement loué 800 € par mois + 50 € de charges. La location en cours se termine le 30 septembre 2026.
+
+Prix du bien : 199 000 €
+Prix hors honoraires : 190 000 €
+Honoraires TTC : 4,74 % soit 9 000 €, à la charge de l’acquéreur
+
+À propos de la copropriété :
+Pas de procédure en cours
+Nombre de lots : 10 (5 principaux)
+
+Charges prévisionnelles annuelles 2025 : 924,24 € au total, dont 516,24 € déductibles et 376,09 € de charges locatives (soit 31,34 € par mois).
+
+Taxe foncière 2025 : 634 € dont 137 € de TOM.
+
+Date de réalisation du diagnostic énergétique : 13/03/2024
+Consommation énergie primaire : 288 kWh/m²/an
+Consommation énergie finale : 151 kWh/m²/an
+
+Montant estimé des dépenses annuelles d’énergie pour un usage standard : entre 1 002 € et 1 357 € par an. Prix moyens des énergies indexés sur l’année 2021 (abonnements compris).
+
+Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : georisques.gouv.fr`,
+      scale: { dpe: 'E', ges: 'C' },
+      alt: {
+        hero0Alt: 'Séjour avec ses deux fenêtres sur rue',
+        hero1Alt: 'Chambre avec rangements',
+        hero2Alt: 'Cuisine séparée équipée'
+      },
+      src: {
+        plan2d: 'assets/ad-strasbourg/plan.jpg',
+        cover: 'assets/ad-strasbourg/photo-01.jpg',
+        hero0: 'assets/ad-strasbourg/photo-01.jpg',
+        hero1: 'assets/ad-strasbourg/photo-02.jpg',
+        hero2: 'assets/ad-strasbourg/photo-03.jpg',
+        tour0: 'assets/ad-strasbourg/photo-03.jpg',
+        tour1: 'assets/ad-strasbourg/photo-02.jpg',
+        agencyLogo: 'assets/ad-strasbourg/store-logo.jpg',
+        map0: 'assets/map/t-17080-11332.png', map1: 'assets/map/t-17081-11332.png',
+        map2: 'assets/map/t-17082-11332.png', map3: 'assets/map/t-17080-11333.png',
+        map4: 'assets/map/t-17081-11333.png', map5: 'assets/map/t-17082-11333.png',
+        map6: 'assets/map/t-17080-11334.png', map7: 'assets/map/t-17081-11334.png',
+        map8: 'assets/map/t-17082-11334.png'
+      },
+      transform: { mapOffset: 'translate(-363.87px, -450.86px)' },
+      val: { finPrice: '199 000', finDown: '39 800' }
+    },
+    '6': {
+      title: 'Maison 4 pièces 89 m² — Le Pian-Médoc | leboncoin',
+      features: 'Maison · 89 m² · 4 pièces',
+      breadcrumb: 'Vente maison 4 pièces, 89 m²',
+      region: 'Aquitaine',
+      city: 'Le Pian-Médoc',
+      where: 'Le Pian-Médoc 33290 · Feydieu',
+      localityName: 'Feydieu',
+      localityAdmin: 'Le Pian-Médoc (33290)',
+      // Secteur et non adresse : le point est celui du village de Feydieu, géocodé
+      // par la Base Adresse Nationale, pas celui de la maison.
+      mapBadge: 'Localisation approximative',
+      mapLabel: 'Carte du secteur de la maison au Pian-Médoc',
+      mktLow: '2 672 € / m²',
+      mktHigh: '4 711 € / m²',
+      price: '335 500 €',
+      ppm: '3 770 € / m²',
+      keyinfo: 'Terrasse · Jardin · Garage · Climatisation',
+      surface: '89 m²',
+      rooms: '4 pièces',
+      beds: '3 chambres',
+      levels: '2 niveaux',
+      bathroom: '1 salle de bains',
+      outside: 'Terrasse · Jardin',
+      feat: 'Terrain de 205 m² · Garage · Climatisation · Cuisine ouverte',
+      orient: 'Orientation sud',
+      heat: 'Chauffage électrique',
+      year: 'Construit en 2023',
+      cond: 'Très bon état',
+      // Vente entre particuliers : il n'y a pas d'honoraires d'agence, la ligne le dit
+      // au lieu d'afficher un pourcentage qui n'existe pas.
+      honoraires: 'Vente de particulier à particulier : aucun honoraire d’agence.',
+      notaire: '26 840 €',
+      total: '362 340 €',
+      taxe: '800 € / an',
+      energie: 'entre 520 et 780 € / an',
+      verdict: 'À 3 770 € / m², le bien est au-dessus de la médiane du secteur (3 509 € / m²).',
+      proposedBy: 'Proposé par',
+      agencyName: 'chamarcy',
+      desc: `Le Pian-Médoc, secteur Feydieu, dans une rue calme.
+
+Projetez-vous dans cette maison individuelle de 2023, de 89 m² avec jardin et garage.
+
+Au rez-de-chaussée, vous trouverez une grande pièce de vie lumineuse grâce à sa large baie vitrée, une cuisine semi-ouverte équipée, un cellier et des WC avec lavabo.
+
+L’étage est composé de 3 chambres avec penderies et d’une salle de bain spacieuse avec baignoire et WC.
+
+À l’extérieur, le jardin avec terrasse en bois est exposé sud et entièrement clôturé. Côté nord, une place de parking avec prise pour véhicule électrique.
+
+Maison récente équipée d’une climatisation réversible et d’un chauffe-eau thermodynamique.
+
+DPE classe A réalisé en 03/2025.
+
+Ce bien est soumis à la copropriété. Les charges courantes annuelles sont estimées à 140 €.
+
+Aucun travaux ni de frais d’agence à prévoir !
+
+Proche des commodités : écoles et commerces.
+
+Vente de particulier à particulier, agence s’abstenir, merci.`,
+      scale: { dpe: 'A', ges: 'A' },
+      alt: {
+        hero0Alt: 'Façade arrière, terrasse en bois et jardin clos',
+        hero1Alt: 'Pièce de vie ouverte sur la salle à manger',
+        hero2Alt: 'Cuisine semi-ouverte équipée'
+      },
+      src: {
+        plan2d: 'assets/ad-pian-medoc/plan.jpg',
+        cover: 'assets/ad-pian-medoc/photo-01.jpg',
+        hero0: 'assets/ad-pian-medoc/photo-01.jpg',
+        hero1: 'assets/ad-pian-medoc/photo-02.jpg',
+        hero2: 'assets/ad-pian-medoc/photo-03.jpg',
+        tour0: 'assets/ad-pian-medoc/photo-03.jpg',
+        tour1: 'assets/ad-pian-medoc/photo-05.jpg',
+        agencyLogo: 'assets/ad-pian-medoc/store-logo.jpg',
+        map0: 'assets/map/t-16325-11789.png', map1: 'assets/map/t-16326-11789.png',
+        map2: 'assets/map/t-16327-11789.png', map3: 'assets/map/t-16325-11790.png',
+        map4: 'assets/map/t-16326-11790.png', map5: 'assets/map/t-16327-11790.png',
+        map6: 'assets/map/t-16325-11791.png', map7: 'assets/map/t-16326-11791.png',
+        map8: 'assets/map/t-16327-11791.png'
+      },
+      left: { gaugeLeft: '54%' },
+      transform: { mapOffset: 'translate(-294.03px, -363.70px)' },
+      val: { finPrice: '335 500', finDown: '67 100' }
+    },
+    '7': {
+      title: 'Appartement 4 pièces 88 m² — Rodez Saint-Éloi | leboncoin',
+      features: 'Appartement · 88 m² · 4 pièces',
+      breadcrumb: 'Vente appartement 4 pièces, 88 m²',
+      region: 'Midi-Pyrénées',
+      city: 'Rodez',
+      where: 'Rodez 12000 · Saint-Éloi – Camonil',
+      localityName: 'Saint-Éloi – Camonil',
+      localityAdmin: 'Rodez (12000)',
+      mapBadge: 'Localisation approximative',
+      mapLabel: 'Carte du secteur de l’appartement à Rodez',
+      mktLow: '1 248 € / m²',
+      mktHigh: '2 815 € / m²',
+      price: '213 000 €',
+      ppm: '2 420 € / m²',
+      keyinfo: 'Ascenseur · Étage 1 · Balcon · Cave',
+      kind: 'Appartement',
+      surface: '88 m²',
+      rooms: '4 pièces',
+      beds: '3 chambres',
+      // L'annonce dit « premier étage » sans donner le nombre d'étages de l'immeuble.
+      levels: 'Étage 1',
+      bathroom: '1 salle d’eau',
+      outside: 'Balcon',
+      feat: 'Cave de 9,50 m² · Place de parking privative · Cuisine séparée',
+      orient: 'Ascenseur',
+      heat: 'Chauffage collectif au gaz',
+      year: 'Construit en 1964',
+      cond: 'Très bon état',
+      // Honoraires à la charge du vendeur (fees_price = 0 dans l'annonce) : le prix
+      // affiché est celui que paie l'acquéreur.
+      honoraires: 'Honoraires d’agence à la charge du vendeur : aucun honoraire ne s’ajoute au prix pour l’acquéreur.',
+      notaire: '17 040 €',
+      total: '230 040 €',
+      taxe: 'Non communiquée',
+      energie: 'entre 1 440 et 1 990 € / an',
+      verdict: 'À 2 420 € / m², le bien est au-dessus de la médiane du secteur (2 087 € / m²).',
+      proposedBy: 'Proposé par',
+      agencyName: 'GUIDICE Romain',
+      agencySiren: 'N° SIREN : 841730393',
+      desc: `Appartement 4 pièces 88 m²
+
+Au sein d’une résidence du quartier Saint-Éloi – Camonil, à Rodez, venez découvrir cet appartement F4 de 88 m² situé au premier étage avec ascenseur.
+ L’appartement dispose de trois chambres, salon séjour, salle d’eau, WC séparé et d’une cuisine séparée donnant sur un balcon au calme.
+ Son état est excellent et les prestations vous raviront par le confort apporté au quotidien, cave de 9,50 m², ascenseur et place de parking privative.
+ Son emplacement proche des commodités du quartier vous ravira !
+ Les charges de copropriété incluent la consommation de chauffage, d’eau froide et eau chaude (chaudière collective gaz).
+ À découvrir sans tarder.
+   - Annonce rédigée et publiée par un Agent Mandataire -
+
+Surface : 88 m²
+
+A propos de la copropriété :
+Pas de procédure en cours
+Nombre de lots : 58
+Date de réalisation du diagnostic énergétique : 09/04/2025
+
+Consommation énergie primaire : 205 kWh/m²/an
+Consommation énergie finale : 200 kWh/m²/an
+
+Montant estimé des dépenses annuelles d’énergie pour un usage standard : entre 1 440 € et 1 990 € sur les années 2021, 2022 et 2023 (abonnements compris).`,
+      scale: { dpe: 'D', ges: 'D' },
+      alt: {
+        hero0Alt: 'Salle à manger ouverte sur le salon, photo habillée d’un bandeau de l’agence',
+        hero1Alt: 'Cuisine séparée équipée',
+        hero2Alt: 'Chambre avec fenêtre sur les arbres'
+      },
+      src: {
+        plan2d: 'assets/ad-rodez/plan.jpg',
+        cover: 'assets/ad-rodez/photo-01.jpg',
+        hero0: 'assets/ad-rodez/photo-01.jpg',
+        hero1: 'assets/ad-rodez/photo-08.jpg',
+        hero2: 'assets/ad-rodez/photo-12.jpg',
+        tour0: 'assets/ad-rodez/photo-02.jpg',
+        tour1: 'assets/ad-rodez/photo-08.jpg',
+        agencyLogo: 'assets/ad-rodez/store-logo.jpg',
+        map0: 'assets/map/t-16617-11868.png', map1: 'assets/map/t-16618-11868.png',
+        map2: 'assets/map/t-16619-11868.png', map3: 'assets/map/t-16617-11869.png',
+        map4: 'assets/map/t-16618-11869.png', map5: 'assets/map/t-16619-11869.png',
+        map6: 'assets/map/t-16617-11870.png', map7: 'assets/map/t-16618-11870.png',
+        map8: 'assets/map/t-16619-11870.png'
+      },
+      left: { gaugeLeft: '75%' },
+      transform: { mapOffset: 'translate(-290.00px, -403.74px)' },
+      val: { finPrice: '213 000', finDown: '42 600' }
+    },
+    '8': {
+      title: 'Appartement 3 pièces 64 m² — Ivry-sur-Seine Ivry Port | leboncoin',
+      features: 'Appartement · 64 m² · 3 pièces',
+      breadcrumb: 'Vente appartement 3 pièces, 64 m²',
+      region: 'Île-de-France',
+      city: 'Ivry-sur-Seine',
+      where: 'Ivry-sur-Seine 94200 · Quartier Ivry Port',
+      localityName: 'Quartier Ivry Port',
+      localityAdmin: 'Ivry-sur-Seine (94200)',
+      mapBadge: 'Localisation approximative',
+      mapLabel: 'Carte du secteur de l’appartement à Ivry-sur-Seine',
+      mktLow: '3 529 € / m²',
+      mktHigh: '6 396 € / m²',
+      price: '309 000 €',
+      ppm: '4 828 € / m²',
+      keyinfo: 'Balcon · Étage 2/8 · Résidence de 2016 · BBC',
+      kind: 'Appartement',
+      surface: '64 m²',
+      rooms: '3 pièces',
+      beds: '2 chambres',
+      levels: 'Étage 2 sur 8',
+      // L'annonce ne liste ni salle de bains ni balcon dans ses informations clés :
+      // les deux sont décrits d'après ses propres photos, sans compter ce qu'on ne voit pas.
+      bathroom: 'Salle de bains',
+      outside: 'Balcon',
+      feat: 'Résidence sécurisée de 2016 · Certifiée BBC · Cuisine ouverte',
+      orient: 'Non communiqué',
+      heat: 'Non communiqué',
+      year: 'Construit en 2016',
+      cond: 'Bon état',
+      // « Les honoraires sont à la charge du vendeur » : le prix affiché est celui
+      // que paie l'acquéreur, rien ne s'y ajoute.
+      honoraires: 'Honoraires d’agence à la charge du vendeur : aucun honoraire ne s’ajoute au prix pour l’acquéreur.',
+      notaire: '24 720 €',
+      total: '333 720 €',
+      taxe: 'Non communiquée',
+      energie: 'entre 460 et 650 € / an',
+      verdict: 'À 4 828 € / m², le bien est au niveau de la médiane du secteur (4 822 € / m²).',
+      proposedBy: 'Proposé en exclusivité par',
+      agencyName: 'GUY HOQUET IVRY-SUR-SEINE',
+      agencySiren: 'N° SIRET : 89902163800015',
+      // La page enregistrée l'a été avec le bouton « Voir plus » replié : la description
+      // s'arrête donc où l'annonce la coupait à l'écran. Rien n'est complété à la main.
+      desc: `Appartement 3 pièces 64 m²
+
+L’agence Guy Hoquet Ivry-sur-Seine vous propose en exclusivité ce bel appartement de 64,1 m² situé au sein d’une résidence récente, calme et sécurisée datant de 2016 et certifiée BBC (Bâtiment Basse Consommation). Un bien qui conjugue confort moderne, fonctionnalité et emplacement stratégique.
+
+Dès l’entrée, découvrez une agréable pièce de vie de près de 30 m², offrant un espace convivial et chaleureux pour le quotidien comme pour recevoir. La cuisine ouverte, moderne…
+
+Surface : 64 m²
+Étage : 2 sur 8
+Référence : 1562`,
+      scale: { dpe: 'B', ges: 'A' },
+      alt: {
+        hero0Alt: 'Séjour avec canapé, téléviseur et porte-fenêtre sur le balcon',
+        hero1Alt: 'Cuisine ouverte équipée, façades bleu canard',
+        hero2Alt: 'Chambre avec lit double et trois fenêtres'
+      },
+      src: {
+        plan2d: 'assets/ad-ivry/plan.jpg',
+        cover: 'assets/ad-ivry/photo-01.jpg',
+        hero0: 'assets/ad-ivry/photo-01.jpg',
+        hero1: 'assets/ad-ivry/photo-03.jpg',
+        hero2: 'assets/ad-ivry/photo-05.jpg',
+        tour0: 'assets/ad-ivry/photo-02.jpg',
+        tour1: 'assets/ad-ivry/photo-03.jpg',
+        agencyLogo: 'assets/ad-ivry/store-logo.jpg',
+        map0: 'assets/map/t-16601-11277.png', map1: 'assets/map/t-16602-11277.png',
+        map2: 'assets/map/t-16603-11277.png', map3: 'assets/map/t-16601-11278.png',
+        map4: 'assets/map/t-16602-11278.png', map5: 'assets/map/t-16603-11278.png',
+        map6: 'assets/map/t-16601-11279.png', map7: 'assets/map/t-16602-11279.png',
+        map8: 'assets/map/t-16603-11279.png'
+      },
+      left: { gaugeLeft: '45%' },
+      transform: { mapOffset: 'translate(-390.49px, -494.91px)' },
+      val: { finPrice: '309 000', finDown: '61 800' }
+    },
+    '9': {
+      title: 'Appartement 2 pièces 52 m² — Drancy Drancy Centre | leboncoin',
+      features: 'Appartement · 52 m² · 2 pièces',
+      breadcrumb: 'Vente appartement 2 pièces, 52 m²',
+      region: 'Île-de-France',
+      city: 'Drancy',
+      where: 'Drancy 93700 · Quartier Drancy Centre',
+      localityName: 'Quartier Drancy Centre',
+      localityAdmin: 'Drancy (93700)',
+      mapBadge: 'Localisation exacte',
+      mapLabel: 'Carte du secteur de l’appartement à Drancy',
+      mktLow: '2 264 € / m²',
+      mktHigh: '4 718 € / m²',
+      price: '175 000 €',
+      ppm: '3 365 € / m²',
+      keyinfo: 'Terrasse de 10,5 m² · Étage 3 · Ascenseur · Cave',
+      kind: 'Appartement',
+      surface: '52 m²',
+      rooms: '2 pièces',
+      beds: '1 chambre',
+      levels: 'Étage 3',
+      bathroom: '1 salle de bains',
+      outside: 'Terrasse',
+      feat: 'Cuisine équipée ouverte · Ascenseur · Cave · Parking · Interphone et digicode',
+      orient: 'Non communiqué',
+      heat: 'Chauffage central au gaz',
+      // L'annonce se contredit : ses informations datent l'immeuble de 2014, sa
+      // description de 2015. C'est la donnée structurée qui est reprise.
+      year: 'Construit en 2014',
+      cond: 'Non communiqué',
+      // « SANS HONORAIRES » ouvre la description : le prix affiché est celui que
+      // paie l'acquéreur.
+      honoraires: 'Vendu sans honoraires d’agence : aucun honoraire ne s’ajoute au prix pour l’acquéreur.',
+      notaire: '14 000 €',
+      total: '189 000 €',
+      // Seule taxe foncière annoncée des neuf annonces, et c'est l'annonceur qui
+      // l'estime — la facture énergétique, elle, n'est donnée qu'en kWh.
+      taxe: '1 500 € / an (estimation de l’annonceur)',
+      energie: 'Non communiquée',
+      verdict: 'À 3 365 € / m², le bien est au-dessus de la médiane du secteur (3 258 € / m²).',
+      proposedBy: 'Proposé par',
+      agencyName: 'CDC HABITAT VENTES',
+      agencySiren: 'Numéro SIREN non communiqué',
+      // La description publiée s'ouvre sur une date de visite et se referme sur deux
+      // fois la même référence : les deux sont retirées, le reste est repris mot pour mot.
+      desc: `Appartement T2
+
+SANS HONORAIRES. Idéalement situé en plein centre-ville de Drancy, au pied des commerces, des écoles et des transports en commun (RER B), découvrez au 3ème étage dans un immeuble avec ascenseur de 2015 ce spacieux appartement de 2 pièces de 52 m² avec une terrasse vendu avec une cave. Possibilité d’acquérir une place de parking en sous-sol pour 10000 euros.
+
+Il se compose d’une entrée, un séjour avec cuisine aménagée (25 m²), d’une chambre spacieuse avec placards (15 m²), d’une salle de bains, WC séparés et une terrasse de 10,5 m² accessible depuis le séjour et la chambre. L’appartement est lumineux, bien distribué et offre de jolies prestations.
+
+Avec ses parcs, ses infrastructures sportives et ses écoles, Drancy offre un cadre de vie privilégié et agréable, idéal pour les familles et les jeunes actifs ou investisseurs.
+
+Faibles charges : estimation des charges mensuelles 180 euros avec chauffage collectif et ECS. Estimation de la taxe foncière pour un T2 1500 euros. DPE C GES C.
+
+Surface : 52 m²
+Étage : 3
+Référence : 6110 - 260638`,
+      scale: { dpe: 'C', ges: 'C' },
+      alt: {
+        // Sur mobile la mosaïque se réduit à `hero1` : c'est donc le séjour, la pièce
+        // que les deux projections aménagent.
+        hero0Alt: 'Séjour vide, porte-fenêtre sur la terrasse à gauche et hotte de la cuisine à droite',
+        hero1Alt: 'Séjour vide, cuisine ouverte à gauche et porte-fenêtre ouverte sur la terrasse',
+        hero2Alt: 'Chambre vide avec placards coulissants et porte-fenêtre sur la terrasse'
+      },
+      src: {
+        plan2d: 'assets/ad-drancy/plan.jpg',
+        cover: 'assets/ad-drancy/photo-04.jpg',
+        hero0: 'assets/ad-drancy/photo-07.jpg',
+        hero1: 'assets/ad-drancy/photo-04.jpg',
+        hero2: 'assets/ad-drancy/photo-05.jpg',
+        tour0: 'assets/ad-drancy/photo-06.jpg',
+        tour1: 'assets/ad-drancy/photo-02.jpg',
+        agencyLogo: 'assets/ad-drancy/store-logo.jpg',
+        map0: 'assets/map/t-16605-11263.png', map1: 'assets/map/t-16606-11263.png',
+        map2: 'assets/map/t-16607-11263.png', map3: 'assets/map/t-16605-11264.png',
+        map4: 'assets/map/t-16606-11264.png', map5: 'assets/map/t-16607-11264.png',
+        map6: 'assets/map/t-16605-11265.png', map7: 'assets/map/t-16606-11265.png',
+        map8: 'assets/map/t-16607-11265.png'
+      },
+      // Fourchette et médiane du secteur telles que publiées par l'annonce source.
+      // Le curseur, lui, est reporté sur cette échelle : l'annonce le place à 42 %
+      // pour un prix au m² calculé sur 53 m², et la surface retenue ici est 52 m².
+      left: { gaugeLeft: '45%' },
+      transform: { mapOffset: 'translate(-493.01px, -292.89px)' },
+      val: { finPrice: '175 000', finDown: '35 000' }
+    }
+  };
+
+  const VARIANT_KEY = 'lbc-proto:participant';
+
+  function currentVariant() {
+    const asked = new URLSearchParams(location.search).get('p');
+    if (['1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(asked)) {
+      try { localStorage.setItem(VARIANT_KEY, asked); } catch (e) {}
+      return asked;
+    }
+    try { return localStorage.getItem(VARIANT_KEY) || '1'; } catch (e) { return '1'; }
+  }
+
+  function applyVariant(v) {
+    const data = VARIANTS[v];
+    if (!data) return;
+    for (const [key, text] of Object.entries(data)) {
+      if (key === 'src' || key === 'left' || key === 'val' ||
+          key === 'alt' || key === 'scale' || key === 'transform') continue;
+      if (key === 'title') { document.title = text; continue; }
+      // Certaines clés ne décrivent pas du texte visible mais un aria-label.
+      document.querySelectorAll('[data-valabel="' + key + '"]').forEach(el => {
+        el.setAttribute('aria-label', text);
+      });
+      document.querySelectorAll('[data-valt="' + key + '"]').forEach(el => { el.alt = text; });
+      document.querySelectorAll('[data-v="' + key + '"]').forEach(el => { el.textContent = text; });
+    }
+    // Le curseur du DPE et du GES : on deplace la classe active sur la lettre voulue.
+    for (const [key, letter] of Object.entries(data.scale || {})) {
+      document.querySelectorAll('[data-vscale="' + key + '"]').forEach(p => {
+        p.querySelectorAll('.scale__step').forEach(s => {
+          s.classList.toggle('scale__step--active', s.textContent.trim() === letter);
+        });
+      });
+    }
+    for (const [key, tr] of Object.entries(data.transform || {})) {
+      document.querySelectorAll('[data-vtransform="' + key + '"]').forEach(el => { el.style.transform = tr; });
+    }
+    for (const [key, src] of Object.entries(data.src)) {
+      document.querySelectorAll('[data-vsrc="' + key + '"]').forEach(el => { el.src = src; });
+    }
+    // Protege comme scale et transform : la variante 5 n'a pas de curseur de marche,
+    // et sans le defaut la boucle interrompait celles qui suivent.
+    for (const [key, left] of Object.entries(data.left || {})) {
+      document.querySelectorAll('[data-vleft="' + key + '"]').forEach(el => { el.style.left = left; });
+    }
+    for (const [key, value] of Object.entries(data.val)) {
+      document.querySelectorAll('[data-vval="' + key + '"]').forEach(el => { el.value = value; });
+    }
+  }
+
+  // Les liens internes reportent la variante : le lien envoyé au participant reste
+  // valable même si son navigateur bloque le stockage local.
+  function propagateVariant(v) {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href || /^(#|https?:|mailto:|tel:)/.test(href)) return;
+      // On manipule la chaîne, pas une URL absolue, pour garder le lien relatif :
+      // le proto est servi sous un préfixe de chemin sur GitHub Pages.
+      const hash = href.includes('#') ? href.slice(href.indexOf('#')) : '';
+      const [path, query = ''] = href.slice(0, href.length - hash.length).split('?');
+      const params = new URLSearchParams(query);
+      params.set('p', v);
+      a.setAttribute('href', path + '?' + params + hash);
+    });
+  }
+
+  const variant = currentVariant();
+  // Hors applyVariant : la variante 1 est le defaut ecrit en dur dans le HTML et
+  // n'a donc pas d'entree dans VARIANTS, mais ses blocs propres doivent survivre.
+  document.querySelectorAll('[data-vonly]').forEach(el => {
+    if (el.dataset.vonly !== variant) el.remove();
+  });
+  /* L'inverse : un bloc qui vaut pour toutes les variantes sauf une. Sans ça il
+     faudrait le recopier autant de fois qu'il y a de variantes concernées. */
+  document.querySelectorAll('[data-vnot]').forEach(el => {
+    if (el.dataset.vnot.split(' ').includes(variant)) el.remove();
+  });
+  /* Les carrousels d'annonces sont du decor : ils n'existent que pour les variantes
+     qui en ont un jeu. Un titre suivi d'une piste vide vaut moins que rien, donc la
+     section entiere s'en va. */
+  document.querySelectorAll('.more').forEach(section => {
+    if (!section.querySelector('.mini')) {
+      const rule = section.previousElementSibling;
+      if (rule && rule.classList.contains('rule')) rule.remove();
+      section.remove();
+    }
+  });
+  applyVariant(variant);
+  propagateVariant(variant);
+</script>
+
+<script>
+  const description = document.querySelector('.description');
+  const moreBtn = description.querySelector('.description__more');
+  moreBtn.addEventListener('click', () => {
+    const open = description.classList.toggle('is-open');
+    moreBtn.textContent = open ? 'Voir moins' : 'Voir plus';
+  });
+
+  const keys = document.getElementById('keys');
+  const keysToggle = document.querySelector('.keys__toggle');
+  /* Le nombre est compté, pas écrit : la vente entre particuliers n'a pas de ligne
+     d'honoraires, et un « +8 » qui n'en cache que 7 se remarque tout de suite. */
+  const hiddenKeys = keys.querySelectorAll('.keys__item--more').length;
+  keysToggle.dataset.labelMore = `Voir les ${hiddenKeys} critères supplémentaires`;
+  keysToggle.textContent = keysToggle.dataset.labelMore;
+  document.querySelector('.keyinfo__more').textContent = `+${hiddenKeys}`;
+  function setKeysExpanded(open) {
+    keys.classList.toggle('keys--expanded', open);
+    keysToggle.setAttribute('aria-expanded', String(open));
+    keysToggle.textContent = open ? keysToggle.dataset.labelLess : keysToggle.dataset.labelMore;
+  }
+  keysToggle.addEventListener('click', () => {
+    setKeysExpanded(!keys.classList.contains('keys--expanded'));
+  });
+
+  // Le récap « +8 » ancre sur Informations clés, déjà déployé à l'arrivée
+  document.querySelector('.keyinfo__more').addEventListener('click', () => setKeysExpanded(true));
+
+  const stickybar = document.getElementById('stickybar');
+  const hero = document.querySelector('.hero');
+  const heroTitle = document.querySelector('.summary__features');
+  const mobile = window.matchMedia('(max-width: 767px)');
+  const tabs = Array.from(document.querySelectorAll('.stickybar__tabs a'));
+  const sections = tabs.map(tab => document.querySelector(tab.getAttribute('href')));
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => {
+      const target = sections[i];
+      if (target && target.tagName === 'DETAILS') target.open = true;
+    });
+  });
+
+  let activeTab = -1;
+
+  function syncStickybar() {
+    // Sur mobile la fiche fait partie du hero : on déclenche dès que le titre sort
+    const ref = mobile.matches ? heroTitle : hero;
+    stickybar.classList.toggle('stickybar--shown', ref.getBoundingClientRect().bottom < 0);
+    // Les onglets ne suivent pas l'ordre du DOM : on retient la dernière
+    // section franchie, pas le dernier onglet dont la section est passée.
+    let current = -1;
+    let closest = -Infinity;
+    sections.forEach((section, i) => {
+      if (!section) return;
+      const top = section.getBoundingClientRect().top;
+      if (top <= 120 && top > closest) {
+        closest = top;
+        current = i;
+      }
+    });
+    tabs.forEach((tab, i) => {
+      if (i === current) tab.setAttribute('aria-current', 'true');
+      else tab.removeAttribute('aria-current');
+    });
+    // La barre d'onglets déborde sur mobile : on ramène l'onglet actif dans le champ
+    if (current !== activeTab) {
+      activeTab = current;
+      if (current !== -1) {
+        const tab = tabs[current];
+        const nav = tab.parentElement;
+        nav.scrollTo({ left: tab.offsetLeft, behavior: 'smooth' });
+      }
+    }
+  }
+
+  syncStickybar();
+  window.addEventListener('scroll', syncStickybar, { passive: true });
+  window.addEventListener('resize', syncStickybar);
+</script>
+
+<!-- Point vert au doigt, pour suivre les appuis en partage d'écran -->
+<script src="../click-dot.js"></script>
+</body>
+</html>
