@@ -28,6 +28,7 @@ const INITIAL_TRANSACTIONS = [
 
 export default function App() {
   const [screen, setScreen] = useState('recherche')
+  const navigate = (tab) => { if (tab !== 'publier') setScreen(tab) }
 
   const [balance,       setBalance]       = useState(5000)
   const [locked,        setLocked]        = useState(true)
@@ -80,7 +81,7 @@ export default function App() {
   if (screen === 'compte') {
     return (
       <MonCompte
-        onTabChange={setScreen}
+        onTabChange={navigate}
         onBack={() => setScreen('recherche')}
         onWallet={() => setScreen('wallet')}
         balance={balance}
@@ -107,12 +108,12 @@ export default function App() {
           onToggleLocked={() => setLocked(l => !l)}
           onAddBalance={() => setBalance(b => b + 2500)}
           onReturnToWallet={onReturnToWallet}
-          onTabChange={setScreen}
+          onTabChange={navigate}
           onBack={() => setScreen('compte')}
         />
       </>
     )
   }
 
-  return <Home onTabChange={setScreen} />
+  return <Home onTabChange={navigate} />
 }
