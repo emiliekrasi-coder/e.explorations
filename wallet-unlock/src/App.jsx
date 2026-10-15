@@ -1,32 +1,8 @@
 import { useState, useCallback } from 'react'
+import Home from './components/home/Home'
+import MonCompte from './components/compte/MonCompte'
 import WalletHome from './components/wallet-home/WalletHome'
 
-const devPanelStyle = {
-  position: 'fixed',
-  bottom: '76px',
-  right: '12px',
-  zIndex: 999,
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '6px',
-  alignItems: 'flex-end',
-  pointerEvents: 'none',
-}
-
-const devBtnStyle = {
-  pointerEvents: 'auto',
-  border: 'none',
-  borderRadius: '999px',
-  padding: '6px 12px',
-  fontSize: '12px',
-  fontWeight: '700',
-  fontFamily: 'inherit',
-  color: '#fff',
-  cursor: 'pointer',
-  opacity: 0.85,
-  boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
-  whiteSpace: 'nowrap',
-}
 
 const MONTHS_SHORT = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.']
 const MONTHS_CAP  = ['Jan.', 'Févr.', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.']
@@ -51,8 +27,11 @@ const INITIAL_TRANSACTIONS = [
 ]
 
 export default function App() {
-  const [balance,       setBalance]       = useState(14250)
+  const [screen, setScreen] = useState('recherche')
+
+  const [balance,       setBalance]       = useState(5000)
   const [locked,        setLocked]        = useState(true)
+  const [kycPending,    setKycPending]    = useState(false)
   const [completedSteps]                  = useState(0)
   const [steps]                           = useState({ kyc: 'todo', iban: 'todo', dac7: 'todo' })
   const [ibanMasked]                      = useState('FR64**** Y90')
@@ -98,35 +77,42 @@ export default function App() {
     }, 350)
   }, [balance, ibanMasked])
 
-  return (
-    <>
-      <WalletHome
+  if (screen === 'compte') {
+    return (
+      <MonCompte
+        onTabChange={setScreen}
+        onBack={() => setScreen('recherche')}
+        onWallet={() => setScreen('wallet')}
         balance={balance}
-        locked={locked}
-        completedSteps={completedSteps}
-        steps={steps}
-        ibanMasked={ibanMasked}
-        transferStep={transferStep}
-        setTransferStep={setTransferStep}
-        transactions={transactions}
-        onUnlock={() => {}}
-        onGoToStep={() => {}}
-        onReturnToWallet={onReturnToWallet}
       />
-      <div style={devPanelStyle}>
-        <button
-          onClick={() => setLocked(l => !l)}
-          style={{ ...devBtnStyle, background: locked ? '#3a4757' : '#1d6340' }}
-        >
-          {locked ? '🔒 Locked' : '🔓 Unlocked'}
-        </button>
-        <button
-          onClick={() => setBalance(b => b + 5000)}
-          style={{ ...devBtnStyle, background: '#094171' }}
-        >
-          +50 €
-        </button>
-      </div>
-    </>
-  )
+    )
+  }
+
+  if (screen === 'wallet') {
+    return (
+      <>
+        <WalletHome
+          balance={balance}
+          locked={locked}
+          kycPending={kycPending}
+          completedSteps={completedSteps}
+          steps={steps}
+          ibanMasked={ibanMasked}
+          transferStep={transferStep}
+          setTransferStep={setTransferStep}
+          transactions={transactions}
+          onUnlock={() => setLocked(false)}
+          onKycComplete={() => { setLocked(false); setKycPending(true) }}
+          onGoToStep={() => {}}
+          onToggleLocked={() => setLocked(l => !l)}
+          onAddBalance={() => setBalance(b => b + 2500)}
+          onReturnToWallet={onReturnToWallet}
+          onTabChange={setScreen}
+          onBack={() => setScreen('compte')}
+        />
+      </>
+    )
+  }
+
+  return <Home onTabChange={setScreen} />
 }

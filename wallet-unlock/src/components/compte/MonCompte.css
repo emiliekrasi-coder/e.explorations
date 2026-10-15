@@ -1,0 +1,453 @@
+.compte-page {
+  min-height: 100dvh;
+  background: var(--color-background);
+  padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Navbar ─── */
+
+.compte-navbar {
+  height: 54px;
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  border-bottom: 1px solid rgba(58, 71, 87, 0.16);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.compte-navbar__back {
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.compte-navbar__back:hover {
+  background: var(--color-neutral-container);
+}
+
+.compte-navbar__back-icon {
+  transform: scaleX(-1);
+}
+
+.compte-navbar__title {
+  flex: 1;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin: 0;
+  line-height: 28px;
+}
+
+.compte-navbar__spacer {
+  width: 44px;
+  flex-shrink: 0;
+}
+
+/* ─── Contenu ─── */
+
+.compte-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 16px;
+  overflow-x: hidden;
+}
+
+/* ─── Chevron générique ─── */
+
+.compte-chevron {
+  flex-shrink: 0;
+  opacity: 0.55;
+}
+
+/* ─── Card profil ─── */
+
+.compte-profile-card {
+  background: var(--color-surface);
+  border-radius: 16px;
+  box-shadow: 0 4px 4px rgba(108, 129, 157, 0.5);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+
+.compte-profile-card:hover {
+  box-shadow: 0 4px 12px rgba(108, 129, 157, 0.4);
+}
+
+.compte-profile-avatar {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: #3a4757;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.compte-profile-avatar__letter {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 44px;
+  text-transform: uppercase;
+}
+
+.compte-profile-avatar__status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  background: var(--color-success);
+  border: 2px solid var(--color-surface);
+}
+
+.compte-profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.compte-profile-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin: 0 0 2px;
+  line-height: 24px;
+}
+
+.compte-profile-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.star-rating {
+  display: flex;
+  gap: 1px;
+}
+
+.star {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.star--full,
+.star--half {
+  color: var(--color-alert);
+}
+
+.star--empty {
+  color: rgba(21, 34, 51, 0.2);
+}
+
+.compte-profile-rating__count {
+  font-size: 12px;
+  color: rgba(21, 34, 51, 0.55);
+}
+
+/* ─── Wallet card ─── */
+
+.compte-wallet-card {
+  background: var(--color-surface);
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(108, 129, 157, 0.5);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px 8px 62px;
+  gap: 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  position: relative;
+  min-height: 80px;
+}
+
+.compte-wallet-card:hover {
+  box-shadow: 0 4px 12px rgba(108, 129, 157, 0.4);
+}
+
+.compte-wallet-card__ornament {
+  position: absolute;
+  left: -282px;
+  top: -159px;
+  width: 384.72px;
+  height: 416.87px;
+  pointer-events: none;
+}
+
+.compte-wallet-card__ornament img {
+  width: 100%;
+  height: 100%;
+}
+
+.compte-wallet-card__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.compte-wallet-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin: 0;
+  line-height: 24px;
+}
+
+.compte-wallet-card__amounts {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.compte-wallet-card__amount {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin: 0;
+  line-height: 32px;
+}
+
+.compte-wallet-card__sub {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-on-surface);
+  margin: 0;
+  line-height: 24px;
+}
+
+/* ─── Sections ─── */
+
+.compte-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.compte-section__label {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(21, 34, 51, 0.72);
+  margin: 0;
+  line-height: 20px;
+}
+
+/* ─── Cartes activités ─── */
+
+.compte-activities {
+  display: flex;
+  gap: 16px;
+}
+
+.compte-activity-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px;
+  border: 1px solid rgba(172, 184, 199, 0.56);
+  border-radius: 16px;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: background 0.1s;
+}
+
+.compte-activity-card:hover {
+  background: var(--color-neutral-container);
+}
+
+.compte-activity-card__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.compte-activity-card__name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  line-height: 24px;
+  flex: 1;
+}
+
+/* ─── Badge ─── */
+
+.compte-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-on-main);
+  background: var(--color-main);
+  min-width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  flex-shrink: 0;
+  border: 2px solid var(--color-surface);
+}
+
+/* ─── Liste (projets / mon compte) ─── */
+
+.compte-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.compte-list-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  margin: 0 -16px;
+  width: calc(100% + 32px);
+  border-bottom: 1px solid rgba(172, 184, 199, 0.56);
+  background: transparent;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: background 0.1s;
+}
+
+.compte-list-row:last-child {
+  border-bottom: none;
+}
+
+.compte-list-row:hover {
+  background: var(--color-neutral-container);
+}
+
+.compte-list-row__icon {
+  flex-shrink: 0;
+}
+
+.compte-list-row__text {
+  flex: 1;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: flex-start;
+  min-width: 0;
+}
+
+.compte-list-row__text--center {
+  justify-content: center;
+}
+
+.compte-list-row__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  line-height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.compte-list-row__sub {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-on-surface);
+  line-height: 16px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── Boutons ─── */
+
+.compte-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.compte-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: var(--radius-full);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  line-height: 24px;
+}
+
+.compte-btn--tinted {
+  background: var(--color-support-container);
+  color: var(--color-support);
+  border: none;
+}
+
+.compte-btn--tinted:hover {
+  background: var(--color-support-container-hovered);
+}
+
+.compte-btn--outlined {
+  background: transparent;
+  color: var(--color-support);
+  border: 1.5px solid var(--color-support);
+}
+
+.compte-btn--outlined:hover {
+  background: var(--color-support-container);
+}
+
+/* ─── Version ─── */
+
+.compte-version {
+  font-size: 10px;
+  font-weight: 400;
+  color: rgba(29, 31, 42, 0.72);
+  margin: 0;
+  line-height: 14px;
+  padding-bottom: 8px;
+}

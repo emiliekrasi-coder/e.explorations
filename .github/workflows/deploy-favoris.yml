@@ -1,9 +1,12 @@
-name: Deploy Favoris to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
-    paths: ['favoris/**', '.github/workflows/deploy-favoris.yml']
+    paths:
+      - 'favoris/**'
+      - 'wallet-unlock/**'
+      - '.github/workflows/deploy-favoris.yml'
 
 jobs:
   deploy:
@@ -22,9 +25,11 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: favoris/package-lock.json
+          cache-dependency-path: |
+            favoris/package-lock.json
+            wallet-unlock/package-lock.json
 
-      - name: Install dependencies
+      - name: Install favoris dependencies
         run: npm ci
         working-directory: favoris
 
@@ -32,20 +37,31 @@ jobs:
         run: npm run build
         working-directory: favoris
 
+      - name: Install wallet-unlock dependencies
+        run: npm ci
+        working-directory: wallet-unlock
+
+      - name: Build wallet-unlock
+        run: npm run build
+        working-directory: wallet-unlock
+
       - name: Assemble site
         run: |
           mkdir -p _site
-          # Copier tous les fichiers existants à la racine du repo (html, assets, etc.)
-          # sauf les dossiers techniques
+          # Copier les fichiers statiques à la racine (html, images, etc.)
+          # sauf les dossiers de projets buildés
           find . -maxdepth 1 \
             -not -name '.' \
             -not -name '_site' \
             -not -name '.git' \
             -not -name '.github' \
             -not -name 'favoris' \
+            -not -name 'wallet-unlock' \
             -exec cp -r {} _site/ \;
-          # Copier le build Next.js dans un sous-dossier favoris/
+          # Build favoris (Next.js static export)
           cp -r favoris/out _site/favoris
+          # Build wallet-unlock (Vite) → basePath /prototypes/2026-09-deblocage-wallet/
+          cp -r wallet-unlock/dist _site/2026-09-deblocage-wallet
 
       - uses: actions/configure-pages@v4
 

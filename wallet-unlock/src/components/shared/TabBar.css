@@ -20,11 +20,9 @@
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  padding: var(--spacing-sm) var(--spacing-sm);
+  padding: var(--spacing-sm);
   cursor: pointer;
   color: var(--color-on-surface);
-  opacity: 0.56;
-  transition: opacity var(--duration-short) var(--ease-standard);
 }
 
 .tab-bar__item span {
@@ -36,12 +34,31 @@
   text-overflow: ellipsis;
   width: 100%;
   text-align: center;
-}
-
-.tab-bar__item--active {
-  opacity: 1;
+  color: var(--color-on-surface);
 }
 
 .tab-bar__item--active span {
   font-weight: 700;
+}
+
+/* ─── Avatar initiale (Mon compte) ─── */
+
+.tab-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--color-neutral-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tab-avatar__letter {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-on-neutral-container);
+  text-transform: uppercase;
 }
