@@ -2,20 +2,20 @@ import './Home.css'
 import TabBar from '../shared/TabBar'
 import { products } from '../../data/products'
 
-const IMG_LOGO    = '/assets/home/logo.svg'
-const IMG_SEARCH  = '/assets/home/search.svg'
-const IMG_CAMERA  = '/assets/home/camera.svg'
-const IMG_MICRO   = '/assets/home/micro.svg'
-const IMG_HEART   = '/assets/home/heart.svg'
-const IMG_CHEVRON = '/assets/home/chevron.svg'
-const IMG_PUB     = '/assets/home/pub.png'
+const IMG_LOGO    = './assets/home/logo.svg'
+const IMG_SEARCH  = './assets/home/search.svg'
+const IMG_CAMERA  = './assets/home/camera.svg'
+const IMG_MICRO   = './assets/home/micro.svg'
+const IMG_HEART   = './assets/home/heart.svg'
+const IMG_CHEVRON = './assets/home/chevron.svg'
+const IMG_PUB     = './assets/home/pub.png'
 
 const CATEGORIES = [
-  { id: 'immo',      label: 'Immobilier',        icon: '/assets/home/cat-immo.svg' },
-  { id: 'vehicules', label: 'Véhicules',          icon: '/assets/home/cat-vehicules.svg' },
-  { id: 'vacances',  label: 'Locations vacances', icon: '/assets/home/cat-vacances.svg' },
-  { id: 'emploi',    label: 'Emploi',             icon: '/assets/home/cat-emploi.svg' },
-  { id: 'autres',    label: 'Autres',             icon: '/assets/home/cat-autres.svg' },
+  { id: 'immo',      label: 'Immobilier',        icon: './assets/home/cat-immo.svg' },
+  { id: 'vehicules', label: 'Véhicules',          icon: './assets/home/cat-vehicules.svg' },
+  { id: 'vacances',  label: 'Locations vacances', icon: './assets/home/cat-vacances.svg' },
+  { id: 'emploi',    label: 'Emploi',             icon: './assets/home/cat-emploi.svg' },
+  { id: 'autres',    label: 'Autres',             icon: './assets/home/cat-autres.svg' },
 ]
 
 const CONTINUE_CARDS = products.slice(0, 5)
