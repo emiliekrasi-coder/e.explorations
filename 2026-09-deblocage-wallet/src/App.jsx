@@ -7,6 +7,17 @@ import WalletHome from './components/wallet-home/WalletHome'
 const MONTHS_SHORT = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.']
 const MONTHS_CAP  = ['Jan.', 'Févr.', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.']
 
+function getProtoUser() {
+  const p = new URLSearchParams(window.location.search)
+  return {
+    phone:         p.get('phone')     ?? '00',
+    prenom:        p.get('prenom')    ?? '',
+    nom:           p.get('nom')       ?? '',
+    dateNaissance: p.get('naissance') ?? '',
+    adresse:       p.get('adresse')   ?? '',
+  }
+}
+
 const INITIAL_TRANSACTIONS = [
   {
     month: 'Sept. 2024',
@@ -29,6 +40,8 @@ const INITIAL_TRANSACTIONS = [
 export default function App() {
   const [screen, setScreen] = useState('recherche')
   const navigate = (tab) => { if (tab !== 'publier') setScreen(tab) }
+
+  const protoUser = getProtoUser()
 
   const [balance,       setBalance]       = useState(5000)
   const [locked,        setLocked]        = useState(true)
@@ -102,6 +115,7 @@ export default function App() {
           transferStep={transferStep}
           setTransferStep={setTransferStep}
           transactions={transactions}
+          protoUser={protoUser}
           onUnlock={() => setLocked(false)}
           onKycComplete={() => { setLocked(false); setKycPending(true) }}
           onGoToStep={() => {}}

@@ -317,7 +317,7 @@ function Dac7LearnMoreSheet({ onClose }) {
   )
 }
 
-function OtpScreen({ onBack, onSuccess, direction = 'up' }) {
+function OtpScreen({ onBack, onSuccess, phone, direction = 'up' }) {
   const SLOTS = 6
   const [digits, setDigits] = useState([])
   const [validated, setValidated] = useState(false)
@@ -358,7 +358,7 @@ function OtpScreen({ onBack, onSuccess, direction = 'up' }) {
           <h1 className="otp-screen__title">Vérifions votre numéro de téléphone</h1>
           <p className="otp-screen__subtitle">
             Saisissez le code reçu au{' '}
-            <strong>+33 6 ** ** ** 00</strong>
+            <strong>+33 6 ** ** ** {phone || '00'}</strong>
           </p>
         </div>
         <div className="otp-screen__fields-wrap">
@@ -639,7 +639,7 @@ const KYC_BACK_SCAN_BACK = {
   'permis-back-scan': 'permis-back',
 }
 
-function KycDataScreen({ onBack, onConfirm, onRetake, onImportDoc, onManualEntry, retakeLabel = 'Reprendre le recto', direction = 'forward' }) {
+function KycDataScreen({ onBack, onConfirm, onRetake, onImportDoc, onManualEntry, nom, prenom, dateNaissance, retakeLabel = 'Reprendre le recto', direction = 'forward' }) {
   return (
     <div className={`kyc-data-screen kyc-screen--${direction}`}>
       <div className="otp-screen__navbar">
@@ -666,15 +666,15 @@ function KycDataScreen({ onBack, onConfirm, onRetake, onImportDoc, onManualEntry
             <dl className="kyc-data-card__list">
               <div className="kyc-data-card__item">
                 <dt>Nom(s)</dt>
-                <dd>Martin</dd>
+                <dd>{nom || 'Martin'}</dd>
               </div>
               <div className="kyc-data-card__item">
                 <dt>Prénom(s)</dt>
-                <dd>Maëlys-Gaëlle</dd>
+                <dd>{prenom || 'Maëlys-Gaëlle'}</dd>
               </div>
               <div className="kyc-data-card__item">
                 <dt>Date de naissance</dt>
-                <dd>13 juillet 1990</dd>
+                <dd>{dateNaissance || '13 juillet 1990'}</dd>
               </div>
             </dl>
           </div>
@@ -1960,6 +1960,7 @@ function WalletKycStatusCard({ onLearnMore }) {
 export default function WalletHome({
   balance, locked, kycPending, completedSteps, steps, ibanMasked,
   transferStep, setTransferStep, transactions,
+  protoUser,
   onUnlock, onKycComplete, onGoToStep, onToggleLocked, onAddBalance, onReturnToWallet, onTabChange, onBack,
 }) {
   const stepsRemaining = 3 - completedSteps
@@ -2130,6 +2131,7 @@ export default function WalletHome({
       {kycScreen === 'otp' && (
         <OtpScreen
           direction={navDirection}
+          phone={protoUser?.phone}
           onBack={() => { kycNavigate(null); setShowUnlockSheet(true) }}
           onSuccess={() => kycNavigate('document-select', 'forward')}
         />
@@ -2171,6 +2173,9 @@ export default function WalletHome({
       {['cni-data','passport-data','permis-data'].includes(kycScreen) && (
         <KycDataScreen
           direction={navDirection}
+          nom={protoUser?.nom}
+          prenom={protoUser?.prenom}
+          dateNaissance={protoUser?.dateNaissance}
           retakeLabel={KYC_DATA_RETAKE_LABEL[kycScreen]}
           onBack={() => kycNavigate(KYC_DATA_BACK[kycScreen], 'back')}
           onImportDoc={() => {
@@ -2211,6 +2216,7 @@ export default function WalletHome({
       {kycScreen === 'cni-back-data' && (
         <KycAddressScreen
           direction={navDirection}
+          defaultValue={protoUser?.adresse}
           onBack={() => kycNavigate('cni-back-scan', 'back')}
           onConfirm={() => kycNavigate('iban', 'forward')}
           onRetake={() => kycNavigate('cni-back-scan', 'back')}
@@ -2223,6 +2229,7 @@ export default function WalletHome({
           direction={navDirection}
           confirmLabel="Valider"
           showRetake={false}
+          defaultValue={protoUser?.adresse}
           onBack={() => kycNavigate('passport-data', 'back')}
           onConfirm={() => kycNavigate('iban', 'forward')}
           onRetake={() => kycNavigate('passport-scan', 'back')}
