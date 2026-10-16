@@ -3,7 +3,7 @@ import Home from './components/home/Home'
 import MonCompte from './components/compte/MonCompte'
 import WalletHome from './components/wallet-home/WalletHome'
 
-const USERS_CSV = 'https://docs.google.com/spreadsheets/d/1T1v_0Dg8nCDsJYecwjmoLHZG00D1RgZFSeKngSVhna8/export?format=csv&gid=1356701939'
+const USERS_CSV = 'https://docs.google.com/spreadsheets/d/1T1v_0Dg8nCDsJYecwjmoLHZG00D1RgZFSeKngSVhna8/pub?gid=1356701939&single=true&output=csv'
 
 const MOIS_FR = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre']
 
