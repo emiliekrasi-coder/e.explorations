@@ -1,22 +1,19 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import Home from './components/home/Home'
 import MonCompte from './components/compte/MonCompte'
 import WalletHome from './components/wallet-home/WalletHome'
 
+const USERS_CSV = 'https://docs.google.com/spreadsheets/d/1ErdXd2FVc4AkN9Wnj4WDfqUtIr0H5ZBdf3j2Y8i4ofQ/pub?gid=0&single=true&output=csv'
+
+function parseCSV(text) {
+  const [header, ...rows] = text.trim().split('\n').map(r =>
+    r.split(',').map(c => c.trim().replace(/^"|"$/g, ''))
+  )
+  return rows.map(row => Object.fromEntries(header.map((h, i) => [h, row[i] ?? ''])))
+}
 
 const MONTHS_SHORT = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.']
 const MONTHS_CAP  = ['Jan.', 'Févr.', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.']
-
-function getProtoUser() {
-  const p = new URLSearchParams(window.location.search)
-  return {
-    phone:         p.get('phone')     ?? '00',
-    prenom:        p.get('prenom')    ?? '',
-    nom:           p.get('nom')       ?? '',
-    dateNaissance: p.get('naissance') ?? '',
-    adresse:       p.get('adresse')   ?? '',
-  }
-}
 
 const INITIAL_TRANSACTIONS = [
   {
@@ -41,7 +38,19 @@ export default function App() {
   const [screen, setScreen] = useState('recherche')
   const navigate = (tab) => { if (tab !== 'publier') setScreen(tab) }
 
-  const protoUser = getProtoUser()
+  const [protoUser, setProtoUser] = useState({ phone: '00', prenom: '', nom: '', dateNaissance: '', adresse: '' })
+
+  useEffect(() => {
+    const n = parseInt(window.location.hash.replace(/^#/, ''))
+    if (!n) return
+    fetch(USERS_CSV)
+      .then(r => r.text())
+      .then(csv => {
+        const user = parseCSV(csv).find(u => u.user_id === String(n))
+        if (user) setProtoUser({ phone: user.phone, prenom: user.prenom, nom: user.nom, dateNaissance: user.naissance, adresse: user.adresse })
+      })
+      .catch(() => {})
+  }, [])
 
   const [balance,       setBalance]       = useState(5000)
   const [locked,        setLocked]        = useState(true)
