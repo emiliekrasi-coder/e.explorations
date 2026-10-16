@@ -2,35 +2,7 @@ import { useState, useCallback, useEffect } from 'react'
 import Home from './components/home/Home'
 import MonCompte from './components/compte/MonCompte'
 import WalletHome from './components/wallet-home/WalletHome'
-
-const USERS_CSV = 'https://docs.google.com/spreadsheets/d/1T1v_0Dg8nCDsJYecwjmoLHZG00D1RgZFSeKngSVhna8/pub?gid=1356701939&single=true&output=csv'
-
-const MOIS_FR = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre']
-
-function toFrDate(s) {
-  if (!s || s === '/') return ''
-  const [dd, mm, yyyy] = s.split('/')
-  return `${parseInt(dd)} ${MOIS_FR[parseInt(mm) - 1]} ${yyyy}`
-}
-
-function parseCSV(text) {
-  const rows = text.trim().split('\n').map(r => {
-    const cells = []; let cur = '', inQ = false
-    for (const c of r) {
-      if (c === '"') inQ = !inQ
-      else if (c === ',' && !inQ) { cells.push(cur.trim()); cur = '' }
-      else cur += c
-    }
-    cells.push(cur.trim())
-    return cells
-  })
-  const hi = rows.findIndex(r => r.map(c => c.trim()).includes('user_id'))
-  if (hi === -1) return []
-  const headers = rows[hi].map(c => c.trim())
-  return rows.slice(hi + 1)
-    .filter(r => r.some(c => c !== ''))
-    .map(row => Object.fromEntries(headers.map((h, i) => [h, (row[i] || '').trim()])))
-}
+import { PROTO_USERS } from './proto-users.js'
 
 const MONTHS_SHORT = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.']
 const MONTHS_CAP  = ['Jan.', 'Févr.', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.']
@@ -63,19 +35,8 @@ export default function App() {
   useEffect(() => {
     const n = parseInt(window.location.hash.replace(/^#/, ''))
     if (!n) return
-    fetch(USERS_CSV)
-      .then(r => r.text())
-      .then(csv => {
-        const user = parseCSV(csv).find(u => u['user_id'] === String(n))
-        if (user) setProtoUser({
-          phone:         (user['Téléphone'] || '00').slice(-2),
-          prenom:        user['Prénom']  || '',
-          nom:           user['Nom']     || '',
-          dateNaissance: toFrDate(user['DATE DE NAISSANCE'] || ''),
-          adresse:       [user['Adresse'], user['Code Postal'], user['Ville']].filter(Boolean).join(', '),
-        })
-      })
-      .catch(() => {})
+    const user = PROTO_USERS.find(u => u.user_id === String(n))
+    if (user) setProtoUser(user)
   }, [])
 
   const [balance,       setBalance]       = useState(5000)
