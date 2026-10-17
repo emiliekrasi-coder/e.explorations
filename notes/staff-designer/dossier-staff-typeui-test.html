@@ -519,7 +519,7 @@
       .ed-outer { max-width: 100%; }
       .ed-header { grid-template-columns: 1fr; gap: 16px; }
       .ed-num { font-size: 80px; }
-      .ed-title { font-size: 40px; }
+      .ed-title { font-size: 80px; }
 
       /* PARCOURS */
       .ft-cols { grid-template-columns: 1fr !important; }
@@ -536,7 +536,13 @@
       /* PANNEAUX */
       .panel { width: 100%; }
       .panel-body { padding: 40px 24px 80px; }
-      .panel-title { font-size: 24px; }
+      .panel-title { font-size: 40px; }
+      .panel-body div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+      .panel-body div[style*="grid-template-columns"] img { width: 100% !important; max-width: 100% !important; }
+      .panel-body div[style*="grid-template-columns"] div[style*="flex"] { flex-wrap: wrap; }
+      .panel-body div[style*="grid-template-columns"] div[style*="flex"] img { width: 100% !important; flex-shrink: 1 !important; }
+      .panel-body figure img { width: 100% !important; }
+      .panel-body figure { align-items: stretch !important; }
 
       /* ATTENDUS */
       #attendus-composant { grid-template-columns: 1fr !important; }
