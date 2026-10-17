@@ -527,8 +527,12 @@
 
       /* PARCOURS */
       .ft-cols { grid-template-columns: 1fr !important; }
-      .tl-list { grid-template-columns: 1fr; gap: 24px; }
-      .tl-col-dot { display: none; }
+      .tl-list { display: flex; flex-direction: column; gap: 0; position: relative; padding-left: 28px; }
+      .tl-list::before { content: ''; position: absolute; left: 8px; top: 10px; bottom: 10px; width: 3px; background: var(--bordeaux); }
+      .tl-item { position: relative; padding-bottom: 28px; }
+      .tl-item:last-child { padding-bottom: 0; }
+      .tl-col-dot { display: flex !important; position: absolute; left: -28px; top: 2px; height: 20px; width: 20px; }
+      .tl-col-dot::before { display: none !important; }
       .tl-col-date { padding-bottom: 4px; }
       .tl-col-label { padding-top: 0; padding-right: 0; }
 
