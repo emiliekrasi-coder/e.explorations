@@ -512,14 +512,18 @@
 
       /* HERO */
       #hero { padding: calc(var(--nav-h) + 32px) 24px 60px; }
-      .hero-title { font-size: 80px; }
+      .hero-title { font-size: 80px; overflow-wrap: break-word; word-break: break-word; }
+
+      /* STATS */
+      .stats-row { flex-direction: column; gap: 16px; }
+      .s-stat { flex: none; min-width: 0; }
 
       /* SECTIONS */
       .ed-section { padding: 64px 24px; }
       .ed-outer { max-width: 100%; }
       .ed-header { grid-template-columns: 1fr; gap: 16px; }
-      .ed-num { font-size: 80px; }
-      .ed-title { font-size: 80px; }
+      .ed-num { font-size: 80px; overflow-wrap: break-word; word-break: break-word; }
+      .ed-title { font-size: 80px; overflow-wrap: break-word; word-break: break-word; }
 
       /* PARCOURS */
       .ft-cols { grid-template-columns: 1fr !important; }
