@@ -191,7 +191,7 @@
     .role-keywords { display: flex; justify-content: space-between; border-top: none; margin-top: 48px; padding-top: 0; }
     .role-keyword { padding: 0; }
     .role-keyword-word { font-size: 40px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--bordeaux); display: block; margin-bottom: 0; white-space: nowrap; }
-    @media (max-width: 768px) { .role-keywords { grid-template-columns: 1fr 1fr; gap: 32px; } .role-keyword-word { font-size: 24px; } }
+    @media (max-width: 768px) { .role-keywords { grid-template-columns: 1fr; gap: 24px; } .role-keyword-word { font-size: 24px; } }
 
     /* ── PROJETS ─────────────────────────────── */
     #projets { padding-top: var(--nav-h); }
@@ -512,7 +512,7 @@
 
       /* HERO */
       #hero { padding: calc(var(--nav-h) + 32px) 24px 60px; }
-      .hero-title { font-size: 56px; }
+      .hero-title { font-size: 80px; }
 
       /* SECTIONS */
       .ed-section { padding: 64px 24px; }
@@ -540,7 +540,8 @@
 
       /* ATTENDUS */
       #attendus-composant { grid-template-columns: 1fr !important; }
-      .subsec-title { font-size: 24px; }
+      #att-detail { display: none !important; }
+      .subsec-title { font-size: 32px; }
       .role-sub-label { font-size: 24px; }
       .ft-title { font-size: 24px; }
       .att-pane-title { font-size: 24px; }
