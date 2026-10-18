@@ -54,7 +54,7 @@
     html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       font-family: 'LBCDenimINK', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background: var(--cream);
+      background: #ffffff;
       color: var(--ink);
       overflow-x: hidden;
     }
@@ -63,8 +63,10 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0;
       height: var(--nav-h);
-      background: var(--cream);
-      border-bottom: 1px solid var(--ink-20);
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid rgba(247, 244, 240, 0.4);
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 48px;
       z-index: 100;
@@ -87,11 +89,11 @@
     #hero {
       background: var(--ink); color: var(--cream);
       min-height: 100vh;
-      display: flex; align-items: flex-end;
+      display: flex; align-items: flex-end; justify-content: center;
       padding: calc(var(--nav-h) + 48px) 64px 80px;
       position: relative;
     }
-    .hero-inner { max-width: 1200px; width: 100%; }
+    .hero-inner { max-width: 1200px; width: 100%; margin: 0 auto; }
     .hero-eyebrow {
       font-size: 14px; font-weight: 600;
       letter-spacing: 0;
@@ -120,12 +122,11 @@
 
     /* ── SECTION ÉDITORIALE ───────────────────── */
     .ed-section {
-      padding: 120px 64px;
-      border-bottom: 1px solid var(--ink-20);
+      padding: 120px 0;
     }
     .ed-section.bg-ink { background: var(--ink); color: var(--cream); --ink-20: rgba(247,244,240,0.15); --ink-60: rgba(247,244,240,0.6); }
-    .ed-outer { max-width: 1200px; margin: 0 auto; }
-    .ed-header { display: grid; grid-template-columns: 180px 1fr; gap: 64px; margin-bottom: 72px; }
+    .ed-outer { max-width: 1200px; margin: 0 auto; padding: 0 64px; }
+    .ed-header { display: grid; grid-template-columns: 180px 1fr; gap: 64px; margin-bottom: 88px; }
     .ed-num {
       font-size: 160px; font-weight: 700; line-height: 0.8;
       letter-spacing: -0.04em; opacity: 0.07; user-select: none;
@@ -134,7 +135,7 @@
     .ed-header-right { display: flex; flex-direction: column; justify-content: flex-end; }
     .ed-label {
       font-size: 14px; font-weight: 600; letter-spacing: 0;
-      opacity: 0.72; margin-bottom: 12px;
+      opacity: 0.72; margin-bottom: 24px;
     }
     .ed-title {
       font-size: 80px; font-weight: 700; line-height: 0.92;
@@ -144,20 +145,20 @@
 
     /* ── PARCOURS ────────────────────────────── */
     .ft-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-bottom: 48px; }
-    .ft-block { border-top: 2px solid var(--bordeaux); padding-top: 24px; }
+    .ft-block { padding-top: 24px; }
     .ft-title {
       font-size: 24px; font-weight: 700; letter-spacing: -0.02em;
-      color: var(--bordeaux); margin-bottom: 20px; line-height: 1.2;
+      color: var(--bordeaux); margin-bottom: 24px; line-height: 1.2;
     }
-    .ft-row { margin-bottom: 14px; }
-    .ft-row .lbl { font-size: 14px; font-weight: 600; letter-spacing: 0; opacity: 0.72; margin-bottom: 3px; }
+    .ft-row { margin-bottom: 16px; }
+    .ft-row .lbl { font-size: 18px; font-weight: 600; letter-spacing: 0; opacity: 0.72; margin-bottom: 8px; }
     .ft-row .val { font-size: 16px; line-height: 1.5; }
 
     .transverse-block {
-      border-top: 1px solid var(--ink-20); padding-top: 32px;
+      padding-top: 32px;
       margin-bottom: 40px;
     }
-    .transverse-block .lbl { font-size: 14px; font-weight: 600; letter-spacing: 0; opacity: 0.55; margin-bottom: 12px; }
+    .transverse-block .lbl { font-size: 14px; font-weight: 600; letter-spacing: 0; opacity: 0.55; margin-bottom: 24px; }
     .transverse-block p { font-size: 24px; font-weight: 600; line-height: 1.35; letter-spacing: -0.015em; }
 
     .signal-block {
@@ -167,7 +168,7 @@
     .signal-block .ttl {
       font-size: 14px; font-weight: 700; letter-spacing: 0;
       color: var(--bordeaux);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
     .signal-block ul { list-style: none; }
     .signal-block li {
@@ -178,52 +179,71 @@
     .signal-block li { padding-left: 0; }
 
     /* ── RÔLE STAFF ──────────────────────────── */
-    .role-sub-label { font-size: 40px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; padding-top: 48px; border-top: none; margin-bottom: 12px; }
+    .role-sub-label { font-size: 40px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; padding-top: 48px; border-top: none; margin-bottom: 24px; }
     .role-sub-label:first-child { padding-top: 0; }
     .role-sub-label + .role-bloc { border-top: none; padding-top: 0; }
     .role-bloc { border-top: none; padding: 24px 0; }
     .role-mot {
       font-size: 24px; font-weight: 700; line-height: 1.1;
-      letter-spacing: -0.02em; color: var(--bordeaux);
-      margin-bottom: 10px;
+      letter-spacing: -0.02em; color: var(--ink);
+      margin-bottom: 16px;
     }
-    .role-text { font-size: 18px; line-height: 1.65; max-width: 660px; }
+    .role-text { font-size: 18px; line-height: 1.65; max-width: 580px; }
     .role-keywords { display: flex; justify-content: space-between; border-top: none; margin-top: 48px; padding-top: 0; }
     .role-keyword { padding: 0; }
     .role-keyword-word { font-size: 40px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--bordeaux); display: block; margin-bottom: 0; white-space: nowrap; }
     @media (max-width: 768px) { .role-keywords { flex-direction: column; align-items: flex-start; gap: 24px; } .role-keyword-word { font-size: 40px; } }
 
     /* ── PROJETS ─────────────────────────────── */
-    #projets { padding-top: var(--nav-h); }
-    .projets-header { padding: 120px 64px 80px; border-bottom: 1px solid var(--ink-20); }
-    .projets-grid { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink-20); }
+    #projets { padding-top: var(--nav-h); background: #ffffff; }
+    .projets-header { max-width: 1200px; margin: 0 auto; padding: 64px 64px 80px; }
+    .projets-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 0 40px 40px; overflow: visible; }
 
     .projet-card {
-      height: 520px; padding: 56px 48px;
-      display: flex; flex-direction: column; justify-content: flex-end;
+      height: 520px;
+      display: flex; flex-direction: row; align-items: stretch;
       cursor: pointer; position: relative; overflow: hidden;
-      transition: filter 0.25s, transform 0.25s;
-      border-right: 1px solid rgba(20,17,16,0.12);
+      border-radius: 20px;
+      border: none;
+      box-shadow: 0 4px 16px rgba(20,17,16,0.18), 0 12px 40px rgba(20,17,16,0.12);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      will-change: transform;
     }
-    .projet-card:last-child { border-right: none; }
-    .projet-card:hover { filter: brightness(1.12); transform: translateY(-4px); }
+    .pc-content {
+      flex: 1; display: flex; flex-direction: column; justify-content: flex-start;
+      padding: 48px 48px 48px; position: relative; overflow: hidden;
+    }
+    .pc-image {
+      width: 42%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px 24px 24px 0;
+    }
+    .pc-image img {
+      max-width: 100%; max-height: 100%; display: block;
+      border-radius: 8px;
+    }
+    .projet-card:hover {
+      filter: none;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(20,17,16,0.22), 0 20px 56px rgba(20,17,16,0.14);
+    }
     .projet-card-1 { background: #690b0b; color: var(--cream); }
     .projet-card-3 { background: #872e1f; color: var(--cream); }
 
     .pc-bgnum {
-      font-size: 200px; font-weight: 700; line-height: 1;
-      letter-spacing: -0.04em; color: var(--cream);
-      opacity: 0.08; position: absolute; top: 24px; right: 32px;
+      font-size: 40px; font-weight: 700; line-height: 1;
+      letter-spacing: -0.02em; color: var(--cream);
+      opacity: 0.6; margin-bottom: 16px;
       user-select: none;
     }
     .pc-tag {
-      font-size: 14px; font-weight: 700; letter-spacing: 0;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
       color: rgba(247,244,240,0.6);
-      margin-bottom: 14px; position: relative;
+      margin-bottom: 16px; position: relative;
     }
     .pc-title {
       font-size: 40px; font-weight: 700; line-height: 1.0;
-      letter-spacing: -0.03em; margin-bottom: 16px;
+      letter-spacing: -0.03em; margin-bottom: 16px; margin-top: auto;
       position: relative; color: var(--cream);
     }
     .pc-excerpt {
@@ -232,82 +252,128 @@
       position: relative;
     }
     .pc-btn {
-      margin-top: 28px; display: inline-flex; align-items: center;
-      gap: 8px; font-size: 14px; font-weight: 700;
-      letter-spacing: 0;
+      margin-top: 32px; display: inline-flex; align-items: center;
+      gap: 8px; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
       color: rgba(247,244,240,0.8); position: relative;
     }
-    .pc-btn::after { content: '→'; font-size: 14px; }
+    .pc-btn::after { content: '→'; font-size: 15px; }
 
     /* ── PANNEAU LATÉRAL ─────────────────────── */
     .overlay {
       display: none; position: fixed; inset: 0;
-      background: rgba(20,17,16,0.5); z-index: 200;
+      background: rgba(20,17,16,0.3); z-index: 200;
       opacity: 0; transition: opacity 0.3s;
     }
     .overlay.open { display: block; opacity: 1; }
-
     .panel {
-      position: fixed; right: 0; top: 0; bottom: 0;
-      width: 80%; background: var(--cream); z-index: 201;
-      transform: translateX(100%);
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: fixed; inset: 16px;
+      width: auto; background: var(--cream); z-index: 201;
+      border-radius: 16px;
+      box-shadow: 0 8px 48px rgba(20,17,16,0.24);
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
       overflow-y: auto;
+      display: block;
     }
-    .panel.open { transform: translateX(0); }
+    .panel.open {
+      opacity: 1; transform: translateY(0);
+      pointer-events: auto;
+    }
 
     .panel-bar {
-      position: sticky; top: 0; background: var(--cream);
-      border-bottom: 1px solid var(--ink-20);
-      padding: 18px 40px;
-      display: flex; justify-content: space-between; align-items: center;
-      z-index: 10;
+      position: sticky; top: 0;
+      display: flex; justify-content: flex-end;
+      padding: 20px 20px 0;
+      z-index: 10; pointer-events: none;
+      background: none;
     }
-    .panel-bar-tag {
-      font-size: 14px; font-weight: 700; letter-spacing: 0;
-      color: var(--bordeaux);
-    }
+    .panel-bar-tag { display: none; }
     .panel-close {
-      font-size: 14px; font-weight: 700; letter-spacing: 0;
+      pointer-events: auto;
+      background: var(--cream-dark);
+      border: 1px solid var(--ink-20);
+      border-radius: 32px;
+      width: 48px; height: 48px;
       cursor: pointer;
-      color: var(--ink); background: none; border: none;
-      display: flex; align-items: center; gap: 6px;
+      color: var(--ink);
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.25s ease;
+      font-size: 18px; font-weight: 400;
     }
-    .panel-close::before { content: '←'; font-size: 14px; }
+    .panel-close:hover { opacity: 0.6; }
+    #panel1 .panel-close, #panel3 .panel-close { background: rgba(247,244,240,0.9); }
+    .panel-nav {
+      padding: 48px 64px 80px; max-width: 1200px; margin: 0 auto;
+      display: flex;
+    }
+    .panel-nav-btn {
+      font-size: 15px; font-weight: 600;
+      color: var(--ink); background: none; border: none;
+      padding: 0; cursor: pointer;
+      opacity: 1;
+      transition: opacity 0.25s ease;
+    }
+    .panel-nav-btn:hover { opacity: 0.5; }
+    .panel-nav-next { margin-left: auto; }
 
-    .panel-body { padding: 60px 56px 100px; }
+    .panel-body { padding: 60px 64px 100px; max-width: 1200px; margin: 0 auto; }
     .panel-title {
-      font-size: 40px; font-weight: 700; line-height: 0.93;
+      font-size: 80px; font-weight: 700; line-height: 0.93;
       letter-spacing: -0.03em; margin-bottom: 64px;
     }
 
-    .p-sec { margin-bottom: 56px; border-top: 1px solid var(--ink-20); padding-top: 32px; }
+    .p-sec { margin-bottom: 64px; padding-top: 32px; }
     .p-sec-label {
-      font-size: 24px; font-weight: 700; letter-spacing: -0.02em;
-      line-height: 1.2; color: var(--bordeaux);
-      margin-bottom: 10px; text-transform: none;
+      font-size: 40px; font-weight: 700; letter-spacing: -0.03em;
+      line-height: 1.1; color: #141110;
+      margin-bottom: 16px; text-transform: none;
     }
     .p-sec-title {
       font-size: 16px; font-weight: 400; letter-spacing: 0;
-      line-height: 24px; margin-bottom: 20px; opacity: 0.72;
+      line-height: 24px; margin-bottom: 24px; opacity: 0.72;
     }
     .p-text { font-size: 16px; line-height: 1.7; margin-bottom: 16px; max-width: 580px; }
     .p-list { font-size: 16px; line-height: 1.7; margin: 0 0 16px 20px; max-width: 560px; }
     .p-list li { margin-bottom: 8px; }
 
     .stats-row { display: flex; gap: 28px; margin: 32px 0; flex-wrap: wrap; }
-    .s-stat { flex: 1; min-width: 120px; border-top: 2px solid var(--bordeaux); padding-top: 14px; }
+    .s-stat { flex: 1; min-width: 120px; padding-top: 16px; }
+    img[alt="Démo hackathon messagerie action"] { flex-shrink: 0; }
+    .impact-layout { display: flex; align-items: flex-start; }
+    .impact-layout .impact-text { flex-shrink: 1; flex-grow: 0; flex-basis: 500px; min-width: 0; }
+    .impact-layout .impact-img { flex-shrink: 0; flex-grow: 0; flex-basis: 260px; width: 260px; margin-left: 80px; border-radius: 16px; display: block; }
+    @media (max-width: 768px) {
+      .mobile-center { width: 100%; }
+      .screens-row { justify-content: center !important; flex-direction: row !important; gap: 8px !important; width: 100% !important; }
+      .panel-body .screens-row img { flex: 1 1 0 !important; min-width: 0 !important; max-width: 120px !important; width: 0 !important; margin: 0 !important; align-self: auto !important; }
+      .panel-body .photos-col { align-items: center !important; width: 100% !important; }
+      .panel-body .photos-col figure { max-width: 300px; width: 100%; margin: 0 auto !important; }
+      .panel-body .photos-col figure img { width: 100% !important; max-width: 100% !important; margin: 0 !important; align-self: auto !important; }
+      .impact-layout { flex-direction: column; }
+      .impact-layout .impact-text { width: 100%; }
+      .impact-layout .impact-img { width: 100%; max-width: 300px; margin-left: auto; margin-right: auto; }
+    }
     .s-stat-num {
       font-size: 80px; font-weight: 700; line-height: 1;
       letter-spacing: -0.03em; color: var(--bordeaux);
     }
-    .s-stat-lbl { font-size: 14px; line-height: 1.4; opacity: 0.75; margin-top: 6px; }
+    .s-stat-lbl { font-size: 14px; line-height: 1.4; opacity: 0.75; margin-top: 8px; }
 
     blockquote {
-      border-left: 3px solid var(--bordeaux);
-      padding: 4px 0 4px 20px; margin: 24px 0;
+      display: flex; align-items: flex-start; gap: 8px;
+      padding: 0; margin: 24px 0;
     }
-    blockquote p { font-size: 18px; font-weight: 600; line-height: 1.4; font-style: italic; }
+    blockquote::before {
+      content: "\201C";
+      flex-shrink: 0;
+      font-size: 80px; font-weight: 700; line-height: 1;
+      color: var(--bordeaux); font-style: normal;
+      pointer-events: none;
+    }
+    blockquote p { font-size: 24px; font-weight: 400; line-height: 1.4; max-width: 580px; }
     blockquote cite { font-size: 14px; display: block; margin-top: 8px; opacity: 0.75; font-style: normal; }
 
     .img-ph {
@@ -326,7 +392,7 @@
 
     .pos-item {
       border-top: none; padding: 48px 0;
-      display: grid; grid-template-columns: 240px 1fr; gap: 56px;
+      display: grid; grid-template-columns: 24px 1fr; gap: 56px;
     }
     .pos-num {
       font-size: 40px; font-weight: 700; letter-spacing: -0.04em;
@@ -334,28 +400,34 @@
     }
     .pos-title {
       font-size: 24px; font-weight: 700; letter-spacing: -0.02em;
-      line-height: 1.1; margin-bottom: 14px;
+      line-height: 1.1; margin-bottom: 16px;
     }
     .pos-item > div:last-child { max-width: 620px; }
-    .pos-text { font-size: 16px; line-height: 1.65; margin-bottom: 14px; }
+    .pos-text { font-size: 16px; line-height: 1.65; margin-bottom: 16px; max-width: 580px; }
     .pos-meta-lbl {
       font-size: 14px; font-weight: 700; letter-spacing: 0;
-      opacity: 0.55; margin-bottom: 4px;
+      opacity: 0.55; margin-bottom: 8px;
     }
     .pos-meta-val { font-size: 14px; line-height: 1.5; margin-bottom: 16px; }
     .pos-result {
-      background: var(--cream-dark); padding: 16px 20px;
-      font-size: 16px; line-height: 1.5; border-radius: 8px;
+      background: transparent; padding: 0 0 0 20px;
+      font-size: 16px; font-weight: 600; line-height: 1.4;
+      border-left: 2px solid var(--bordeaux);
     }
     .pos-result strong { color: var(--bordeaux); }
+    .pos-result, .pos-meta-val, .att-pane-body li,
+    .ft-row .val, .transverse-block p { max-width: 580px; }
+    .ed-section p, .ed-section li, .panel-body p, .panel-body li { max-width: 580px; }
+    .vb-text p, .vb-zone p, .vb-attr-name, .vb-attr-role { max-width: none; }
+    .pos-title, .subsec-title, .att-pane-title, .panel-title { max-width: 620px; }
 
     /* ── FEEDBACKS ────────────────────────────  */
     .feedback-item {
-      border-top: 1px solid var(--ink-20); padding: 56px 0;
+      padding: 56px 0;
       display: grid; grid-template-columns: 220px 1fr; gap: 64px;
     }
-    .fb-name { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 4px; }
-    .fb-role { font-size: 14px; opacity: 0.75; line-height: 1.4; margin-bottom: 10px; }
+    .fb-name { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 8px; }
+    .fb-role { font-size: 14px; opacity: 0.75; line-height: 1.4; margin-bottom: 16px; }
     .fb-ctx { font-size: 18px; font-style: italic; opacity: 0.72; margin-bottom: 16px; }
     .fb-badges { display: flex; flex-direction: column; gap: 6px; margin-top: 16px; }
     .badge {
@@ -365,42 +437,62 @@
       display: inline-block; width: fit-content; border-radius: 4px;
     }
     .fb-verbatim { font-size: 16px; line-height: 1.72; }
-    .fb-verbatim p { margin-bottom: 18px; }
+    .fb-verbatim p { margin-bottom: 16px; }
     .fb-verbatim p:last-child { margin: 0; }
 
 
     /* ── COMPOSANT VERBATIM ───────────────────── */
-    .vb-composant { border: 1px solid var(--ink-20); border-radius: 8px; overflow: hidden; }
-    .vb-cards-row { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .vb-composant { display: flex; flex-direction: column; align-items: center; }
+
+    /* Pill tabs */
+    .vb-pill {
+      display: inline-flex; gap: 8px; padding: 4px;
+      background: rgba(247,244,240,0.3);
+      border: 1px solid #D7D3D0;
+      border-radius: 16px;
+      margin-bottom: 40px;
+      width: 830px; max-width: 100%;
+    }
     .vb-card {
-      padding: 28px 24px; cursor: pointer;
-      border-right: 1px solid var(--ink-20);
-      transition: background 0.18s;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 4px; padding: 16px; min-width: 160px; flex: 1;
+      border-radius: 12px; border: 1.5px solid transparent;
+      cursor: pointer; transition: background 0.4s ease, border-color 0.4s ease;
+      text-align: center;
     }
-    .vb-card:last-child { border-right: none; }
-    .vb-card:hover:not(.active) { background: rgba(20,17,16,0.03); }
-    .vb-card.active { background: rgba(105,11,11,0.05); box-shadow: inset 0 -2px 0 var(--bordeaux); }
-    .vb-card-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; margin-bottom: 12px; background: var(--cream-dark); }
-    .vb-card-avatar img { width: 44px; height: 44px; object-fit: cover; display: block; }
-    .vb-card-name { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 4px; }
-    .vb-card-role { font-size: 14px; line-height: 1.45; opacity: 0.72; margin-bottom: 10px; }
-    .vb-card-ctx { font-size: 14px; font-style: italic; opacity: 0.6; margin-bottom: 16px; line-height: 1.45; }
-    .vb-badges { display: flex; flex-direction: column; gap: 5px; }
-    .vb-zone { border-top: 1px solid var(--ink-20); padding: 40px 48px; min-height: 260px; }
-    .vb-ctx-line {
-      font-size: 18px; font-style: italic; opacity: 0.6;
-      margin-bottom: 20px; line-height: 1.45;
-    }
-    .vb-text { font-size: 16px; line-height: 1.72; }
-    .vb-text p { margin-bottom: 18px; }
-    .vb-text p:last-child { margin: 0; }
+    .vb-card:hover:not(.active) { background: #F1EDE6; }
+    .vb-card.active { background: var(--cream); border-color: var(--bordeaux); }
+    .vb-card-avatar { width: 32px; height: 32px; border-radius: 50%; overflow: hidden; background: var(--cream-dark); margin-bottom: 4px; }
+    .vb-card-avatar img { width: 32px; height: 32px; object-fit: cover; display: block; }
+    .vb-card-name { font-size: 14px; font-weight: 500; line-height: 1.4; }
+    .vb-card-role { font-size: 11px; line-height: 1.4; opacity: 0.72; }
+
+    /* Zone verbatim */
+    .vb-zone { width: 100%; max-width: 800px; }
+    .vb-text { font-size: 16px; line-height: 1.72; text-align: center; display: flex; flex-direction: column; align-items: center; width: 830px; max-width: 100%; }
+    .vb-text p { margin-bottom: 16px; text-align: center; }
+    .vb-text p:last-of-type { margin-bottom: 0; }
+    .vb-quote-icon { font-size: 80px; font-weight: 700; color: var(--bordeaux); line-height: 0.6; margin-bottom: -16px; }
+    .vb-separator { display: none; }
+    .vb-ctx-line { font-size: 12px; font-weight: 600; letter-spacing: 0; opacity: 0.6; text-align: center; margin-top: 16px; margin-bottom: 0; }
+    .vb-badges-row { margin-top: 16px !important; }
+    .vb-attribution { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 24px; }
+    .vb-attr-photo { width: 64px; height: 64px; border-radius: 50%; overflow: hidden; object-fit: cover; }
+    .vb-attr-name { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; }
+    .vb-attr-role { font-size: 14px; font-weight: 600; opacity: 0.72; }
 
     /* ── FOOTER ───────────────────────────────  */
+    #attendus { background: linear-gradient(to bottom, #ffffff 0%, #F7F4F0 600px, #F7F4F0 100%); }
+    #feedbacks { background: #F7F4F0; }
+
     footer {
-      padding: 80px 64px;
+      padding: 80px 0;
       background: var(--ink); color: var(--cream);
-      display: flex; justify-content: space-between; align-items: center;
       border-top: 1px solid rgba(247,244,240,0.1);
+    }
+    .foot-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 64px;
+      display: flex; justify-content: space-between; align-items: center;
     }
     .foot-name { font-size: 40px; font-weight: 700; letter-spacing: -0.025em; }
     .foot-meta { font-size: 14px; opacity: 0.5; text-align: right; line-height: 1.6; }
@@ -409,20 +501,20 @@
 
     /* ── ATTENDUS INTERACTIF ──────────────────── */
     #attendus-composant { align-items: stretch; }
-    #att-cards-col { display: flex; flex-direction: column; align-self: stretch; }
+    #att-cards-col { display: flex; flex-direction: column; align-self: stretch; gap: 4px; padding: 4px; background: rgba(247,244,240,0.3); border: 1px solid #D7D3D0; border-radius: 16px; }
     #att-cards-col .att-card { flex: 1; }
-    #att-detail { min-height: 0; }
+    #att-detail { min-height: 0; border: 1px solid #D7D3D0; border-radius: 16px; }
 
     .att-card {
       padding: 14px 20px; cursor: pointer;
-      border-bottom: 1px solid var(--ink-20);
-      transition: background 0.15s;
+      transition: background 0.2s ease, border-color 0.2s ease;
       display: flex; flex-direction: column; gap: 4px;
+      border-radius: 12px;
+      border: 1.5px solid transparent;
     }
-    .att-card:last-child { border-bottom: none; }
-    .att-card:hover { background: var(--cream-dark); }
-    .att-card.active { background: white; border-left: 3px solid var(--bordeaux); padding-left: 17px; }
-    .att-card-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+    .att-card:hover { background: #F1EDE6; }
+    .att-card.active { background: var(--cream); border-color: var(--bordeaux); }
+    .att-card-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
     .att-card-num {
       font-size: 14px; font-weight: 700; letter-spacing: 0;
       color: var(--bordeaux); opacity: 0.5;
@@ -433,7 +525,7 @@
     }
     .att-indicator {
       font-size: 16px; font-weight: 700; letter-spacing: 0;
-      color: var(--bordeaux); margin-bottom: 28px;
+      color: var(--bordeaux); margin-bottom: 32px;
     }
     .att-pane-title {
       font-size: 40px; font-weight: 700; letter-spacing: -0.03em;
@@ -444,51 +536,62 @@
     }
     .att-pane-body .att-sub {
       font-size: 16px; font-weight: 700; letter-spacing: 0;
-      color: var(--bordeaux); margin-bottom: 10px;
+      color: var(--bordeaux); margin-bottom: 16px;
     }
     .att-pane-body ul { list-style: none; }
     .att-pane-body a { color: var(--bordeaux); text-decoration: underline; text-underline-offset: 2px; }
     .att-pane-body a:hover { opacity: 0.75; }
+    .p-list a, .p-text a { color: var(--bordeaux); text-decoration: underline; text-underline-offset: 2px; }
     .att-pane-body li {
       font-size: 16px; line-height: 1.55; padding-left: 14px;
-      position: relative; margin-bottom: 6px; color: var(--ink);
+      position: relative; margin-bottom: 8px; color: var(--ink);
     }
     .att-pane-body li::before {
       content: '·'; position: absolute; left: 0;
       color: var(--bordeaux); font-weight: 700; font-size: 18px; line-height: 1.3;
     }
+    @media (max-width: 1200px) {
+      .panel-body div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+      .panel-body img[style*="flex-shrink"] { width: min(400px, 100%) !important; max-width: 100% !important; height: auto !important; flex-shrink: 1 !important; }
+      .panel-body div[style*="flex"] { flex-wrap: wrap; justify-content: center; }
+    }
+
+    @media (max-width: 1000px) {
+      .panel-body .stats-row { flex-direction: column; gap: 16px; }
+    }
+
     @media (max-width: 768px) {
       #attendus-composant { grid-template-columns: 1fr !important; }
-      #att-cards-col { border-right: none; }
+
       #att-detail { display: none; }
       .att-pane-body { grid-template-columns: 1fr; gap: 24px; }
-      .att-accordion { padding: 20px 20px 24px; background: rgba(105,11,11,0.04); border-top: 2px solid var(--bordeaux); border-bottom: 1px solid var(--ink-20); }
-      .att-accordion .att-pane-title { font-size: 18px; margin-bottom: 20px; }
+      .att-accordion { padding: 20px 20px 24px; background: transparent; border: 1px solid #D7D3D0; border-radius: 16px; margin-top: 8px; }
+      .att-accordion .att-pane-title { font-size: 18px; margin-bottom: 24px; }
     }
 
     /* ── BADGES ──────────────────────────────── */
     .att-badge {
       display: inline-block; font-size: 12px; font-weight: 500; line-height: 16px;
       letter-spacing: 0;
-      padding: 4px 10px; border-radius: 4px;
+      padding: 3px 10px; border-radius: 100px;
     }
     .badge-demonstre { background: #690B0B; color: #FFFFFF; }
     .badge-en-cours { background: #DDD0C0; color: #141110; }
 
     /* ── TIMELINE ─────────────────────────────── */
     .timeline-block { margin: 48px 0; }
-    .tl-label { font-size: 40px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: var(--ink); margin-bottom: 24px; }
+    .tl-label { font-size: 40px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: var(--ink); margin-bottom: 40px; }
     .tl-list { display: grid; grid-template-columns: 1fr 1fr 1fr; }
     .tl-item { display: flex; flex-direction: column; }
     .tl-col-date { padding-bottom: 16px; }
-    .tl-col-date span { font-size: 14px; font-weight: 700; letter-spacing: 0; color: var(--bordeaux); }
+    .tl-col-date span { font-size: 24px; font-weight: 700; letter-spacing: 0; color: var(--bordeaux); }
     .tl-col-dot { display: flex; align-items: center; position: relative; height: 20px; }
     .tl-col-dot::before { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 3px; background: var(--bordeaux); transform: translateY(-50%); }
     .tl-item:first-child .tl-col-dot::before { left: 7px; }
     .tl-last .tl-col-dot::before { right: 7px; }
     .tl-bubble { width: 20px; height: 20px; border-radius: 50%; border: 3px solid var(--bordeaux); background: var(--cream); position: relative; z-index: 1; flex-shrink: 0; align-self: center; }
     .tl-col-label { padding-top: 16px; padding-right: 16px; }
-    .tl-col-label .tl-title { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; color: var(--ink); display: block; margin-bottom: 4px; }
+    .tl-col-label .tl-title { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; color: var(--ink); display: block; margin-bottom: 8px; }
     .tl-col-label .tl-sub { font-size: 16px; line-height: 1.45; color: var(--ink); opacity: 0.65; display: block; }
 
     /* ── SCROLL REVEAL ────────────────────────  */
@@ -496,6 +599,7 @@
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.12s; }
     .reveal-delay-2 { transition-delay: 0.24s; }
+    .projet-card.visible:hover { transform: translateY(-6px); box-shadow: 0 8px 32px rgba(20,17,16,0.22), 0 20px 56px rgba(20,17,16,0.14); }
 
     /* ── MOBILE ──────────────────────────────── */
     @media (max-width: 768px) {
@@ -521,8 +625,8 @@
       .s-stat { flex: none; min-width: 0; }
 
       /* SECTIONS */
-      .ed-section { padding: 64px 24px; }
-      .ed-outer { max-width: 100%; }
+      .ed-section { padding: 64px 0; }
+      .ed-outer { max-width: 100%; padding: 0 24px; }
       .ed-header { grid-template-columns: 1fr; gap: 16px; }
       .ed-num { font-size: 80px; overflow-wrap: break-word; word-break: break-word; }
       .ed-title { font-size: 80px; overflow-wrap: break-word; word-break: break-word; }
@@ -541,14 +645,25 @@
       /* PROJETS */
       .projets-header { padding: 56px 24px 40px; }
       .projets-grid { grid-template-columns: 1fr; }
-      .projet-card { height: 380px; padding: 32px 28px; border-right: none; border-bottom: 1px solid rgba(20,17,16,0.12); }
+      .projet-card { height: 380px; border-right: none; border-bottom: 1px solid rgba(20,17,16,0.12); }
+      .pc-content { padding: 32px 28px; }
+      .pc-image { display: none; }
+      .pc-bgnum { font-size: 200px; font-weight: 700; letter-spacing: -0.04em; opacity: 0.08; position: absolute; top: 24px; right: 32px; margin-bottom: 0; }
 
       /* PANNEAUX */
-      .panel { width: 100%; }
-      .panel-body { padding: 40px 24px 80px; }
+      .panel-body { padding: 40px 24px 80px; max-width: 100%; }
+      .panel-body figure { margin: 0; max-width: 300px; }
+      .panel-body figure img { width: 100%; height: auto; }
+      .panel-body > * { max-width: 100%; }
+      .panel-body div[style*="grid-template-columns"] {
+        display: flex !important; flex-direction: column !important; gap: 24px !important;
+      }
+      .panel-body div[style*="display: flex"] { flex-direction: column !important; gap: 16px !important; align-items: center !important; }
+      .panel-body img[style*="flex-shrink"] {
+        width: min(400px, 100%) !important; max-width: 100% !important;
+        flex-shrink: 1 !important; height: auto !important;
+      }
       .panel-title { font-size: 40px; }
-      .panel-body div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
-      .panel-body div[style*="grid-template-columns"] img { width: 100% !important; max-width: 100% !important; }
       .panel-body div[style*="grid-template-columns"] div[style*="flex"] { flex-wrap: wrap; }
       .panel-body div[style*="grid-template-columns"] div[style*="flex"] img { width: 100% !important; flex-shrink: 1 !important; }
       .panel-body figure img { width: 100% !important; }
@@ -566,15 +681,44 @@
       .pos-item { grid-template-columns: 1fr; gap: 16px; }
 
       /* VERBATIM */
-      .vb-composant { width: 100%; overflow: hidden; }
+      .vb-composant { width: 100%; }
+      .vb-pill-outer {
+        position: relative; width: 100%; margin-bottom: 40px;
+        box-shadow: inset 0 0 0 1px #D7D3D0; border-radius: 16px;
+        background: rgba(247,244,240,0.3);
+        padding: 4px 4px 5.5px; overflow: hidden;
+      }
+      .vb-pill-outer.at-end::after { display: none; }
+      .vb-pill-outer::after {
+        content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 48px;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        mask-image: linear-gradient(to right, transparent, black);
+        -webkit-mask-image: linear-gradient(to right, transparent, black);
+        pointer-events: none; z-index: 1;
+      }
+      .vb-pill { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; width: 100%; justify-content: flex-start; margin-bottom: 0; border: none; background: transparent; border-radius: 0; padding: 0; }
+      .vb-pill::-webkit-scrollbar { display: none; }
+      .vb-card { min-width: 56%; flex-shrink: 0; scroll-snap-align: start; }
       .vb-cards-row { grid-template-columns: 1fr 1fr; }
-      .vb-card { padding: 20px 16px; border-right: none; border-bottom: 1px solid var(--ink-20); }
-      .vb-cards-row .vb-card:nth-child(odd) { border-right: 1px solid var(--ink-20); }
+      .vb-cards-row .vb-card:nth-child(odd) { border-right: none; }
       .vb-zone { padding: 24px 20px; }
 
       /* FOOTER */
-      footer { flex-direction: column; gap: 16px; padding: 48px 24px; text-align: center; }
+      footer { padding: 48px 0; }
+      .foot-inner { flex-direction: column; gap: 16px; padding: 0 24px; text-align: center; }
       .foot-meta { text-align: center; }
+    }
+    @media (max-width: 768px) {
+      .panel-body img:not([alt="Flow notif vendeur"]) {
+        max-width: 300px !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+        flex-shrink: 1 !important;
+        align-self: center !important;
+      }
     }
   </style>
 </head>
@@ -680,7 +824,7 @@
   </section>
 
   <!-- ═══ 02 RÔLE STAFF ══════════════════════════════════ -->
-  <section id="role-staff" class="ed-section">
+  <section id="role-staff" class="ed-section" style="padding-top: 64px;">
     <div class="ed-outer">
       <div class="ed-header reveal">
         <div class="ed-num">02</div>
@@ -693,7 +837,7 @@
         <div class="role-sub-label reveal">Pourquoi Staff maintenant</div>
         <div class="role-bloc reveal">
           
-          <p class="role-text">En travaillant à l’échelle de deux crews, j’ai <span style="font-weight: 600">vu des problèmes</span> que chaque équipe voyait partiellement mais dont personne ne s’emparait vraiment. C’est dans ces espaces-là, entre les équipes, entre les parcours, que je sens que je peux avoir le <span style="font-weight: 600">plus d’impact</span> et là où je pense m’épanouir.</p>
+          <p class="role-text">En travaillant à l’échelle de deux crew, j’ai <span style="font-weight: 600">vu des problèmes</span> que chaque équipe voyait partiellement mais dont personne ne s’emparait vraiment. C’est dans ces espaces-là, entre les équipes, entre les parcours, que je sens que je peux avoir le <span style="font-weight: 600">plus d’impact</span> et là où je pense m’épanouir.</p>
         </div>
 
         <div class="role-sub-label reveal">La valeur spécifique d’un Staff</div>
@@ -709,7 +853,7 @@
           <p class="role-text">Chaque équipe optimise son périmètre. Mais les <span style="font-weight: 600">incohérences</span> s’accumulent dans les <span style="font-weight: 600">espaces entre elles sans propriétaire naturel</span>. Nos utilisateurs, eux, ne voient pas ces <span style="font-weight: 600">frontières</span>. Ils vivent une <span style="font-weight: 600">expérience continue</span>. L’enjeu : pousser une <span style="font-weight: 600">expérience plus cohérente, continue, sans friction entre les briques</span>.</p>
         </div>
         <div class="role-bloc reveal" style="border-top: none;">
-          <div class="role-mot">Confiance</div>
+          <div class="role-mot">Fiabilité</div>
           <p class="role-text">La fiabilité entre particuliers <span style="font-weight: 600">dégrade l’expérience du plus grand nombre</span> par des comportements ordinaires : ghosting, désistements, négociations agressives… Ce sujet n’appartient à aucune équipe en particulier. J’ai commencé à en prendre l’ownership : construire un <span style="font-weight: 600">diagnostic partagé pour alimenter les roadmaps</span> des deux crews sur Q1 2027. Le sujet de l’IA devient aussi un enjeu sur la plateforme : perception, arnaque, uniformisation… Deux sujets qui se rejoignent sur la même question : <span style="font-weight: 600">comment LBC construit la confiance de ses utilisateurs.</span></p>
         </div>
 
@@ -740,18 +884,28 @@
 
       <!-- CARD 1 -->
       <div class="projet-card projet-card-1 reveal" onclick="openPanel('panel1')">
-        <span class="pc-bgnum">01</span>
-        <h3 class="pc-title">Vision produit<br>notification vendeur</h3>
-        <p class="pc-excerpt">Un des top pain points CES Vente. 1/3 des conversations ghostées font suite à une notification vendeur.</p>
-        <span class="pc-btn">Voir la réalisation</span>
+        <div class="pc-content">
+          <span class="pc-bgnum">01</span>
+          <h3 class="pc-title">Vision produit<br>notification vendeur</h3>
+          <p class="pc-excerpt">Un des top pain points CES Vente. 1/3 des conversations ghostées font suite à une notification vendeur.</p>
+          <span class="pc-btn">Voir la réalisation</span>
+        </div>
+        <div class="pc-image">
+          <img src="Assets/Visuels/Notif vendeurs/Après.png" alt="Notification vendeur">
+        </div>
       </div>
 
       <!-- CARD 3 -->
       <div class="projet-card projet-card-3 reveal reveal-delay-1" onclick="openPanel('panel3')">
-        <span class="pc-bgnum">02</span>
-        <h3 class="pc-title">Initiative<br>Delighters</h3>
-        <p class="pc-excerpt">OKR groupe 2026 : +2 pts de considération de marque · 7.7 → 7.8 sur la satisfaction particuliers.</p>
-        <span class="pc-btn">Voir la réalisation</span>
+        <div class="pc-content">
+          <span class="pc-bgnum">02</span>
+          <h3 class="pc-title">Initiative<br>Delighters</h3>
+          <p class="pc-excerpt">OKR groupe 2026 : +2 pts de considération de marque · 7.7 → 7.8 sur la satisfaction particuliers.</p>
+          <span class="pc-btn">Voir la réalisation</span>
+        </div>
+        <div class="pc-image">
+          <img src="Assets/Visuels/Delighters/pere-noel.jpg" alt="Delighters">
+        </div>
       </div>
     </div>
   </section>
@@ -770,10 +924,10 @@
       <div class="ed-content" style="max-width: 1200px;">
         <h3 class="subsec-title reveal" style="border-top: none; padding-top: 0;">6 attendus Staff : ma lecture</h3>
         <!-- COMPOSANT ATTENDUS INTERACTIF -->
-      <div id="attendus-composant" style="display:grid; grid-template-columns: 360px 1fr; gap: 0; border: 1px solid var(--ink-20); border-radius: 8px; overflow: hidden;">
+      <div id="attendus-composant" style="display:grid; grid-template-columns: 280px 1fr; gap: 16px;">
 
         <!-- COL GAUCHE : liste cards -->
-        <div id="att-cards-col" style="border-right: 1px solid var(--ink-20);">
+        <div id="att-cards-col">
           <div class="att-card active" data-att="1" onclick="showAtt(1)">
             <div class="att-card-header"><div class="att-card-num">01</div><span class="att-badge badge-demonstre">Démontré</span></div>
             <div class="att-card-title">Autonomie et contribution stratégique</div>
@@ -811,7 +965,7 @@
                 <li><a href="https://www.figma.com/design/bahp6rY4H7gjoy8yrfF1AH/FT-Connect?node-id=23261-68869" target="_blank"><span style="font-weight:600">Vision notification vendeur</span></a> : vision UX formalisée.</li>
                 <li><span style="font-weight:600">Vision inbox</span> : vision transverse adressant le ghosting, "sujet gagnant du hackathon ghosting".</li>
                 <li><a href="https://docs.google.com/presentation/d/1H-7yshinphaCIWJR_3P8RVHDsrkUj5-WH9WrcOBt7UA/edit?slide=id.g3ee7a359c76_0_54" target="_blank"><span style="font-weight:600">Delighters</span></a> : initiative co-lancée avec Imène, liée aux OKR groupe satisfaction particuliers.</li>
-                <li><a href="https://miro.com/app/board/uXjVHreBXis=/" target="_blank"><span style="font-weight:600">Opt out IA sur le dépôt</span></a> : <span style="font-weight:600">signal user négatif documenté</span> et partagé avec PM et Head of.</li>
+                <li><a href="https://miro.com/app/board/uXjVHreBXis=/" target="_blank"><span style="font-weight:600">Opt out IA sur le dépôt</span></a> : <span style="font-weight:600">signal user négatif documenté</span> et partagé avec PM et Head of Product.</li>
               </ul></div>
               <div><div class="att-sub">Résultats</div><ul>
                 <li><span style="font-weight:600">Visions</span> notification vendeur et inbox <span style="font-weight:600">en roadmap Connect.</span></li>
@@ -882,6 +1036,7 @@
             <h3 class="att-pane-title">Leadership et influence</h3>
             <div class="att-pane-body">
               <div><div class="att-sub">Faits</div><ul>
+                <li><span style="font-weight:600">1/1</span> bimensuel avec les <span style="font-weight:600">Head of Product</span> crew Exchange et crew Buyer/Seller</li>
                 <li>Initiative Delighters co-lancée <span style="font-weight:600">sans mandat</span>, portée au niveau transverse.</li>
                 <li><span style="font-weight:600">5 FTs en demande du kit</span> (Search, Maps, Adlife/Cognition, Addons, Pro Dealers).</li>
                 <li><span style="font-weight:600">POC</span> Père Noël : a <span style="font-weight:600">inversé une décision déjà prise.</span></li>
@@ -908,12 +1063,12 @@
                 <li><span style="font-weight:600">Ce dossier lui-même vibecodé avec Claude.</span> Si tu as lu jusque ici, sache que 3 easter eggs se cachent dans ce site. Sauras-tu les trouver ?</li>
               </ul></div>
               <div><div class="att-sub">Résultats</div><ul>
-                <li>Prototypes dynamiques convaincants pour les tests utilisateurs</li>
-                <li>POCs qui ont convaincu les décideurs de lancer des sujets</li>
-                <li>Pratiques partagées en guilde, réutilisables par l'équipe</li>
+                <li><span style="font-weight:600">Prototypes dynamiques convaincants</span> pour les tests utilisateurs.</li>
+                <li>POCs qui ont <span style="font-weight:600">convaincu les décideurs</span> de lancer des sujets.</li>
+                <li>Pratiques partagées en guilde, <span style="font-weight:600">réutilisables par l'équipe.</span></li>
               </ul>
               <div class="att-sub" style="margin-top:20px;">Prochaines étapes</div><ul>
-                <li>Lancer un chantier de composants Spark vibecodés</li>
+                <li>Lancer un chantier de <span style="font-weight:600">composants Spark vibecodés</span> partagés pour faciliter le <span style="font-weight:600">prototype des designers.</span></li>
               </ul></div>
             </div>
           </div>
@@ -927,7 +1082,11 @@
           <div class="pos-num">01</div>
           <div>
             <div class="pos-title">S'installer dans le paysage organisationnel</div>
-            <p class="pos-text">Créer des <span style="font-weight:600">relations</span> avec les <span style="font-weight:600">bons interlocuteurs</span>, créer la <span style="font-weight:600">confiance</span> avec les décideurs de la tribe. Être <span style="font-weight:600">là où les sujets se définissent</span>, pas seulement là où ils se livrent.</p>
+            <ul class="pos-text" style="padding-left: 1.2em; margin: 0 0 16px;">
+              <li>Créer des <span style="font-weight:600">relations</span> avec les <span style="font-weight:600">bons interlocuteurs</span></li>
+              <li>créer la <span style="font-weight:600">confiance</span> avec les décideurs de la tribe.</li>
+              <li>Être <span style="font-weight:600">là où les sujets se définissent</span>, pas seulement là où ils se livrent.</li>
+            </ul>
             <div class="pos-meta-lbl">Partenaires</div>
             <div class="pos-meta-val">Directeur de tribe Horizontale, Heads of Product Exchange et Buyer/Seller, Design Manager.</div>
             <div class="pos-result"><strong>Premier résultat observable :</strong> être sollicitée en amont d'une décision produit transverse sans l'avoir demandé.</div>
@@ -937,8 +1096,8 @@
         <div class="pos-item reveal">
           <div class="pos-num">02</div>
           <div>
-            <div class="pos-title">Élever les pratiques et la cohérence design de la tribe</div>
-            <p class="pos-text">Créer des <span style="font-weight:600">espaces de feedback collectif</span> sur les sujets à fort enjeu. <span style="font-weight:600">Mentorer</span> un Senior sur <span style="font-weight:600">un sujet complexe</span>, pas juste partager en guilde. <span style="font-weight:600">Aligner la qualité</span> entre les crews.</p>
+            <div class="pos-title">Améliorer les pratiques et la cohérence design de la tribe</div>
+            <p class="pos-text">Créer des <span style="font-weight:600">espaces de feedbacks collectif</span> sur les sujets à fort enjeu. <span style="font-weight:600">Mentorer</span> un Senior sur <span style="font-weight:600">un sujet complexe</span>, pas juste partager en guilde. <span style="font-weight:600">Aligner la qualité</span> entre les crews.</p>
             <div class="pos-meta-lbl">Partenaires</div>
             <div class="pos-meta-val">Design Manager, deuxième Staff de la tribe, Seniors Designers.</div>
             <div class="pos-result"><strong>Premier résultat observable :</strong> un Senior porte un sujet transverse de façon autonome avec mon accompagnement.</div>
@@ -963,91 +1122,123 @@
 
 
   <!-- ═══ 05 FEEDBACKS ══════════════════════════════════ -->
-  <section id="feedbacks" class="ed-section">
+  <section id="feedbacks" class="ed-section" style="padding-top: 64px;">
     <div class="ed-outer">
       <div class="ed-header reveal">
         <div class="ed-num">05</div>
         <div class="ed-header-right">
           <div class="ed-label">Rayonnement dans l'entreprise</div>
-          <h2 class="ed-title">Verbatim</h2>
+          <h2 class="ed-title">Feedbacks</h2>
         </div>
       </div>
       <div class="ed-content">
         <div class="vb-composant reveal">
-          <div class="vb-cards-row">
-
+          <div class="vb-pill-outer">
+          <div class="vb-pill">
             <div class="vb-card active" data-vb="1" onclick="showVb(1)">
               <div class="vb-card-avatar"><img src="assets/Guillaume.jpeg" alt="Guillaume Baptiste"></div>
               <div class="vb-card-name">Guillaume Baptiste</div>
-              <div class="vb-card-role">DesignOps et Design Manager<br>Horizontale</div>
+              <div class="vb-card-role">DesignOps et Design Manager</div>
             </div>
-
             <div class="vb-card" data-vb="2" onclick="showVb(2)">
               <div class="vb-card-avatar"><img src="assets/valentin.png" alt="Valentin Ménardie"></div>
               <div class="vb-card-name">Valentin Ménardie</div>
-              <div class="vb-card-role">Engineering Manager<br>Connect</div>
+              <div class="vb-card-role">Engineering Manager</div>
             </div>
-
             <div class="vb-card" data-vb="3" onclick="showVb(3)">
               <div class="vb-card-avatar"><img src="assets/Pauline.jpeg" alt="Pauline Minary"></div>
               <div class="vb-card-name">Pauline Minary</div>
-              <div class="vb-card-role">Product Manager Senior<br>Cognition</div>
+              <div class="vb-card-role">Product Manager Senior</div>
             </div>
-
             <div class="vb-card" data-vb="4" onclick="showVb(4)">
               <div class="vb-card-avatar"><img src="assets/Luc.jpeg" alt="Luc Maitre"></div>
               <div class="vb-card-name">Luc Maitre</div>
-              <div class="vb-card-role">Lead UI Designer<br>Transverse</div>
+              <div class="vb-card-role">Lead UI Designer</div>
             </div>
-
+          </div>
           </div>
 
           <div class="vb-zone">
             <div class="vb-text" id="vb-1">
-              <div class="vb-ctx-line">Ancien manager direct.</div>
+              <div class="vb-quote-icon">"</div>
               <p>Emilie a rejoint la tribe Horizontale et a travaillé sur notamment une première vision de la messagerie en collaboration avec sa PM en Q1 afin de lui <span style="font-weight:600">donner plus de sens et la désiloter</span> du reste du site.</p>
-              <p>La vision a été présentée à Martin Berthonneau, <span style="font-weight:600">CPO</span> de l'époque, qui en a <span style="font-weight:600">fait l'éloge à plusieurs moments</span> : directement en point individuel que j'avais avec lui et indirectement par les voix de Margaux Chénard, <span style="font-weight:600">head of Buyer/Seller</span> et Ludovic Hazart, <span style="font-weight:600">directeur tribe</span> lors de nos points Crew.</p>
+              <p>La vision a été présentée à Martin Berthonneau, <span style="font-weight:600">CPO</span> de l'époque, qui en a <span style="font-weight:600">fait l'éloge à plusieurs moments</span> : directement en point individuel que j'avais avec lui et indirectement par les voix de Margaux Chénard, <span style="font-weight:600">Head of Product Buyer/Seller</span> et Ludovic Hazart, <span style="font-weight:600">Directeur de tribe</span> lors de nos points Crew.</p>
               <p>Je retiens aussi la façon dont Emilie a commencé et mené le sujet des Delighters à partir de Q2. Elle a su <span style="font-weight:600">intégrer le sujet dans les OKR groupe et de l'équipe design</span>, aux côtés d'Imène, puis <span style="font-weight:600">fédérer</span> des product et visual designers, des équipes et au delà de l'équipe design à travers des ateliers et présentations pour lui <span style="font-weight:600">offrir de la visibilité</span> et <span style="font-weight:600">montrer à quel point le sujet est stratégique.</span></p>
               <p>Cette <span style="font-weight:600">posture de leadership</span> sur le sujet Delighters, c'est ce qu'elle montre à travers le fait de <span style="font-weight:600">fédérer les gens autour d'un objectif qui dépasse pour moi le cercle du design</span> et qui a un <span style="font-weight:600">impact sur le produit</span> globalement. Je note aussi sa <span style="font-weight:600">posture critique sur les sujets</span> et une <span style="font-weight:600">communication qui s'est affinée</span> au fur et à mesure pour arriver à une <span style="font-weight:600">posture de critique et d'apport de solutions.</span></p>
-            <div class="vb-badges-row" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:24px; padding-top:0;">
-              <span class="badge">Att. 01 · vision stratégique</span>
-              <span class="badge">Att. 04 · impact collectif</span>
-              <span class="badge">Att. 05 · leadership d'influence</span>
+              <div class="vb-separator"></div>
+              <div class="vb-ctx-line">Ancien manager direct.</div>
+              <div class="vb-badges-row" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:16px;">
+                <span class="badge">Att. 01 · vision stratégique</span>
+                <span class="badge">Att. 04 · impact collectif</span>
+                <span class="badge">Att. 05 · leadership d'influence</span>
+              </div>
+              <div class="vb-separator"></div>
+              <div class="vb-attribution">
+                <img class="vb-attr-photo" src="assets/Guillaume.jpeg" alt="Guillaume Baptiste">
+                <div class="vb-attr-name">Guillaume Baptiste</div>
+                <div class="vb-attr-role">DesignOps et Design Manager Horizontale</div>
+              </div>
             </div>
-            </div>
+
             <div class="vb-text" id="vb-2" style="display:none">
+              <div class="vb-quote-icon">"</div>
+              <p>Au-delà de notre collaboration quotidienne dans l'équipe Connect, j'ai observé chez Emilie une <span style="font-weight:600">réelle capacité à faire rayonner</span> son expertise et à <span style="font-weight:600">créer de l'impact au-delà de son périmètre.</span></p>
+              <p>Sur le sujet du Pricing Recommendation, Emilie a repéré qu'Adlife travaillait sur un enjeu similaire au niveau du depôt. Elle a alors <span style="font-weight:600">facilité le dialogue entre les équipes et la mise en commun de leurs travaux,</span> notamment des résultats de tests utilisateurs, pour faire émerger une approche plus cohérente.</p>
+              <p>Lors de la refonte de la notification vendeur, elle a également <span style="font-weight:600">dépassé l'exécution du besoin initial en questionnant les impacts plus larges,</span> notamment sur la CES et d'autres périmètres. <span style="font-weight:600">Son recul a aidé notre PM à mieux cadrer le sujet et anticiper les risques.</span></p>
+              <p>Elle a porté l'évangélisation des Delighters en organisant un BBL, en présentant le sujet lors d'un workshop de JLQ (Mogador) et en intervenant en guilde auprès des engineers. Elle a aussi proposé Connect comme équipe pilote pour expérimenter. Les ingénieurs de l'équipe ont ainsi été sensibilisés et se sont mis à proposer des idées ; depuis, plusieurs équipes ont lancé des initiatives, dont certaines sont en production. Cela montre <span style="font-weight:600">sa capacité à transmettre, fédérer et faire passer une idée à l'expérimentation à l'échelle de l'entreprise.</span></p>
+              <p>Ces exemples illustrent <span style="font-weight:600">sa capacité à décloisonner les équipes, à apporter une vision globale et à influencer les décisions produit et design au-delà de son équipe.</span></p>
+              <div class="vb-separator"></div>
               <div class="vb-ctx-line">Collaboration quotidienne en équipe Connect, observations transverses - sept. 2025 / oct. 2026</div>
-              <p>Au-delà de notre collaboration quotidienne dans l'équipe Connect, j'ai observé chez Emilie une réelle capacité à faire rayonner son expertise et à créer de l'impact au-delà de son périmètre.</p>
-              <p>Sur le sujet du Pricing Recommendation, Émilie a repéré qu'Adlife travaillait sur un enjeu similaire au niveau du depôt. Elle a alors facilité le dialogue entre les équipes et la mise en commun de leurs travaux, notamment des résultats de tests utilisateurs, pour faire émerger une approche plus cohérente.</p>
-              <p>Lors de la refonte de la notification vendeur, elle a également dépassé l'exécution du besoin initial en questionnant les impacts plus larges, notamment sur la CES et d'autres périmètres. Son recul a aidé notre PM à mieux cadrer le sujet et anticiper les risques.</p>
-              <p>Elle a porté l'évangélisation des Delighters en organisant un BBL, en présentant le sujet lors d'un workshop de JLQ (Mogador) et en intervenant en guilde auprès des engineers. Elle a aussi proposé Connect comme équipe pilote pour expérimenter. Les ingénieurs de l'équipe ont ainsi été sensibilisés et se sont mis à proposer des idées ; depuis, plusieurs équipes ont lancé des initiatives, dont certaines sont en production. Cela montre sa capacité à transmettre, fédérer et faire passer une idée à l'expérimentation à l'échelle de l'entreprise.</p>
-              <p>Ces exemples illustrent sa capacité à décloisonner les équipes, à apporter une vision globale et à influencer les décisions produit et design au-delà de son équipe.</p>
-            <div class="vb-badges-row" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:24px; padding-top:0;">
-              <span class="badge">Att. 01 · contribution stratégique</span>
-              <span class="badge">Att. 02 · résolution transverse</span>
-              <span class="badge">Att. 05 · leadership d'influence</span>
+              <div class="vb-badges-row" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:16px;">
+                <span class="badge">Att. 01 · contribution stratégique</span>
+                <span class="badge">Att. 02 · résolution transverse</span>
+                <span class="badge">Att. 05 · leadership d'influence</span>
+              </div>
+              <div class="vb-separator"></div>
+              <div class="vb-attribution">
+                <img class="vb-attr-photo" src="assets/valentin.png" alt="Valentin Ménardie">
+                <div class="vb-attr-name">Valentin Ménardie</div>
+                <div class="vb-attr-role">Engineering Manager Connect</div>
+              </div>
             </div>
-            </div>
+
             <div class="vb-text" id="vb-3" style="display:none">
-              <div class="vb-ctx-line">Collaboration sur la tribe Horizontale.</div>
+              <div class="vb-quote-icon">"</div>
               <p><span style="font-weight:600">Emilie crée des ponts entre les équipes.</span> Elle <span style="font-weight:600">partage spontanément ses apprentissages et élève la qualité de nos réflexions produit collectives.</span> Elle <span style="font-weight:600">nourrit</span> régulièrement <span style="font-weight:600">nos réflexions</span> sur le dépôt <span style="font-weight:600">avec des insights venus d'autres étapes du parcours.</span> Par exemple, sur la recommandation de prix, elle nous partage ce qui ressort des tests menés sur la négociation. Ces apprentissages <span style="font-weight:600">nous aident à orienter les directions</span> pour le sujet de mieux accompagner les vendeurs lors de la définition de leur prix au dépôt.</p>
               <p>Son <span style="font-weight:600">analyse du CES est aussi précieuse</span> car elle nous apporte des frictions des utilisateurs au dépôt (qui évoluent depuis l'arrivée du 1 click) mais <span style="font-weight:600">nous fait aussi sortir d'une vision trop centrée</span> sur le dépôt et a ramené la perspective de la vente, c'est-à-dire <span style="font-weight:600">ce qui se passe pour le vendeur une fois l'annonce publiée.</span></p>
-            <div class="vb-badges-row" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:24px; padding-top:0;">
-              <span class="badge">Att. 02 · résolution transverse</span>
-              <span class="badge">Att. 03 · données utilisateurs et décisions produit</span>
-              <span class="badge">Att. 04 · élever la qualité collective</span>
+              <div class="vb-separator"></div>
+              <div class="vb-ctx-line">Collaboration sur la tribe Horizontale.</div>
+              <div class="vb-badges-row" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:16px;">
+                <span class="badge">Att. 02 · résolution transverse</span>
+                <span class="badge">Att. 03 · données utilisateurs et décisions produit</span>
+                <span class="badge">Att. 04 · élever la qualité collective</span>
+              </div>
+              <div class="vb-separator"></div>
+              <div class="vb-attribution">
+                <img class="vb-attr-photo" src="assets/Pauline.jpeg" alt="Pauline Minary">
+                <div class="vb-attr-name">Pauline Minary</div>
+                <div class="vb-attr-role">Product Manager Senior Cognition</div>
+              </div>
             </div>
-            </div>
+
             <div class="vb-text" id="vb-4" style="display:none">
-              <div class="vb-ctx-line">Collaboration sur l'initiative Delighters, Q2-Q4 2026. Ateliers JLQ, BBL, prototypes Halloween et Noël.</div>
+              <div class="vb-quote-icon">"</div>
               <p>Cette année Emilie a lancé l'initiative Delighters qui vise à rendre l'expérience leboncoin plus désirable, attrayante et interactive. Elle a fait connaitre cette démarche <span style="font-weight:600">au-delà de l'équipe design</span> en mettant en place des ateliers et moments de partages avec les designers mais également avec les équipes produits et techniques, notamment un atelier en JLQ et un BBL auxquels j'ai participé / assisté.</p>
               <p>Emilie a mis en place un format d'atelier pour <span style="font-weight:600">aider les membres des FTs, accompagnées de leur designer</span>, à imaginer des delighters au sein de leur périmètre. Ce format donne un <span style="font-weight:600">cadre concret</span> pour passer de l'idée à l'exploration collective. Grâce à cette méthode de travail, elle prépare actuellement 2 initiatives pour cette fin d'année autour d'Halloween et de Noël. J'ai participé aux deux et ai pu constater <span style="font-weight:600">sa capacité à trouver les bons interlocuteurs, faire avancer le travail avec efficacité</span>, en <span style="font-weight:600">portant une attention</span> particulière aux <span style="font-weight:600">détails tout en restant pragmatique.</span></p>
               <p><span style="font-weight:600">J'apprécie sa façon de collaborer</span>, Emilie sait <span style="font-weight:600">fédérer les personnes</span> autour d'une idée, tout en <span style="font-weight:600">laissant la place aux expertises de chacun.</span> Elle <span style="font-weight:600">écoute, ajuste sa démarche et permet à chacun de contribuer pleinement.</span> Pour moi, cette initiative illustre sa <span style="font-weight:600">capacité à faire émerger une démarche collective,</span> à la <span style="font-weight:600">diffuser</span> auprès des différents métiers et à la <span style="font-weight:600">traduire en expérimentation concrète</span> dans le produit.</p>
-            <div class="vb-badges-row" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:24px; padding-top:0;">
-              <span class="badge">Att. 01 · autonomie stratégique</span>
-              <span class="badge">Att. 05 · leadership d'influence</span>
-              <span class="badge">Att. 06 · excellence et innovation</span>
-            </div>
+              <div class="vb-separator"></div>
+              <div class="vb-ctx-line">Collaboration sur l'initiative Delighters, Q2-Q4 2026. Ateliers JLQ, BBL, prototypes Halloween et Noël.</div>
+              <div class="vb-badges-row" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:16px;">
+                <span class="badge">Att. 01 · autonomie stratégique</span>
+                <span class="badge">Att. 05 · leadership d'influence</span>
+                <span class="badge">Att. 06 · excellence et innovation</span>
+              </div>
+              <div class="vb-separator"></div>
+              <div class="vb-attribution">
+                <img class="vb-attr-photo" src="assets/Luc.jpeg" alt="Luc Maitre">
+                <div class="vb-attr-name">Luc Maitre</div>
+                <div class="vb-attr-role">Lead UI Designer Transverse</div>
+              </div>
             </div>
           </div>
         </div>
@@ -1057,97 +1248,131 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="foot-name">Emilie Krasi</div>
-    <div class="foot-meta">Candidature Staff Product Designer<br>leboncoin · octobre 2026</div>
+    <div class="foot-inner">
+      <div class="foot-name">Emilie Krasi</div>
+      <div class="foot-meta">Candidature Staff Product Designer<br>leboncoin · octobre 2026</div>
+    </div>
   </footer>
 
-  <!-- ═══ PANNEAU RÉAL 1 ═════════════════════════════════ -->
   <div class="overlay" id="overlay" onclick="closePanel()"></div>
 
+  <!-- ═══ PANNEAU RÉAL 1 ═════════════════════════════════ -->
   <div class="panel" id="panel1">
     <div class="panel-bar">
 
-      <button class="panel-close" onclick="closePanel()">Fermer</button>
+      <button class="panel-close" onclick="closePanel()">✕</button>
     </div>
     <div class="panel-body">
       <h2 class="panel-title">Vision produit<br>notification vendeur</h2>
 
       <div class="p-sec">
         <div class="p-sec-label">Contexte et enjeu</div>
-        <div class="stats-row">
-          <div class="s-stat">
-            <div class="s-stat-num">1/3</div>
-            <div class="s-stat-lbl">des conversations ghostées font suite à une notification vendeur</div>
+        <div style="max-width: 800px; margin: 0 auto;">
+          <div class="stats-row">
+            <div class="s-stat">
+              <div class="s-stat-num">1/3</div>
+              <div class="s-stat-lbl">des conversations ghostées font suite à une notification vendeur</div>
+            </div>
+            <div class="s-stat">
+              <div class="s-stat-num">~60%</div>
+              <div class="s-stat-lbl">des vendeurs ne répondent pas aux notifications</div>
+            </div>
+            <div class="s-stat">
+              <div class="s-stat-num">71,93%</div>
+              <div class="s-stat-lbl">ne voient pas l'intérêt de répondre à un message automatique</div>
+            </div>
           </div>
-          <div class="s-stat">
-            <div class="s-stat-num">~60%</div>
-            <div class="s-stat-lbl">des vendeurs ne répondent pas aux notifications</div>
-          </div>
-          <div class="s-stat">
-            <div class="s-stat-num">71,93%</div>
-            <div class="s-stat-lbl">ne voient pas l'intérêt de répondre à un message automatique</div>
+          <div style="max-width: 580px; margin: 0 auto 48px; text-align: center;">
+            <blockquote style="justify-content: center;">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <p>Quand on met en favoris, ça envoie direct un message au vendeur... Sans rien demander... Enlevez ce truc !</p>
+                <div style="width: 200px; height: 1px; background: var(--ink-20); margin: 24px 0 0;"></div>
+              </div>
+            </blockquote>
           </div>
         </div>
-        <blockquote>
-          <p>«Quand on met en favoris, ça envoie direct un message au vendeur... Sans rien demander... Enlevez ce truc !»</p>
-        </blockquote>
-        <p class="p-text">Pour les vendeurs, gérer ces notifications revient à trier sans critère. Ils reçoivent des signaux sans pouvoir distinguer qui vaut la peine d'une réponse.</p>
-        <p class="p-text" style="font-weight:600;">La vision : donner au vendeur le pouvoir de prioriser les bons contacts, au bon moment.</p>
+        <div style="max-width: 580px; margin-top: 124px; margin-bottom: 80px;">
+          <p class="p-text">Pour les vendeurs, <span style="font-weight:600">gérer ces notifications revient à trier sans critère.</span> Ils reçoivent des signaux <span style="font-weight:600">sans pouvoir distinguer</span> qui vaut la <span style="font-weight:600">peine d'une réponse.</span></p>
+          <div style="margin-top: 16px; font-size: 24px; font-weight: 700; line-height: 1.2; color: var(--bordeaux); letter-spacing: -0.02em;">La vision : donner au vendeur le pouvoir de prioriser les bons contacts, au bon moment.</div>
+        </div>
       </div>
 
       <div class="p-sec">
+        <img src="assets/Visuels/Notif vendeurs/flow notif vendeur.png" alt="Flow notif vendeur" style="width: 100%; border-radius: 8px; border: 1px solid var(--ink-20); display: block; margin-bottom: 72px;">
         <div style="display: grid; grid-template-columns: 1fr 556px; gap: 40px; align-items: start;">
           <div>
             <div class="p-sec-label">Mon rôle et mes décisions</div>
             <div class="p-sec-title">Lead design · De la discovery à l'AB test · PM : Sarah Bouin</div>
-            <p class="p-text">Analyse du questionnaire sur les comportements acheteurs et vendeurs, mapping de la vision, maquettes, protocole de tests utilisateurs RITE, prototypes interactifs, passation des tests, itérations MVP. Atelier d'idéation et priorisation avec la PM pour aligner la vision.</p>
-            <p class="p-text">Ces fonctionnalités n'avaient pas de place naturelle dans la messagerie. La première tentative : regrouper les conversations par article pour créer une forme de centre de gestion à l'intérieur de la messagerie. Ça ne tenait pas, une messagerie n'est pas un centre de gestion, et forcer ce regroupement cassait la logique du produit. J'ai proposé une autre approche : une bannière temporaire en haut de la messagerie, avec une card par article ayant reçu des mises en favoris. Chaque card affiche photo, titre, nombre de favoris et un indicateur de nouveau favori depuis la dernière visite. Elle redirige vers une page d'action par article, qui permet d'envoyer des offres et messages en batch.</p>
+            <ul class="p-list">
+              <li><a href="https://miro.com/app/board/uXjVJ_roQe0=/" target="_blank">Analyse du questionnaire sur les comportements acheteurs et vendeurs</a></li>
+              <li><a href="https://miro.com/app/board/uXjVJ2TO2HU=/" target="_blank">Ateliers d'idéation et priorisation avec la PM pour aligner la vision.</a></li>
+              <li>Mapping de la vision</li>
+              <li><a href="https://www.figma.com/design/bahp6rY4H7gjoy8yrfF1AH/FT-Connect?node-id=23302-72728" target="_blank">Maquettes</a></li>
+              <li>Protocole de tests utilisateurs RITE</li>
+              <li>Prototypes interactifs</li>
+              <li><a href="https://docs.google.com/presentation/d/17pSVAyHc_40KYjcMuFioZla1T2l5fNPy466jvaE00CQ/edit?slide=id.g3bf8b802285_0_139#slide=id.g3bf8b802285_0_139" target="_blank">Passation des tests, restitution</a></li>
+              <li><a href="https://www.figma.com/design/bahp6rY4H7gjoy8yrfF1AH/FT-Connect?node-id=23261-68869" target="_blank">Itérations MVP</a></li>
+            </ul>
           </div>
-          <div style="display: flex; gap: 8px; align-items: flex-start;">
-            <img src="assets/Visuels/Notif vendeurs/Notif vendeur 1.png" alt="Écran 1" style="width: 180px; flex-shrink: 0; border-radius: 8px; border: 1px solid var(--ink-20);">
-            <img src="assets/Visuels/Notif vendeurs/Notif vendeur 2.png" alt="Écran 2" style="width: 180px; flex-shrink: 0; border-radius: 8px; border: 1px solid var(--ink-20);">
-            <img src="assets/Visuels/Notif vendeurs/Notif vendeur 3.png" alt="Écran 3" style="width: 180px; flex-shrink: 0; border-radius: 8px; border: 1px solid var(--ink-20);">
+          <div class="mobile-center"><div class="screens-row" style="display: flex; flex-wrap: nowrap; gap: 8px; align-items: flex-start;">
+              <img src="assets/Visuels/Notif vendeurs/Notif vendeur 1.png" alt="Écran 1" style="width: 180px; flex-shrink: 1; min-width: 0; border-radius: 8px; border: 1px solid var(--ink-20);">
+              <img src="assets/Visuels/Notif vendeurs/Notif vendeur 2.png" alt="Écran 2" style="width: 180px; flex-shrink: 1; min-width: 0; border-radius: 8px; border: 1px solid var(--ink-20);">
+              <img src="assets/Visuels/Notif vendeurs/Notif vendeur 3.png" alt="Écran 3" style="width: 180px; flex-shrink: 1; min-width: 0; border-radius: 8px; border: 1px solid var(--ink-20);">
+          </div></div>
+        </div>
+        <p class="p-text" style="max-width: 580px; margin-top: 80px;">Ces fonctionnalités n'avaient <span style="font-weight:600">pas de place naturelle</span> dans la messagerie. La première tentative : regrouper les conversations par article pour créer une forme de centre de gestion à l'intérieur de la messagerie. Ça ne tenait pas, une messagerie n'est pas un centre de gestion, et forcer ce regroupement cassait la logique du produit. J'ai <span style="font-weight:600">proposé une autre approche</span> : une bannière temporaire en haut de la messagerie, avec une card par article ayant reçu des mises en favoris. Chaque card affiche photo, titre, nombre de favoris et un indicateur de nouveau favori depuis la dernière visite. Elle redirige vers <span style="font-weight:600">une page d'action</span> par article, qui permet <span style="font-weight:600">d'envoyer des offres et messages en batch.</span></p>
+      </div>
+
+      <div class="p-sec">
+        <div style="display: grid; grid-template-columns: 360px 1fr; gap: 32px; align-items: start;">
+          <div class="mobile-center"><div class="photos-col" style="display: flex; flex-direction: column; gap: 24px;">
+            <figure style="margin: 0; display: flex; flex-direction: column;">
+              <img src="assets/img/Notif-vendeur-CPO2.png" alt="Retour Martin Berthonneau" style="width:100%; display:block; border-radius:4px;">
+              <figcaption style="margin-top:8px; font-size:14px; color:var(--ink-60);">Martin Berthonneau · CPO</figcaption>
+            </figure>
+            <figure style="margin: 0; display: flex; flex-direction: column;">
+              <img src="assets/img/Notif-vendeur-Hazart.png" alt="Retour Ludovic Hazart" style="width:100%; display:block; border-radius:4px;">
+              <figcaption style="margin-top:8px; font-size:14px; color:var(--ink-60);">Ludovic Hazart · Directeur tribe Horizontale</figcaption>
+            </figure>
+          </div></div>
+          <div>
+            <div class="p-sec-label">Influence et collaboration</div>
+            <p class="p-text">Nous avons <span style="font-weight:600">anticipé que l'ouverture automatique</span> de la notification allait <span style="font-weight:600">amplifier un problème déjà présent</span> : le ghosting. <span style="font-weight:600">Plutôt qu'attendre que ce risque devienne un problème de delivery, nous avons construit une vision qui n'était pas dans le brief,</span> co-présenté à Lucie Leroy Lusson (Head of Product), Ludovic Hazart (directeur de la tribe Horizontale) et Martin Berthonneau (CPO), et obtenu sa priorisation en roadmap face à d'autres sujets.</p>
           </div>
         </div>
-        <img src="assets/Visuels/Notif vendeurs/flow notif vendeur.png" alt="Flow notif vendeur" style="width: 100%; border-radius: 8px; border: 1px solid var(--ink-20); margin-top: 32px; display: block;">
       </div>
 
       <div class="p-sec">
-        <div class="p-sec-label">Influence et collaboration</div>
-        <p class="p-text">Nous avons anticipé que l'ouverture automatique de la notification allait amplifier un problème déjà présent : le ghosting. Plutôt qu'attendre que ce risque devienne un problème de delivery, nous avons construit une vision qui n'était pas dans le brief, co-présenté à Lucie Leroy Lusson (Head of Product), Ludovic Hazart (directeur de la tribe Horizontale) et Martin Berthonneau (CPO), et obtenu sa priorisation en roadmap face à d'autres sujets.</p>
-        <figure style="margin: 32px 0; display: flex; flex-direction: column; align-items: center;">
-          <img src="assets/img/Notif-vendeur-CPO2.png" alt="Retour Ludovic Hazart" style="width:50%; display:block; border-radius:4px;">
-          <figcaption style="width:50%; margin-top:10px; font-size:14px; color:var(--ink-60);">Martin Berthonneau · CPO</figcaption>
-        </figure>
-        <figure style="margin: 32px 0; display: flex; flex-direction: column; align-items: center;">
-          <img src="assets/img/Notif-vendeur-Hazart.png" alt="Retour Ludovic Hazart" style="width:50%; display:block; border-radius:4px;">
-          <figcaption style="width:50%; margin-top:10px; font-size:14px; color:var(--ink-60);">Ludovic Hazart · Directeur tribe Horizontale</figcaption>
-        </figure>
-      </div>
-
-      <div class="p-sec">
-        <div style="display: grid; grid-template-columns: 1fr 556px; gap: 40px; align-items: start;">
-          <div>
+        <div class="impact-layout">
+          <div class="impact-text">
             <div class="p-sec-label">Impact et preuves</div>
-            <p class="p-text">L'ouverture de la notification vendeur en automatique (décision business) a augmenté par 3 le volume d'offres envoyées par les vendeurs aux acheteurs. La conversion côté acheteur n'a augmenté que de 5% (taux de payin) malgré cet afflux. Nous avions anticipé cet effet : cette vision a précisément été conçue pour donner aux vendeurs les outils pour gérer ce volume. Le MVP est en AB test.</p>
-            <p class="p-text">Ce projet est une première pierre sur un segment restreint. Il a posé les bases d'une vision plus large : une messagerie orientée "action", qui a remporté un hackathon interne et qui est le sujet principal de Q4.</p>
-            <div class="p-sec-label" style="margin-top: 28px;">Et maintenant ?</div>
-            <p class="p-text">Nous travaillons aujourd'hui à améliorer la conversion acheteur.</p>
-            <p class="p-text">Solution : Les offres dans la messagerie sont mises en valeur et contextualisées pour aider les utilisateurs à prendre une décision et faciliter leur acceptation.</p>
-            <p class="p-text">Cette itération est faite en convergence avec le sujet Q4 de la contextualisation du prix dans le dépôt afin d'offrir une cohérence de bout en bout.</p>
+            <p class="p-text">L'ouverture de la notification vendeur en automatique (décision business) a <span style="font-weight:600">augmenté par 3</span> le volume d'offres envoyées par les vendeurs aux acheteurs. La <span style="font-weight:600">conversion côté acheteur n'a augmenté que de 5%</span> (taux de payin) malgré cet afflux. Nous avions <span style="font-weight:600">anticipé cet effet</span> : cette vision a précisément été conçue pour <span style="font-weight:600">donner aux vendeurs les outils pour gérer ce volume.</span> Le MVP est en AB test.</p>
+            <p class="p-text">Ce projet est une première pierre sur un segment restreint. Il a posé les bases d'une <span style="font-weight:600">vision plus large : une messagerie orientée "action"</span>, qui a remporté un hackathon interne et qui est le sujet principal de Q4.</p>
           </div>
-          <div style="display: flex; gap: 10px; align-items: flex-start;">
-            <img src="assets/Visuels/Notif vendeurs/hackathon-demo-cropped.gif" alt="Démo hackathon messagerie action" style="width: 283px; flex-shrink: 0; border-radius: 16px; border: 1px solid var(--ink-20);">
-            <img src="assets/Visuels/Notif vendeurs/Conversion acheteur.png" alt="Conversion acheteur" style="width: 263px; flex-shrink: 0; border-radius: 8px; border: 1px solid var(--ink-20);">
+          <img src="assets/Visuels/Notif vendeurs/hackathon-demo-cropped.gif" alt="Démo hackathon messagerie action" class="impact-img">
+        </div>
+      </div>
+
+      <div class="p-sec">
+        <div style="display: grid; grid-template-columns: 360px 1fr; gap: 32px; align-items: start;">
+          <img src="assets/Visuels/Notif vendeurs/Conversion acheteur.png" alt="Conversion acheteur" style="width: 250px; max-width: 100%; border-radius: 8px; display: block; margin: 0 auto;">
+          <div style="max-width: 580px;">
+            <div class="p-sec-label">Et maintenant ?</div>
+            <p class="p-text">Nous travaillons aujourd'hui à améliorer la conversion acheteur.</p>
+            <p class="p-text">Solution : Les <span style="font-weight:600">offres</span> dans la messagerie sont <span style="font-weight:600">mises en valeur et contextualisées pour aider les utilisateurs à prendre une décision et faciliter leur acceptation.</span></p>
+            <p class="p-text">Cette itération est faite en <span style="font-weight:600">convergence</span> avec le sujet Q4 de la contextualisation du prix dans le <span style="font-weight:600">dépôt afin d'offrir une cohérence de bout en bout.</span></p>
           </div>
         </div>
       </div>
 
       <div class="p-sec">
         <div class="p-sec-label">Recul</div>
-        <p class="p-text">J'avais identifié la tension architecturale (l'absence de centre de gestion vendeur) et choisi de m'adapter à la contrainte de delivery dans le périmètre de la FT pour livrer. Si c'était à refaire, j'aurais aussi posé ce problème à l'échelle de la tribe en parallèle, pas seulement résolu la contrainte dans le scope de mon équipe.</p>
-        <p class="p-text" style="font-weight:600; color: var(--bordeaux);">Ce que cette expérience démontre : la capacité à anticiper un effet business avant qu'il devienne un problème de delivery, à proposer une vision plus ambitieuse que le brief initial pour influencer la roadmap, et à porter ce sujet jusqu'au niveau de la direction.</p>
+        <p class="p-text">J'avais <span style="font-weight:600">identifié la tension architecturale</span> (l'absence de centre de gestion vendeur) et choisi de m'adapter à la contrainte de delivery dans le périmètre de la FT pour livrer. Si c'était à refaire, j'aurais <span style="font-weight:600">aussi posé ce problème à l'échelle de la tribe</span> en parallèle, pas seulement résolu la contrainte dans le scope de mon équipe.</p>
+        <div class="pos-result"><strong>Ce que cette expérience démontre :</strong> la capacité à anticiper un effet business avant qu'il devienne un problème de delivery, à proposer une vision plus ambitieuse que le brief initial pour influencer la roadmap et à porter ce sujet jusqu'au niveau de la direction.</div>
       </div>
+    </div>
+    <div class="panel-nav">
+      <button class="panel-nav-btn panel-nav-next" onclick="openPanel('panel3')">Initiative Delighters →</button>
     </div>
   </div>
 
@@ -1155,7 +1380,7 @@
   <div class="panel" id="panel3">
     <div class="panel-bar">
 
-      <button class="panel-close" onclick="closePanel()">Fermer</button>
+      <button class="panel-close" onclick="closePanel()">✕</button>
     </div>
     <div class="panel-body">
       <h2 class="panel-title">Initiative<br>Delighters</h2>
@@ -1172,60 +1397,64 @@
             <div class="s-stat-lbl">sur la satisfaction particuliers (OKR groupe 2026)</div>
           </div>
         </div>
-        <p class="p-text">Le diagnostic : améliorer les parcours existants réduit les irritants mais ne crée pas la désirabilité. Le modèle Kano l'explique : les fonctionnalités "must-be" évitent la chute, elles ne font pas monter la satisfaction. Les Delighters agissent sur l'émotion et la mémorabilité, c'est un des seuls levier direct sur le NPS et la considération de marque.</p>
+        <p class="p-text">Le diagnostic : <span style="font-weight:600">améliorer les parcours existants réduit les irritants mais ne crée pas la désirabilité.</span> Le modèle Kano l'explique : les <span style="font-weight:600">fonctionnalités "must-be" évitent la chute, elles ne font pas monter la satisfaction.</span></p>
+        <div style="margin-top: 16px; font-size: 24px; font-weight: 700; line-height: 1.2; color: var(--bordeaux); letter-spacing: -0.02em; max-width: 640px;">Les Delighters agissent sur l'émotion et la mémorabilité, c'est un des seuls levier direct sur le NPS et la considération de marque.</div>
       </div>
 
       <div class="p-sec">
         <div class="p-sec-label">Mon rôle et mes décisions</div>
         <p class="p-text" style="font-size: 18px; font-weight: 600;">Co-initiative avec Imène.</p>
         <ul class="p-list">
-          <li>Atelier ouvert à tout P&amp;T lors de la JLQ de juillet, idéation collective.</li>
-          <li>Atelier rodé en guilde designers.</li>
-          <li>Channel Slack avec les premiers participants. (À ce jour 48 membres)</li>
-          <li>BBL organisé chez LBC Tech le 17 septembre, avec comme objectif de trouver des sponsors et d'embarquer des PMs et devs dans leurs FTs.</li>
+          <li>Atelier <span style="font-weight:600">ouvert à tout P&amp;T</span> lors de la JLQ de juillet, <span style="font-weight:600">idéation collective.</span></li>
+          <li><span style="font-weight:600">Atelier rodé</span> en guilde designers.</li>
+          <li><a href="https://adevinta.enterprise.slack.com/archives/C0BC3LDRRNK" target="_blank">Channel Slack</a> avec les premiers participants. (48 membres à ce jour)</li>
+          <li><span style="font-weight:600"><a href="https://docs.google.com/presentation/d/1H-7yshinphaCIWJR_3P8RVHDsrkUj5-WH9WrcOBt7UA/edit?slide=id.g3ee7a359c76_0_54#slide=id.g3ee7a359c76_0_54" target="_blank">BBL</a> organisé avec LBC Tech</span> le 17 septembre, avec comme <span style="font-weight:600">objectif de trouver des sponsors et d'embarquer des PMs, designers et devs dans leurs FTs.</span></li>
         </ul>
         <p class="p-text" style="font-size: 18px; font-weight: 600;">En lead solo sur quatre chantiers :</p>
         <ul class="p-list">
-          <li>FT pilote Connect.</li>
-          <li>Kit FT pour l'autonomie des équipes.</li>
-          <li>POC Noël qui a inversé une décision déjà prise.</li>
-          <li>3 sponsors identifiés et convaincus en démarche directe.</li>
+          <li><span style="font-weight:600">FT pilote</span> Connect.</li>
+          <li><span style="font-weight:600">Kit FT pour l'autonomie</span> des équipes.</li>
+          <li>POC Noël qui a <span style="font-weight:600">inversé une décision</span> déjà prise.</li>
+          <li><span style="font-weight:600">3 sponsors identifiés et convaincus</span> en démarche directe.</li>
         </ul>
       </div>
 
       <div class="p-sec">
         <div class="p-sec-label">Influence et collaboration</div>
         <ul class="p-list">
-          <li>Sponsorship : <span style="font-weight: 600">Margaux Chenard </span>(Head of Product Buyer/Seller), <span style="font-weight: 600">Cyrille Page</span> (Directeur Tech Mobility), <span style="font-weight: 600">David Groizeau</span> (Directeur Tech Monetization).</li>
+          <li>Sponsorship : <span style="font-weight: 600">Margaux Chenard</span> (Head of Product Buyer/Seller), <span style="font-weight: 600">Cyrille Page</span> (Directeur Tech Mobility), <span style="font-weight: 600">David Groizeau</span> (Directeur Tech Monetization).</li>
           <li><span style="font-weight: 600">Eliott Lujan</span> (développeur Staff Android) nous a invité en guilde Android pour présenter l'initiative aux développeurs.</li>
         </ul>
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 16px; margin: 24px 0;">
-          <img src="assets/Visuels/Delighters/Feedback 1.png" alt="Feedback BBL 1" style="width: 50%; border-radius: 6px; border: 1px solid var(--ink-20);">
-          <img src="assets/Visuels/Delighters/Feedback 3.png" alt="Feedback BBL 3" style="width: 50%; border-radius: 6px; border: 1px solid var(--ink-20);">
+        <div style="height: 48px;"></div>
+        <div style="display: flex; gap: 16px;">
+          <img src="assets/Visuels/Delighters/Feedback 1.png" alt="Feedback BBL 1" style="flex: 1; width: 0; border-radius: 6px; border: 1px solid var(--ink-20);">
+          <img src="assets/Visuels/Delighters/Feedback 3.png" alt="Feedback BBL 3" style="flex: 1; width: 0; border-radius: 6px; border: 1px solid var(--ink-20);">
         </div>
-        <div style="max-width: 580px;">
-          <blockquote>
-            <p>«C'est agréable d'entendre parler d'une stratégie produit qui ne se limite pas aux leads et qui cherche aussi à apporter une réelle valeur à nos utilisateurs.»</p>
+        <div style="height: 48px;"></div>
+        <div style="max-width: 580px; margin: 0 auto 24px; text-align: center;">
+          <blockquote style="justify-content: center;">
+            <p>C'est agréable d'entendre parler d'une stratégie produit qui ne se limite pas aux leads et qui cherche aussi à apporter une réelle valeur à nos utilisateurs.</p>
           </blockquote>
-          <blockquote>
-            <p>«Très malin d'avoir proposé le kit à la fin de la présentation.»</p>
+          <blockquote style="justify-content: center; margin-top: 24px;">
+            <p>Très malin d'avoir proposé le kit à la fin de la présentation.</p>
           </blockquote>
+          <p style="font-size: 14px; opacity: 0.55; margin-top: 8px; text-align: center;">Source : questionnaire de feedback du BBL</p>
         </div>
-        <p style="font-size: 14px; opacity: 0.55; margin-top: 8px;">Source : questionnaire de feedback du BBL</p>
+        <div style="height: 24px;"></div>
       </div>
 
       <div class="p-sec">
         <div style="display: grid; grid-template-columns: 1fr 556px; gap: 40px; align-items: start;">
           <div>
-            <div class="p-sec-label">Impact et preuves (4,5 mois)</div>
+            <div class="p-sec-label">Impact et preuves (5 mois)</div>
             <ul class="p-list">
-              <li>Un premier Delighter "cities celebration" en production.</li>
-              <li>BBL rempli avec liste d'attente.</li>
-              <li>Un Delighter Halloween en développement sur la messagerie.</li>
-               <li>La FT Addons qui travaille sur des Delighters pour Halloween que nous avons accompagné.</li>
-              <li>POC Noël : décision inversée grâce à la démonstration au BBL, équipe constituée sur Android et iOS, web en discussion, objectif sortie Q4.</li>
-              <li>4 FTs en demande du kit : Search, Maps, Pro Dealers, Adlife/Cognition, Addons.</li>
-              <li>Designers en demande de formation (Marie, Aline).</li>
+              <li>Un premier Delighter "cities celebration" <span style="font-weight:600">en production.</span></li>
+              <li><span style="font-weight:600">BBL rempli</span> avec liste d'attente.</li>
+              <li>Un <span style="font-weight:600">Delighter Halloween</span> en développement sur la messagerie.</li>
+              <li>La <span style="font-weight:600">FT Addons qui travaille sur des Delighters</span> pour Halloween que nous <span style="font-weight:600">avons accompagné.</span></li>
+              <li>POC Noël : <span style="font-weight:600">décision inversée grâce à la démonstration</span> au BBL, équipe constituée sur Android et iOS, web en discussion, <span style="font-weight:600">objectif sortie Q4.</span></li>
+              <li><span style="font-weight:600">4 FTs en demande du kit</span> : Search, Maps, Pro Dealers, Adlife/Cognition, Addons.</li>
+              <li>Designers <span style="font-weight:600">en demande de formation</span> (Marie, Aline).</li>
               
             </ul>
           </div>
@@ -1239,8 +1468,11 @@
       <div class="p-sec">
         <div class="p-sec-label">Recul</div>
         <p class="p-text">Si je recommençais, je définirais plus tôt avec Imène qui porte quoi pour optimiser le temps de chacune. On a appris en faisant.</p>
-        <p class="p-text" style="font-weight:600; color: var(--bordeaux);">Ce que cette expérience démontre : la capacité à identifier un problème systémique avant qu'on me le demande, à créer de l'infrastructure qui scale sans moi, et à faire avancer un sujet transverse sans mandat, avec des contraintes de temps réelles.</p>
+        <div class="pos-result"><strong>Ce que cette expérience démontre :</strong> la capacité à identifier un problème systémique avant qu'on me le demande, à créer de l'infrastructure qui scale sans moi, et à faire avancer un sujet transverse sans mandat, avec des contraintes de temps réelles.</div>
       </div>
+    </div>
+    <div class="panel-nav">
+      <button class="panel-nav-btn" onclick="openPanel('panel1')">← Notification vendeur</button>
     </div>
   </div>
 
@@ -1268,8 +1500,12 @@
       document.getElementById('att-1').style.display = 'block';
       if (maxH > 0) composant.style.height = maxH + 'px';
     }
-    if (document.readyState !== 'loading') { fixAttHeight(); }
-    else { document.addEventListener('DOMContentLoaded', fixAttHeight); }
+    function initAtt() {
+      fixAttHeight();
+      if (window.innerWidth <= 768) { showAtt(1); }
+    }
+    if (document.readyState !== 'loading') { initAtt(); }
+    else { document.addEventListener('DOMContentLoaded', initAtt); }
 
     function showAtt(n) {
       var isMobile = window.innerWidth <= 768;
@@ -1278,7 +1514,8 @@
       if (!isMobile) {
         document.querySelectorAll('.att-pane').forEach(p => p.style.display = 'none');
         document.querySelector('.att-card[data-att="' + n + '"]').classList.add('active');
-        document.getElementById('att-' + n).style.display = 'block';
+        var pane = document.getElementById('att-' + n);
+        pane.style.display = 'block';
         document.getElementById('att-indicator').textContent = '0' + n + ' / 06';
       } else {
         var col = document.getElementById('att-cards-col');
@@ -1301,11 +1538,22 @@
       }
     }
 
+    (function() {
+      var pill = document.querySelector('.vb-pill');
+      var outer = document.querySelector('.vb-pill-outer');
+      if (pill && outer) {
+        pill.addEventListener('scroll', function() {
+          outer.classList.toggle('at-end', pill.scrollLeft + pill.clientWidth >= pill.scrollWidth - 8);
+        });
+      }
+    })();
+
     function showVb(n) {
       document.querySelectorAll('.vb-card').forEach(c => c.classList.remove('active'));
       document.querySelectorAll('.vb-text').forEach(t => t.style.display = 'none');
       document.querySelector('.vb-card[data-vb="' + n + '"]').classList.add('active');
-      document.getElementById('vb-' + n).style.display = 'block';
+      var txt = document.getElementById('vb-' + n);
+      txt.style.display = 'flex';
     }
 
     // Scroll reveal
@@ -1331,7 +1579,9 @@
     // Panel open/close
     function openPanel(id) {
       document.querySelectorAll('.panel').forEach(p => p.classList.remove('open'));
-      document.getElementById(id).classList.add('open');
+      var panel = document.getElementById(id);
+      panel.scrollTop = 0;
+      panel.classList.add('open');
       document.getElementById('overlay').classList.add('open');
       document.body.style.overflow = 'hidden';
     }
