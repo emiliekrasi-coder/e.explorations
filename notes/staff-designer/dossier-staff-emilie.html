@@ -1622,7 +1622,7 @@
         clickCount = 0;
         const msg = document.createElement('div');
         msg.textContent = 'Si tu lis ça, c\'est que tu es curieux. Bonne nouvelle, moi aussi.';
-        msg.style.cssText = 'position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:#eb4807;color:#fff;padding:14px 24px;border-radius:4px;font-size:14px;font-weight:600;letter-spacing:0.01em;z-index:9999;opacity:0;transition:opacity 0.3s;white-space:nowrap';
+        msg.style.cssText = 'position:fixed;bottom:40px;left:24px;right:24px;transform:none;background:#eb4807;color:#fff;padding:14px 24px;border-radius:4px;font-size:14px;font-weight:600;letter-spacing:0.01em;z-index:9999;opacity:0;transition:opacity 0.3s;text-align:center;';
         document.body.appendChild(msg);
         setTimeout(() => msg.style.opacity = '1', 10);
         setTimeout(() => { msg.style.opacity = '0'; setTimeout(() => msg.remove(), 300); }, 3500);
