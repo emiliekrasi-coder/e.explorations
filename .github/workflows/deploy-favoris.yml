@@ -1,0 +1,83 @@
+name: Deploy Favoris to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'favoris/**'
+      - 'immo-parcours-complet/**'
+      - 'notif-vendeur/**'
+      - '2026-09-deblocage-wallet/**'
+      - '.github/workflows/deploy-favoris.yml'
+  # Permet de republier sans avoir à pousser un commit.
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: favoris/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: favoris
+
+      - name: Build favoris
+        run: npm run build
+        working-directory: favoris
+
+      - name: Install dependencies (deblocage-wallet)
+        run: npm ci
+        working-directory: 2026-09-deblocage-wallet
+
+      - name: Inject proto users data
+        env:
+          PROTO_USERS_JSON: ${{ secrets.PROTO_USERS_JSON }}
+        run: |
+          if [ -n "$PROTO_USERS_JSON" ]; then
+            printf 'export const PROTO_USERS = %s\n' "$PROTO_USERS_JSON" > 2026-09-deblocage-wallet/src/proto-users.js
+          fi
+
+      - name: Build deblocage-wallet
+        run: npm run build
+        working-directory: 2026-09-deblocage-wallet
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          # Copier tous les fichiers existants à la racine du repo (html, assets, etc.)
+          # sauf les dossiers techniques
+          find . -maxdepth 1 \
+            -not -name '.' \
+            -not -name '_site' \
+            -not -name '.git' \
+            -not -name '.github' \
+            -not -name 'favoris' \
+            -not -name '2026-09-deblocage-wallet' \
+            -exec cp -r {} _site/ \;
+          # Copier le build Next.js dans un sous-dossier favoris/
+          cp -r favoris/out _site/favoris
+          # Copier le build Vite dans un sous-dossier 2026-09-deblocage-wallet/
+          cp -r 2026-09-deblocage-wallet/dist _site/2026-09-deblocage-wallet
+
+      - uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
