@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Dépôt photos</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .app {
+    width: 100%;
+    max-width: 430px;
+    height: 100dvh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+  }
+
+  /* ─── ÉCRANS ─── */
+  .screen {
+    position: absolute;
+    inset: 0;
+    display: none;
+  }
+  .screen.active {
+    display: block;
+  }
+
+  /* PNG plein écran */
+  .screen-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ─── ZONES DE TAP ─── */
+  .tap {
+    position: absolute;
+    cursor: pointer;
+    border-radius: 50%;
+    /* debug : border: 2px solid red; */
+  }
+
+  /* Déclencheur : centré horizontalement, dans la bande bottom-controls */
+  .tap-shutter {
+    width: 72px;
+    height: 72px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 68px; /* au-dessus de la tab bar */
+  }
+
+  /* Bouton Passer (écran 2) */
+  .tap-passer {
+    width: 90px;
+    height: 44px;
+    right: 16px;
+    bottom: 74px;
+    border-radius: 24px;
+  }
+
+  /* Flash blanc */
+  .flash {
+    position: absolute;
+    inset: 0;
+    background: #fff;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .flash.go {
+    animation: flash-anim 0.35s ease-out forwards;
+  }
+  @keyframes flash-anim {
+    0%   { opacity: 0.9; }
+    100% { opacity: 0; }
+  }
+
+  /* Slide-up pour bottom sheet (screen 6) */
+  #screen-6.active {
+    animation: slide-up-anim 0.38s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+  }
+  @keyframes slide-up-anim {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+  }
+
+  /* Zone de tap CTA bas d'écran */
+  .tap-cta {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    height: 52px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  /* Zone de tap chips Stockage */
+  .tap-chips {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 56%;
+    height: 14%;
+    cursor: pointer;
+  }
+
+  /* Zone de tap chips Garantie */
+  .tap-garantie {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 66%;
+    height: 13%;
+    cursor: pointer;
+  }
+
+  /* ─── ÉCRANS SCROLLABLES (Pre1, Pre2) ─── */
+  .screen.scrollable {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 72px;
+  }
+  /* Wrapper relatif DANS le scroll — les taps scrollent avec le contenu */
+  .scroll-content {
+    position: relative;
+    width: 100%;
+  }
+  .screen.scrollable .screen-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: unset;
+    object-position: unset;
+  }
+  /* Zones de tap dans le contenu scrollable */
+  .tap-inline {
+    position: absolute;
+    cursor: pointer;
+    left: 16px;
+    right: 16px;
+  }
+
+  /* ─── STICKY BAR FIXE ─── */
+  .sticky-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 430px;
+    z-index: 200;
+    display: none;
+    pointer-events: none;
+  }
+  .sticky-overlay.active {
+    display: block;
+    pointer-events: all;
+  }
+  .sticky-overlay img {
+    width: 100%;
+    display: block;
+  }
+  .sticky-cta-tap {
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    right: 16px;
+    bottom: 10px;
+    border-radius: 24px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- SCREEN 1 — Couverture -->
+  <div class="screen active" id="screen-1">
+    <img class="screen-img" src="KeyScreen/Mobile-4.png" alt="">
+    <div class="tap tap-shutter" onclick="shoot(1)"></div>
+    <div class="flash" id="flash-1"></div>
+  </div>
+
+  <!-- SCREEN 2 — Profil / ports -->
+  <div class="screen" id="screen-2">
+    <img class="screen-img" src="KeyScreen/Mobile.png" alt="">
+    <div class="tap tap-shutter" onclick="shoot(2)"></div>
+    <div class="tap tap-passer" onclick="goTo(3)"></div>
+    <div class="flash" id="flash-2"></div>
+  </div>
+
+  <!-- SCREEN 3 — Boite + téléphone -->
+  <div class="screen" id="screen-3">
+    <img class="screen-img" src="KeyScreen/Mobile-1.png" alt="">
+    <div class="tap tap-shutter" onclick="shoot(3)"></div>
+    <div class="tap tap-passer" onclick="goTo(4)"></div>
+    <div class="flash" id="flash-3"></div>
+  </div>
+
+  <!-- SCREEN 4 — Zoom imperfections -->
+  <div class="screen" id="screen-4">
+    <img class="screen-img" src="KeyScreen/Mobile-2.png" alt="">
+    <div class="tap tap-shutter" onclick="shoot(4)"></div>
+    <div class="tap tap-passer" onclick="goTo(5)"></div>
+    <div class="flash" id="flash-4"></div>
+  </div>
+
+  <!-- SCREEN 5 — D'autres imperfections -->
+  <div class="screen" id="screen-5">
+    <img class="screen-img" src="KeyScreen/Mobile-3.png" alt="">
+    <div class="tap tap-shutter" onclick="shoot(5)"></div>
+    <div class="tap tap-passer" onclick="goTo(6)"></div>
+    <div class="flash" id="flash-5"></div>
+  </div>
+
+  <!-- SCREEN 6 — Bottom sheet, rien sélectionné, CTA désactivé -->
+  <div class="screen" id="screen-6">
+    <img class="screen-img" src="KeyScreen/1.png" alt="">
+    <div class="tap tap-chips" onclick="goTo(7)"></div>
+  </div>
+
+  <!-- SCREEN 7 — 64 Go sélectionné, Garantie vide, CTA désactivé -->
+  <div class="screen" id="screen-7">
+    <img class="screen-img" src="KeyScreen/1.bis.png" alt="">
+    <div class="tap tap-garantie" onclick="goTo(8)"></div>
+  </div>
+
+  <!-- SCREEN 8 — Tout sélectionné, CTA actif -->
+  <div class="screen" id="screen-8">
+    <img class="screen-img" src="KeyScreen/2.png" alt="">
+    <div class="tap tap-cta" onclick="goTo(9)"></div>
+  </div>
+
+  <!-- SCREEN 9 — Prévisualisation annonce (chips vides) -->
+  <div class="screen scrollable" id="screen-9">
+    <div class="scroll-content" onclick="handlePreTap(event, 9)">
+      <img class="screen-img" src="Pre1.png" alt="">
+    </div>
+  </div>
+
+  <!-- SCREEN 10 — Prévisualisation (chips sélectionnées) -->
+  <div class="screen scrollable" id="screen-10">
+    <div class="scroll-content">
+      <img class="screen-img" src="Pre2.png" alt="">
+    </div>
+  </div>
+
+  <!-- STICKY BAR fixe (screens 9 + 10) -->
+  <div class="sticky-overlay" id="sticky-bar">
+    <img src="KeyScreen/sticky-actions.png" alt="">
+    <div class="sticky-cta-tap" onclick="goTo(11)"></div>
+  </div>
+
+</div>
+
+<script>
+  const SCROLLABLE_SCREENS = [9, 10];
+
+  function shoot(n) {
+    const flash = document.getElementById('flash-' + n);
+    flash.classList.add('go');
+    flash.addEventListener('animationend', () => {
+      flash.classList.remove('go');
+      goTo(n + 1);
+    }, { once: true });
+  }
+
+  // Sur Pre1 : clic dans la zone chips (40-58% de la hauteur de l'image)
+  function handlePreTap(e, screenNum) {
+    const img = e.currentTarget.querySelector('img');
+    const rect = img.getBoundingClientRect();
+    const clickY = e.clientY - rect.top; // y relatif à l'image rendue
+    const pct = clickY / rect.height;
+    if (pct >= 0.38 && pct <= 0.60) {
+      goTo(screenNum + 1);
+    }
+  }
+
+  function goTo(n) {
+    const target = document.getElementById('screen-' + n);
+    if (!target) return;
+    // Reset scroll des écrans scrollables
+    document.querySelectorAll('.screen.scrollable').forEach(s => s.scrollTop = 0);
+    // Change d'écran
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    target.classList.add('active');
+    // Sticky bar visible sur les écrans Pre
+    const sticky = document.getElementById('sticky-bar');
+    if (SCROLLABLE_SCREENS.includes(n)) {
+      sticky.classList.add('active');
+    } else {
+      sticky.classList.remove('active');
+    }
+  }
+</script>
+</body>
+</html>
